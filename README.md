@@ -8,4 +8,4 @@
 
 Boulder B-cycle posts its trips data set on its website as soon as its annual report is released. Trips data have been available since 2010. The 2017 annual report and its associated dataset for this report were obtained from [Boulder B-Cycle website](https://boulder.bcycle.com/data-reports).
 
-![](https://github.com/hbhasin/Boulder-2017-Bike-Share/blob/master/figures/Boulder%202016%20Annual%20Report.PNG)
+![](https://github.com/hbhasin/Boulder-2017-Bike-Share/blob/master/figures/Boulder%202017%20Annual%20Report.PNG)
