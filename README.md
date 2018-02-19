@@ -25,3 +25,20 @@ Data for this study was downloaded from several sources and combined using the f
 1. Downloaded Boulder B-cycle May 2011-January 2018 Trip Data from [Boulder B-Cycle website](https://boulder.bcycle.com/data-reports).. The columns names were changed to comply with Python code best practices and only rows for 2017 were kept for this exercise.
 2. Created a list of the 1892 combinations of the 44 checkout/return kiosks. Used [Google Distance Matrix API](https://developers.google.com/maps/documentation/distance-matrix/) to provide the bicycling distance and time between each checkout and return kiosk. Google only supports a maximum of 2500 requests a day, so it took two days to obtain this data.
 3. Obtained daily and hourly weather data via [Dark Sky API](https://darksky.net/dev/) for all of 2017. Dark Sky supports up to 1000 requests per day.
+
+
+### Basic Ridership Statistics 
+#### Number of Rides 
+The B-cycle data, as downloaded, contained 122,331 rows of trips data. Under normal circumstances this would mean that 122,331 B-cycle trips were taken in 2017. However, the [2017 Boulder B-cycle annual report](https://cdn01.bcycle.com/libraries/docs/librariesprovider35/default-document-library/2017-annual-report-final_web.pdf?sfvrsn=996021c5_2) acknowledged 103,568 total trips for the year.
+
+The Trips dataset reported 39 rows with NaN (Not A Number) entries. Removal of these 39 rows resulted in 122,292 rows with the following breakdown:
+
+Membership Type | Number of Trips
+--------------- | -------------
+Annual (Republic Rider) | 67,092
+24-hour (Day Tripper) | 23,082
+Maintenance | 15,393
+Monthly | 14,426
+Pay-per-trip | 2,293
+7-day | 6
+**Total Trips** | **122,292**
