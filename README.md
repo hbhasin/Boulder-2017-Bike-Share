@@ -6,4 +6,4 @@
 
 ![](https://github.com/hbhasin/Boulder-2016-Bike-Share/blob/master/figures/Boulder%20Header.PNG)
 
-Boulder B-cycle posts its trips data set on its website as soon as its annual report is released. Trips data have been available since 2010. The 2016 annual report and its associated dataset for this report were obtained from [Boulder B-Cycle website](https://Boulder.bcycle.com/) and (https://cdn01.bcycle.com/libraries/docs/librariesprovider35/default-document-library/boulder-b-cycle-may-2011-december-2017-trip-data.xlsx?sfvrsn=882021c5_2)
+Boulder B-cycle posts its trips data set on its website as soon as its annual report is released. Trips data have been available since 2010. The 2016 annual report and its associated dataset for this report were obtained from [Boulder B-Cycle website](https://boulder.bcycle.com/data-reports).
