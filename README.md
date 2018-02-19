@@ -51,45 +51,43 @@ Pay-per-trip | 2,293
 7-day | 6
 **Total Trips** | **122,292**
 
-Removing “Maintenance” entries brought the number of rows down to 106,899. Removing entries with a Trip Duration = 0 resulted in 104,985 rows.
-Over 1.4% of the Boulder B-cycle rides (1284 rides) had the same checkout station as return station with a trip duration of only 1 minute (Figure 1). It is very likely that the majority of these “rides” are likely people checking out a bike, and then deciding after a very short time that this particular bike doesn’t work for them.
+Removing “Maintenance” entries brought the number of rows down to 106,899. There were 1914 entries with a Trip Duration = 0. Removing these entries resulted in 104,985 rows.
+Over 1.2% of the Boulder B-cycle rides (1284 rides) had the same checkout station as return station with a trip duration of only 1 minute (Figure 1). It is very likely that the majority of these “rides” are likely people checking out a bike, and then deciding after a very short time that this particular bike doesn’t work for them.
 
-![](https://github.com/hbhasin/Boulder-2016-Bike-Share/blob/master/figures/Figure%201.PNG)
+![](https://github.com/hbhasin/Boulder-2017-Bike-Share/blob/master/figures/Figure%201.PNG)
 
 <p align="center">
 FIGURE 1: TRIP DURATION WHEN CHECKOUT AND RETURN KIOSKS ARE THE SAME
 </p>
 
-Removing entries with a Trip Duration = 1 resulted in 94,512 rows with the following breakdown:
+Removing entries with a Trip Duration = 1 resulted in 103,578 rows with the following breakdown:
 
 Membership Type | Number of Trips
 --------------- | -------------
-Annual (Republic Rider) | 54,737
-24-hour (Day Tripper) | 27,935
-Monthly (People’s Pedaler) | 10,568
-Pay-per-trip (Casual Cruiser) | 821
-Semester (150-day) | 450
-7-day | 1
-**Total Trips** | **94,512**
+Annual (Republic Rider) | 64,842
+24-hour (Day Tripper) | 22,466
+Monthly (People’s Pedaler) | 14,032
+Pay-per-trip (Casual Cruiser) | 2,232
+7-day | 6
+**Total Trips** | **103,578**
 
-This number appeared closer to the 94,446 trips reported by Boulder B-cycle although there were differences amongst the individual membership types.
+This number appeared closer to the 103,568 trips reported by Boulder B-cycle although there were differences amongst the individual membership types.
 
-There were 193 rows in the Trips dataset that had “Maintenance” entry in the Return Kiosk column. These 193 rows were removed accordingly.
+There were 296 rows in the Trips dataset that had “Maintenance” entry in the Return Kiosk column. These 296 rows were removed accordingly.
 
-Removing the 1,343 rows with a trip duration of 1 minute and 193 rows with invalid kiosk names resulted in **94,319 Boulder B-cycle rides in 2016**.
+Removing the 1,343 rows with a trip duration of 1 minute and 193 rows with invalid kiosk names resulted in **103,282 Boulder B-cycle rides in 2017**.
 
 Membership Type | Number of Trips
 --------------- | -------------
-Annual (Republic Rider) | 54,610
-24-hour (Day Tripper) | 27,889
-Monthly (People’s Pedaler) | 10,549
-Pay-per-trip (Casual Cruiser) | 821
-Semester (150-day) | 449
-7-day | 1
-**Total Trips** | **94,319**
+Annual (Republic Rider) | 64,646
+24-hour (Day Tripper) | 22,409
+Monthly (People’s Pedaler) | 13,996
+Pay-per-trip (Casual Cruiser) | 2,225
+7-day | 6
+**Total Trips** | **103,282**
 
 ## Distance Traveled
-To estimate the distance between checkout and return kiosks when they are the same, Tyler’s method of using the “average speed of all the other rides (nominal distance ridden divided by the duration), and then applying this average speed to the same-kiosk trip durations” was adopted. This resulted in 143,006 miles ridden in 2016 and sharply contrasted with the 229,071 miles reported by Boulder B-cycle. 
+To estimate the distance between checkout and return kiosks when they are the same, Tyler’s method of using the “average speed of all the other rides (nominal distance ridden divided by the duration), and then applying this average speed to the same-kiosk trip durations” was adopted. This resulted in 158,140 miles ridden in 2016 and sharply contrasted with the 242,004 miles reported by Boulder B-cycle. 
 
 ### Most Popular and Least Popular Checkout and Return Kiosks 
 ### Most Popular 
@@ -97,31 +95,31 @@ The following ten kiosks were the most popular checkout kiosks by number of tota
 
 Checkout Kiosk | Number of Checkouts
 -------------- | -------------------
-115th & Pearl | 5443
-13th & Spruce | 4272
-Municipal Building | 3666
-11th & Pearl | 3566
-Folsom & Colorado | 3565
-13th & Arapahoe | 3392
-20th & Pearl | 3327
-Broadway & Alpine | 3147
-31st & Pearl | 2976
-Broadway & Euclid | 2968
+Folsom & Colorado | 4885
+15th & Pearl | 4709
+28th & Mapleton | 4069
+Broadway & Euclid | 3854
+21st & Arapahoe | 3462
+13th & Spruce | 3447
+Folsom & Pearl | 3416
+11th & Pearl | 3348
+19th @ Boulder Creek | 3185
+13th & Arapahoe | 3143
 
 The most popular Checkout Kiosk to Return Kiosk routes were as follows:
 
 Checkout Kiosk | Return Kiosk | Number of Trips
 -------------- | ------------ | ---------------
-13th & Spruce | Broadway & Alpine | 724
-Broadway & Alpine | 13th & Spruce | 695
-6th & Canyon | Municipal Building | 680
-Municipal Building | 6th & Canyon | 641
-20th & Pearl | 15th & Pearl | 604
-Municipal Building | Municipal Building | 566
-28th & Mapleton | 26th & Pearl | 552
-Folsom & Pearl | 15th & Pearl | 529
-13th & Arapahoe | 13th & Arapahoe | 506
-15th & Pearl | 20th & Pearl | 503
+26th @ Pearl | 28th & Mapleton | 884
+28th & Mapleton | 26th @ Pearl | 883
+Folsom & Pearl | 15th & Pearl | 610
+13th & Arapahoe | 13th & Arapahoe | 525
+Settlers' Park	11th & Pearl	473
+38th & Arapahoe | 48th & Arapahoe | 452
+21st & Arapahoe | 21st & Arapahoe | 451
+15th & Pearl | Folsom & Pearl | 432
+15th & Pearl | 28th & Mapleton | 413
+Broadway & Baseline | Williams Village | 412
 
 The following ten kiosks were the most popular return kiosks by number of total bike checkouts in 2016.
 
@@ -140,55 +138,55 @@ Broadway & Alpine | 3040
 
 
 ### Least Popular 
-The following ten kiosks were the least popular checkout kiosks by number of total bike checkouts in 2016.
+The following ten kiosks were the least popular checkout kiosks by number of total bike checkouts in 2017.
 
 Checkout Kiosk | Number of Checkouts
 -------------- | -------------------
-Broadway & Iris | 1328
-13th & College | 1299
-UCAR Center Green | 1227
-9th & Pearl | 982
-27th Way & Broadway | 678
-33rd & Fisher | 648
-Wilderness Place | 370
-30th & Diagonal Highway | 247
-30th & Marine | 159
-Gunbarrel North | 120
+UCAR Center Green | 1379
+13th & College | 1317
+Boulder Junction | 1251
+North Boulder Recreation Center | 1012
+Pearl Place | 1006
+30th & Diagonal Highway | 938
+Broadway & Iris | 873
+Table Mesa Park-n-Ride | 506
+27th Way & Broadway | 257
+Gunbarrel North | 160
 
-The following ten kiosks were the least popular return kiosks by number of total bike returns in 2016.
+The following ten kiosks were the least popular return kiosks by number of total bike returns in 2017.
 
 Return Kiosk | Number of Returns
 ------------ | -------------------
-Broadway & Iris | 1265
-Broadway & University | 1070
-9th & Pearl | 963
-13th & College | 804
-33rd & Fisher | 708
-27th Way & Broadway | 509
-Wilderness Place | 426
-30th & Diagonal Highway | 263
-30th & Marine | 170
-Gunbarrel North | 114
+Broadway & University | 1210
+Boulder Junction | 1146
+Pearl Place | 1132
+North Boulder Recreation Center | 953
+13th & College | 922
+30th & Diagonal Highway | 880
+Broadway & Iris | 756
+Table Mesa Park-n-Ride | 475
+27th Way & Broadway | 257
+Gunbarrel North | 166
 
 
 ## Map of Station Popularity
 ### Checkout Kiosks 
 
-The use of Tableau aided in the creation of the following map showing the popularity of the various Checkout Kiosks (Figure 2). The size of the circle is proportional to the number of checkouts from that kiosk in 2016. 
+The use of Tableau aided in the creation of the following map showing the popularity of the various Checkout Kiosks (Figure 2). The size of the circle is proportional to the number of checkouts from that kiosk in 2017. 
 
-![](https://github.com/hbhasin/Boulder-2016-Bike-Share/blob/master/figures/Figure%202.PNG)
+![](https://github.com/hbhasin/Boulder-2017-Bike-Share/blob/master/figures/Figure%202.PNG)
 
 <p align="center">
-FIGURE 2: CHECKOUT KIOSK LOCATIONS AND NUMBER OF CHECKOUTS IN 2016
+FIGURE 2: CHECKOUT KIOSK LOCATIONS AND NUMBER OF CHECKOUTS IN 2017
 </p>
 
 ### Return Kiosks 
-Similarly, the use of Tableau aided in the creation of the following map showing the popularity of the various Return Kiosks (Figure 3). The size of the circle corresponds to the number of checkouts returned to that kiosk in 2016.
+Similarly, the use of Tableau aided in the creation of the following map showing the popularity of the various Return Kiosks (Figure 3). The size of the circle corresponds to the number of checkouts returned to that kiosk in 2017.
 
-![](https://github.com/hbhasin/Boulder-2016-Bike-Share/blob/master/figures/Figure%203.PNG)
+![](https://github.com/hbhasin/Boulder-2017-Bike-Share/blob/master/figures/Figure%203.PNG)
 
 <p align="center">
-FIGURE 3: RETURN KIOSK LOCATIONS AND NUMBER OF RETURNS IN 2016
+FIGURE 3: RETURN KIOSK LOCATIONS AND NUMBER OF RETURNS IN 2017
 </p>
 
 
