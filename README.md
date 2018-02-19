@@ -52,7 +52,7 @@ Pay-per-trip | 2,293
 **Total Trips** | **122,292**
 
 Removing “Maintenance” entries brought the number of rows down to 106,899. Removing entries with a Trip Duration = 0 resulted in 104,985 rows.
-Over 1.4% of the Boulder B-cycle rides (1284 rides) had the same checkout station as return station with a trip duration of only 1 minute (Figure 1). These trips were removed from Again, Tyler’s explanation of why these trips should be removed from the dataset makes sense - “I believe these should be filtered out because I believe the majority of these “rides” are likely people checking out a bike, and then deciding after a very short time that this particular bike doesn’t work for them. I believe that most of the same-kiosk rides under 5 minutes or so likely shouldn’t count, but only culled the ones that were one minute long”.
+Over 1.4% of the Boulder B-cycle rides (1284 rides) had the same checkout station as return station with a trip duration of only 1 minute (Figure 1). It is very likely that the majority of these “rides” are likely people checking out a bike, and then deciding after a very short time that this particular bike doesn’t work for them.
 
 ![](https://github.com/hbhasin/Boulder-2016-Bike-Share/blob/master/figures/Figure%201.PNG)
 
