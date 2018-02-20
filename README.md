@@ -406,8 +406,6 @@ FIGURE 20: TOTAL CHECKOUTS BY HOURLY VISIBILITY IN 2017
 
 # Part 2: Regression Modeling 
 
-In his study, Tyler attempted to create a linear regression model using a number of calendar and weather variables. Using temperature, temperature squared, humidity, month, weekday, hour of day, holiday and cloud cover as input variables he arrived at an R squared value of 0.7382 which meant that approximately 73.8% of the variation in the hourly ridership could be explained by the selected variables and the linear model he used to fit the data.
-
 In this section various linear and non-linear regression models were used to test and train the Trips data that was merged with the weather data to try to predict the number of checkouts based on calendar, clock and weather conditions.
 
 The following regression models with their brief explanation were used in this study:
@@ -441,7 +439,7 @@ The Checkout Month, Week Day and Hour numeric variables were converted to catego
 
 Prior to applying the models a feature correlation was performed on all the features to see if any of the features were highly correlated to one another. As shown in Figure 21, Temperature and Apparent Temperature were highly correlated suggesting that one of them could be removed from the features in the model application.
 
-![](https://github.com/hbhasin/Boulder-2016-Bike-Share/blob/master/figures/Figure%2021.PNG)
+![](https://github.com/hbhasin/Boulder-2017-Bike-Share/blob/master/figures/Figure%2021.PNG)
 
 <p align="center">
 FIGURE 21: FEATURE CORRELATIONS
@@ -451,7 +449,7 @@ The models used for regression supported the use of several parameters that coul
 
 The dataset was randomly spilt into 70% for training and 30% for testing. For each model the training and test scores, R Squared and RMSE results were collected and summarized. In addition, the Decision Tree, Random Forest and Extra Trees models also had their Feature Importance bar charts plotted. The chart for Extra Tree model is shown in Figure 22.
 
-![](https://github.com/hbhasin/Boulder-2016-Bike-Share/blob/master/figures/Figure%2022.PNG)
+![](https://github.com/hbhasin/Boulder-2017-Bike-Share/blob/master/figures/Figure%2022.PNG)
 
 <p align="center">
 FIGURE 22: EXTRA TREES REGRESSION MODEL FEATURE IMPORTANCE CHART
@@ -461,11 +459,10 @@ FIGURE 22: EXTRA TREES REGRESSION MODEL FEATURE IMPORTANCE CHART
 
 Metric | Linear | Lasso | Ridge | Bayesian Ridge | Decision Tree | Random Forest | Extra Trees | Nearest Neighbors
 ------ | ------ | ----- | ----- | -------------- | ------------- | ------------- | ----------- | -----------------
-Training Test Score | 0.680 | 0.677 | 0.677 | 0.680 | 1.000 | 0.943 | 1.000 | 0.597
-Test Set Score | 0.676 | 0.674 | 0.674 | 0.676 | 0.423 | 0.679 | 0.699 | 0.496
-R Squared | 0.822253 | 0.821127 | 0.821127 | 0.822232 | 0.650078 | 0.824289 | 0.835802 | 0.70400
-RMSE | 46.268837 | 46.533272 | 46.533272 | 46.273848 | 82.481079 | 45.789939 | 43.059707 | 72.051003
-
+Training Test Score | 0.702 | 0.699 | 0.699 | 0.702 | 1.000 | 0.948 | 1.000 | 0.590
+Test Set Score | 0.703 | 0.699 | 0.699 | 0.702 | 0.541 | 0.732 | 0.752 | 0.499
+R Squared | 0.838215 | 0.836334 | 0.836334 | 0.838118 | 0.735793 | 0.855677 | 0.867256 | 0.706641
+RMSE | 48.413736 | 48.926522 | 48.926522 | 48.440353 | 74.658154 | 43.598737 | 40.350959 | 81.503647
 
 The Extra Trees regression model achieved the highest accuracy and the lowest RMSE. The Decision Tree model had lowest accuracy and the highest RMSE.
 
@@ -475,7 +472,7 @@ Using Checkout Month, Week Day and Hour numeric variables resulted in just 9 tot
 
 Prior to applying the models a feature correlation was performed on all the features to see if any of the features were highly correlated to one another. As shown in Figure 23, Temperature and Apparent Temperature were highly correlated suggesting that one of them could be removed from the features in the model application.
 
-![](https://github.com/hbhasin/Boulder-2016-Bike-Share/blob/master/figures/Figure%2023.PNG)
+![](https://github.com/hbhasin/Boulder-2017-Bike-Share/blob/master/figures/Figure%2023.PNG)
 
 <p align="center">
 FIGURE 23: FEATURE CORRELATION
@@ -483,13 +480,13 @@ FIGURE 23: FEATURE CORRELATION
 
 For each model the training and test scores, R Squared and RMSE results were collected and summarized. In addition, the Decision Tree, Random Forest and Extra Trees models also had their Feature Importance bar charts plotted. The chart for Random Forest and the Extra Trees models are shown in Figures 24 and 25, respectively.
 
-![](https://github.com/hbhasin/Boulder-2016-Bike-Share/blob/master/figures/Figure%2024.PNG)
+![](https://github.com/hbhasin/Boulder-2017-Bike-Share/blob/master/figures/Figure%2024.PNG)
 
 <p align="center">
 FIGURE 24: RANDOM FOREST REGRESSION MODEL FEATURE IMPORTANCE CHART
 </p>
 
-![](https://github.com/hbhasin/Boulder-2016-Bike-Share/blob/master/figures/Figure%2025.PNG)
+![](https://github.com/hbhasin/Boulder-2017-Bike-Share/blob/master/figures/Figure%2025.PNG)
 
 <p align="center">
 FIGURE 25: EXTRA TREES REGRESSION MODEL FEATURE IMPORTANCE CHART
@@ -501,8 +498,8 @@ Metric | Linear | Lasso | Ridge | Bayesian Ridge | Decision Tree | Random Forest
 ------ | ------ | ----- | ----- | -------------- | ------------- | ------------- | ----------- | -----------------
 Training Test Score | 0.452 | 0.444 | 0.444 | 0.451 | 1.000 | 0.947 | 1.000 | 0.867
 Test Set Score | 0.470 | 0.463 | 0.463 | 0.471 | 0.481 | 0.735 | 0.739 | 0.616
-R Squared | 0.655919 | 0.680605 | 0.680605 | 0.685989 | 0.693454 | 0.857242 | 0.859465 | 0.784742
-RMSE | 74.533468 | 75.555613 | 75.555613 | 74.519813 | 73.070383 | 37.319948 | 36.782801 | 54.076287
+R Squared | 0.671243 | 0.669656 | 0.669656 | 0.671447 | 0.728553 | 0.871173 | 0.876915 | 0.800871
+RMSE | 87.618427 | 87.957784 | 87.957784 | 87.574861 | 74.825290 | 38.441564 | 36.841010 | 57.187221
 
 
 ### Regression Modeling Summary
