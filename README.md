@@ -455,6 +455,7 @@ The dataset was randomly spilt into 70% for training and 30% for testing. For ea
 FIGURE 22: EXTRA TREES REGRESSION MODEL FEATURE IMPORTANCE CHART
 </p>
 
+
 ## Regression Modeling Summary – Categorical Feature Set
 
 Metric | Linear | Lasso | Ridge | Bayesian Ridge | Decision Tree | Random Forest | Extra Trees | Nearest Neighbors
@@ -496,8 +497,8 @@ FIGURE 25: EXTRA TREES REGRESSION MODEL FEATURE IMPORTANCE CHART
 
 Metric | Linear | Lasso | Ridge | Bayesian Ridge | Decision Tree | Random Forest | Extra Trees | Nearest Neighbors
 ------ | ------ | ----- | ----- | -------------- | ------------- | ------------- | ----------- | -----------------
-Training Test Score | 0.452 | 0.444 | 0.444 | 0.451 | 1.000 | 0.947 | 1.000 | 0.867
-Test Set Score | 0.470 | 0.463 | 0.463 | 0.471 | 0.481 | 0.735 | 0.739 | 0.616
+Training Test Score | 0.441 | 0.435 | 0.435 | 0.441 | 1.000 | 0.958 | 1.000 | 0.884
+Test Set Score | 0.451 | 0.448 | 0.448 | 0.451 | 0.531 | 0.759 | 0.769 | 0.641
 R Squared | 0.671243 | 0.669656 | 0.669656 | 0.671447 | 0.728553 | 0.871173 | 0.876915 | 0.800871
 RMSE | 87.618427 | 87.957784 | 87.957784 | 87.574861 | 74.825290 | 38.441564 | 36.841010 | 57.187221
 
@@ -507,17 +508,34 @@ RMSE | 87.618427 | 87.957784 | 87.957784 | 87.574861 | 74.825290 | 38.441564 | 3
 * The non-linear regression models performed better than the linear models. In particular, even with a reduced feature set, the non-linear models such as the Extra Trees and the Random Forest were the best performers with R Squared values well above 0.85.
 
 ## Testing Regressor on unseen samples
-The Extra Trees Forest Regressor with a predictive accuracy of 85.9% was used to predict 10 samples (with numerical feature set) from the dataset that had not been used neither in the training nor in the test sets. The results are tabulated below. The regressor predicted all 10 of the 10 samples accurately. 
+The Extra Trees Forest Regressor with a predictive accuracy of 85.9% was used to predict 20 samples (with numerical feature set) from the dataset that had not been used neither in the training nor in the test sets. The results are tabulated below. The regressor predicted all 20 of the 20 samples accurately. 
 
 Sample Number | Actual Number of Checkouts | Predicted Number of Checkouts | +/-
 ------------- | -------------------------- | ----------------------------- | ---
-1 | 12 | 12 | 0
-2 | 48 | 48 | 0
-3 | 9 | 9 | 0
-4 | 33 | 33 | 0
-5 | 12 | 12 | 0
-6 | 13 | 13 | 0
-7 | 9 | 9 | 0
+1 | 4 | 4 | 0
+2 | 18 | 18 | 0
+3 | 2 | 2 | 0
+4 | 15 | 15 | 0
+5 | 54 | 54 | 0
+6 | 18 | 18 | 0
+7 | 17 | 17 | 0
 8 | 6 | 6 | 0
-9 | 8 | 8 | 0
-10 | 5 | 5 | 0
+9 | 3 | 3 | 0
+10 | 10 | 10 | 0
+11 | 29 | 29 | 0
+12 | 8 | 8 | 0
+13 | 16 | 16 | 0
+14 | 15 | 15 | 0
+15 | 19 | 19 | 0
+16 | 27 | 27 | 0
+17 | 34 | 34 | 0
+18 | 47 | 47 | 0
+19 | 35 | 35 | 0
+20 | 9 | 9 | 0
+
+# Summary
+
+This study covered two areas:
+
+1. Explored the Boulder Trips dataset and visualized the data and provided useful and interesting information.
+2. Deployed a variety of supervised machine learning regression models to predict the number of checkouts using calendar, clock and weather attributes.
