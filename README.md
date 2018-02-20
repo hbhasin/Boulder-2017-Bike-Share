@@ -125,16 +125,16 @@ The following ten kiosks were the most popular return kiosks by number of total 
 
 Return Kiosk | Number of Returns
 ------------ | -------------------
-115th & Pearl | 5366
-13th & Spruce | 909
-Municipal Building | 3919
-13th & Arapahoe | 3898
-11th & Pearl | 3737
-29th & Pearl | 3260
-21st & Arapahoe | 3178
-14th & Canyon | 3102
-20th & Pearl | 3055
-Broadway & Alpine | 3040
+15th & Pearl | 4692
+28th & Mapleton | 4282
+13th & Spruce | 4057
+21st & Arapahoe | 3943
+13th & Arapahoe | 3708
+Folsom & Pearl | 3491
+11th & Pearl | 3464
+48th & Arapahoe | 3356
+The Village | 3220
+Twenty Ninth Street North | 3156
 
 
 ### Least Popular 
