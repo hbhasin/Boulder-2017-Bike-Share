@@ -114,7 +114,7 @@ Checkout Kiosk | Return Kiosk | Number of Trips
 28th & Mapleton | 26th @ Pearl | 883
 Folsom & Pearl | 15th & Pearl | 610
 13th & Arapahoe | 13th & Arapahoe | 525
-Settlers' Park	11th & Pearl	473
+Settlers' Park | 11th & Pearl | 473
 38th & Arapahoe | 48th & Arapahoe | 452
 21st & Arapahoe | 21st & Arapahoe | 451
 15th & Pearl | Folsom & Pearl | 432
