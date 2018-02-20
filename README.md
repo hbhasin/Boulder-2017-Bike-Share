@@ -18,7 +18,7 @@ The following project files are located in this project directory:
 
 [Boulder 2017 Hourly Weather Forecast](https://github.com/hbhasin/Boulder-2017-Bike-Share/blob/master/Boulder_Hourly_Weather_Forecast.py) - Python 2.7 script used to retrieve hourly weather attributes from [Dark Sky API](https://darksky.net/dev/).
 
-[Boulder 2017 Bike Share Weather Data Consolidation](https://github.com/hbhasin/Boulder-2016-Bike-Share/blob/master/Boulder%202016%20Bike%20Share%20Weather%20Data%20Consolidation.ipynb) - Merges the daily and hourly weather attributes from [Dark Sky API](https://darksky.net/dev/) into the Trips dataset.
+[Boulder 2017 Bike Share Weather Data Consolidation](https://github.com/hbhasin/Boulder-2017-Bike-Share/blob/master/Boulder_2017_Bike_Share_Weather_Data_Consolidation.ipynb) - Merges the daily and hourly weather attributes from [Dark Sky API](https://darksky.net/dev/) into the Trips dataset.
 
 [Boulder 2017 Bike Share Data Exploration](https://github.com/hbhasin/Boulder-2016-Bike-Share/blob/master/Boulder%202016%20Bike%20Share%20Data%20Exploration.ipynb) - Jupyter notebook containing Python code used to explore and visualize the information contained in the Boulder 2017 Trips dataset. 
 
