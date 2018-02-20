@@ -24,8 +24,6 @@ The following project files are located in this project directory:
 
 [Boulder 2017 Bike Share Regression Modeling](https://github.com/hbhasin/Boulder-2016-Bike-Share/blob/master/Boulder%202016%20Bike%20Share%20Regression%20Modeling.ipynb) - Jupyter notebook containing Python code used to deploy a variety of regression models to train and test the Trips dataset followed by a predcition on 10 unseen samples. The regression models include Linear, Lasso, Ridge, Bayesian Ridge, Decision Tree, Random Forest, Extra Trees and Nearest Neighbors. 
 
-[Boulder 2017 Bike Share Multi-Class Classification Modeling](https://github.com/hbhasin/Boulder-2016-Bike-Share/blob/master/Boulder%202016%20Bike%20Share%20Multi-Class%20Classification%20Modeling.ipynb) - Jupyter notebook containing Python code used to deploy a variety of classification models to train and test the Trips dataset followed by a predcition on 10 unseen samples. The classification models include Logistic, Decision Tree, Random Forest, Extra Trees, Naive Bayes, Nearest Neighbors, Gradient Boosting and Multi-Layer Perceptron.
-
 [./data](https://github.com/hbhasin/Boulder-2017-Bike-Share/tree/master/data) - Folder containing data files used in the Python scripts and in the notebooks.
 
 [./figures](https://github.com/hbhasin/Boulder-2017-Bike-Share/tree/master/figures) - Folder containing figures used in the Python notebooks.
