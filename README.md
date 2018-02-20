@@ -10,13 +10,13 @@ The following project files are located in this project directory:
 
 [Boulder 2017 Bike Share Data Exploration and Predictive Analysis](https://github.com/hbhasin/Boulder-2017-Bike-Share/blob/master/Boulder_2017_Bike_share_Data_Exploration_and_Predictive_Analysis.md) - Final Report.
 
-[Boulder 2017 Excel to CSV File Conversion](https://github.com/hbhasin/Boulder-2016-Bike-Share/blob/master/Boulder_2016_Excel_to_CSV_File_Conversion.ipynb) -- Converts the Trips dataset Excel spreadsheet from a hefty 27MB file size to a reasonable 6MB compressed file.
+[Boulder 2017 Excel to CSV File Conversion](https://github.com/hbhasin/Boulder-2017-Bike-Share/blob/master/Boulder_2017_Excel_to_CSV_File_Conversion.ipynb) -- Converts the Trips dataset Excel spreadsheet from a 8MB file size to a reasonable 1.8MB compressed file.
 
-[Boulder Bike Share Distance Duration Submit](https://github.com/hbhasin/Boulder-2016-Bike-Share/blob/master/Boulder_Bike_Share_Distance_Duration_Submit.py) - Python 3.6 script to retrieve distances between checkout and return kiosks from [Google Distance Matrix API](https://developers.google.com/maps/documentation/distance-matrix/).
+[Boulder 2017 Bike Share Distance Duration Submit](https://github.com/hbhasin/Boulder-2017-Bike-Share/blob/master/Boulder_2017_Bike_Share_Distance_Duration_Submit.py) - Python 3.6 script to retrieve distances between checkout and return kiosks from [Google Distance Matrix API](https://developers.google.com/maps/documentation/distance-matrix/).
 
-[Boulder Daily Forecast 2017](https://github.com/hbhasin/Boulder-2016-Bike-Share/blob/master/Boulder_Daily_Forecast_2016.py) - Python 2.7 script used to retrieve daily weather attributes from [Dark Sky API](https://darksky.net/dev/).
+[Boulder 2017 Daily Weather Forecast](https://github.com/hbhasin/Boulder-2017-Bike-Share/blob/master/Boulder_2017_Daily_Weather_Forecast.py) - Python 2.7 script used to retrieve daily weather attributes from [Dark Sky API](https://darksky.net/dev/).
 
-[Boulder Hourly Forecast 2017](https://github.com/hbhasin/Boulder-2016-Bike-Share/blob/master/Boulder_Hourly_Forecast_2016.py) - Python 2.7 script used to retrieve hourly weather attributes from [Dark Sky API](https://darksky.net/dev/).
+[Boulder 2017 Hourly Weather Forecast](https://github.com/hbhasin/Boulder-2017-Bike-Share/blob/master/Boulder_Hourly_Weather_Forecast.py) - Python 2.7 script used to retrieve hourly weather attributes from [Dark Sky API](https://darksky.net/dev/).
 
 [Boulder 2017 Bike Share Weather Data Consolidation](https://github.com/hbhasin/Boulder-2016-Bike-Share/blob/master/Boulder%202016%20Bike%20Share%20Weather%20Data%20Consolidation.ipynb) - Merges the daily and hourly weather attributes from [Dark Sky API](https://darksky.net/dev/) into the Trips dataset.
 
