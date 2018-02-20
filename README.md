@@ -10,8 +10,6 @@ The following project files are located in this project directory:
 
 [Boulder 2017 Bike Share Data Exploration and Predictive Analysis.md](https://github.com/hbhasin/Boulder-2017-Bike-Share/blob/master/Boulder_2017_Bike_share_Data_Exploration_and_Predictive_Analysis.md) - Final Report.
 
-[Boulder 2017 B-cycle](https://github.com/hbhasin/Boulder-2016-Bike-Share/blob/master/Boulder%202016%20B-cycle.pdf) - Slide Deck.
-
 [Boulder 2017 Excel to CSV File Conversion](https://github.com/hbhasin/Boulder-2016-Bike-Share/blob/master/Boulder_2016_Excel_to_CSV_File_Conversion.ipynb) -- Converts the Trips dataset Excel spreadsheet from a hefty 27MB file size to a reasonable 6MB compressed file.
 
 [Boulder Bike Share Distance Duration Submit](https://github.com/hbhasin/Boulder-2016-Bike-Share/blob/master/Boulder_Bike_Share_Distance_Duration_Submit.py) - Python 3.6 script to retrieve distances between checkout and return kiosks from [Google Distance Matrix API](https://developers.google.com/maps/documentation/distance-matrix/).
@@ -34,7 +32,7 @@ The following project files are located in this project directory:
 
 
 ## Data Sources
-[Boulder B-cycle](https://boulder.bcycle.com/) - The Trips dataset was retrieved from [Dropbox](https://www.dropbox.com/s/hk8csl6fm4q0221/Boulder%20B-cycle%20May%202011-January%202017%20Trip%20Data.xlsx?dl=0).
+[Boulder B-cycle](https://boulder.bcycle.com/) - The Trips dataset was retrieved from [Data and Reports](https://boulder.bcycle.com/data-reports).
 
 Distances between Checkout and Return Kiosks: Distances were retrieved from [Google Distance Matrix API](https://developers.google.com/maps/documentation/distance-matrix/) using Python 3.6 script.
 
