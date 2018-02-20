@@ -104,13 +104,13 @@ tr:nth-child(even) {
 <h2 id="data-acquisition">Data Acquisition</h2>
 <p>Data for this study was downloaded from several sources and combined using the following steps:</p>
 <ol type="1">
-	<li><p>Downloaded B-cycle 2016 Trips and Kiosk data from <a href="https://www.denverbcycle.com/company">Denver B-Cycle website</a>. The columns names were changed to comply with Python code best practices.</p></li>
-	<li><p>Created a list of the 7921 combinations of the 89 checkout/return kiosks. Used <a href="https://developers.google.com/maps/documentation/distance-matrix/">Google Distance Matrix API</a> to provide the bicycling distance and time between each checkout and return kiosk. Adopted Tyler’s method of finding the average distance by taking the distance from each checkout-return pair’s distance separately then averaging it. As he pointed out in his study, this approach was taken “because of the large number of one-way streets in the Denver downtown area where the kiosks are highly clustered”. Google only supports a maximum of 2500 requests a day, it took four days to obtain this data.</p></li>
-	<li><p>Obtained daily and hourly weather data via <a href="https://darksky.net/dev/">Dark Sky API</a> for all of 2016. Dark Sky supports up to 1000 requests per day.</p></li>
+	<li><p>Downloaded Boulder B-cycle May 2011-January 2018 Trip Data from <a href="https://boulder.bcycle.com/data-reports">Boulder B-Cycle website</a>. The columns names were changed to comply with Python code best practices.</p></li>
+	<li><p>Created a list of the 1892 combinations of the 44 checkout/return kiosks. Used <a href="https://developers.google.com/maps/documentation/distance-matrix/">Google Distance Matrix API</a> to provide the bicycling distance and time between each checkout and return kiosk. Google only supports a maximum of 2500 requests a day, it took two days to obtain this data.</p></li>
+	<li><p>Obtained daily and hourly weather data via <a href="https://darksky.net/dev/">Dark Sky API</a> for all of 2017. Dark Sky supports up to 1000 requests per day.</p></li>
 </ol>
 <h3 id="basic-ridership-statistics">Basic Ridership Statistics</h3>
 <h4 id="number-of-rides">Number of Rides</h4>
-<p>The B-cycle data, as downloaded, contained 419,611 rows of trips data. Under normal circumstances this would mean that 419,611 B-cycle trips were taken in 2016. However, the <a href="http://denver.bcycle.com/docs/librariesprovider34/default-document-library/dbs_annualreport_2016_05.pdf">2016 Denver B-cycle annual report</a> acknowledged 354,652 total trips for the year. The breakdown was as follows:</p>
+<p>The B-cycle data, as downloaded, contained 122,331 rows of trips data. Under normal circumstances this would mean that 122,331 B-cycle trips were taken in 2017. However, the <a href="http://https://cdn01.bcycle.com/libraries/docs/librariesprovider35/default-document-library/2017-annual-report-final_web.pdf?sfvrsn=996021c5_2">2017 Boulder B-cycle annual report</a> acknowledged 103,568 total trips for the year. The breakdown, totaling 101,146 trips was as follows:</p>
 <table>
 <thead>
 <tr class="header">
@@ -120,28 +120,28 @@ tr:nth-child(even) {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Annual (And Annual Plus)</td>
-<td>193,113</td>
+<td>Annual (Republic Rider)</td>
+<td>63,262</td>
 </tr>
 <tr class="even">
-<td>Flex Pass</td>
-<td>3,565</td>
+<td>24-hour (Day Tripper)</td>
+<td>23,082</td>
 </tr>
 <tr class="odd">
-<td>30 Day</td>
-<td>54,004</td>
+<td>Maintenance</td>
+<td>15,393</td>
 </tr>
 <tr class="even">
-<td>24 hour online</td>
-<td>117</td>
+<td>Monthly</td>
+<td>14,426</td>
 </tr>
 <tr class="odd">
-<td>24-hour Kiosk</td>
-<td>103,853</td>
+<td>7-day</td>
+<td>6</td>
 </tr>
 <tr class="even">
 <td><strong>Total Trips</strong></td>
-<td><strong>354,652</strong></td>
+<td><strong>101,146</strong></td>
 </tr>
 </tbody>
 </table>
