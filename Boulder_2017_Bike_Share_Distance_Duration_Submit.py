@@ -29,7 +29,7 @@ with open("Boulder_2017_Bike_Kiosks_Distances_Durations.csv", "w", newline='') a
       "Distance_Return_Checkout", "Duration_Return_Checkout", "Average_Distance",
       "Average_Duration"]
   writer.writerow(colNames)
-  for KioskRow in Bike_list[2459:4800]:
+  for KioskRow in Bike_list:
     origins = [KioskRow[1] + "," + KioskRow[2]]
     destinations = [KioskRow[4] + "," + KioskRow[5]]
     gmaps = googlemaps.Client(key='your_apikey')
