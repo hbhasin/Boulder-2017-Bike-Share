@@ -8,7 +8,7 @@ The following project files are located in this project directory:
 
 [README.md](https://github.com/hbhasin/Boulder-2017-Bike-Share/blob/master/README.md) -- This document, with project description.
 
-[Boulder 2017 Bike Share Data Exploration and Predictive Analysis.md](https://github.com/hbhasin/Boulder-2017-Bike-Share/blob/master/Boulder_2017_Bike_share_Data_Exploration_and_Predictive_Analysis.md) - Final Report.
+[Boulder 2017 Bike Share Data Exploration and Predictive Analysis](https://github.com/hbhasin/Boulder-2017-Bike-Share/blob/master/Boulder_2017_Bike_share_Data_Exploration_and_Predictive_Analysis.md) - Final Report.
 
 [Boulder 2017 Excel to CSV File Conversion](https://github.com/hbhasin/Boulder-2016-Bike-Share/blob/master/Boulder_2016_Excel_to_CSV_File_Conversion.ipynb) -- Converts the Trips dataset Excel spreadsheet from a hefty 27MB file size to a reasonable 6MB compressed file.
 
