@@ -483,7 +483,7 @@ For each model the training and test scores, R Squared and RMSE results were col
 
 ![](https://github.com/hbhasin/Boulder-2017-Bike-Share/blob/master/figures/Figure%2024.PNG)
 
-<p align="center">
+7<p align="center">
 FIGURE 24: RANDOM FOREST REGRESSION MODEL FEATURE IMPORTANCE CHART
 </p>
 
@@ -508,7 +508,7 @@ RMSE | 87.618427 | 87.957784 | 87.957784 | 87.574861 | 74.825290 | 38.441564 | 3
 * The non-linear regression models performed better than the linear models. In particular, even with a reduced feature set, the non-linear models such as the Extra Trees and the Random Forest were the best performers with R Squared values well above 0.85.
 
 ## Testing Regressor on unseen samples
-The Extra Trees Forest Regressor with a predictive accuracy of 85.9% was used to predict 20 samples (with numerical feature set) from the dataset that had not been used neither in the training nor in the test sets. The results are tabulated below. The regressor predicted all 20 of the 20 samples accurately. 
+The Extra Trees Forest Regressor with a predictive accuracy of 87.7% was used to predict 20 samples (with numerical feature set) from the dataset that had not been used neither in the training nor in the test sets. The results are tabulated below. The regressor predicted all 20 of the 20 samples accurately. 
 
 Sample Number | Actual Number of Checkouts | Predicted Number of Checkouts | +/-
 ------------- | -------------------------- | ----------------------------- | ---
