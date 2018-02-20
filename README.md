@@ -388,7 +388,6 @@ FIGURE 18: TOTAL CHECKOUTS BY HOURLY CLOUD COVER IN 2017
 
 ### Checkouts vs. Hourly Wind Speed
 Data on wind speed indicated it was clustered heavily in 0 to 8 miles per hour range, as shown in Figure 19.
-
 ![](https://github.com/hbhasin/Boulder-2017-Bike-Share/blob/master/figures/Figure%2019.PNG)
 
 <p align="center">
@@ -442,7 +441,7 @@ Prior to applying the models a feature correlation was performed on all the feat
 ![](https://github.com/hbhasin/Boulder-2017-Bike-Share/blob/master/figures/Figure%2021.PNG)
 
 <p align="center">
-FIGURE 21: FEATURE CORRELATIONS
+FIGURE 21: FEATURE CORRELATION
 </p>
 
 The models used for regression supported the use of several parameters that could be used to adjust or tune them for better performance. In most cases in this study, the parameters were set to default.
