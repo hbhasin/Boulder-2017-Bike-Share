@@ -1,4 +1,4 @@
-# Boulder-2017-Bike-Share
+# Boulder-2017-Bike-Share Data Exploration and Predictive Analytics
 
 ![](https://github.com/hbhasin/Boulder-2017-Bike-Share/blob/master/figures/splash.PNG)
 
@@ -91,7 +91,7 @@ To estimate the distance between checkout and return kiosks when they are the sa
 
 ### Most Popular and Least Popular Checkout and Return Kiosks 
 ### Most Popular 
-The following ten kiosks were the most popular checkout kiosks by number of total bike checkouts in 2016.
+The following ten kiosks were the most popular checkout kiosks by number of total bike checkouts in 2017.
 
 Checkout Kiosk | Number of Checkouts
 -------------- | -------------------
@@ -121,7 +121,7 @@ Settlers' Park	11th & Pearl	473
 15th & Pearl | 28th & Mapleton | 413
 Broadway & Baseline | Williams Village | 412
 
-The following ten kiosks were the most popular return kiosks by number of total bike checkouts in 2016.
+The following ten kiosks were the most popular return kiosks by number of total bike checkouts in 2017.
 
 Return Kiosk | Number of Returns
 ------------ | -------------------
@@ -195,21 +195,22 @@ With the revisions made earlier to the membership type entries, the figure below
 
 Membership Type | Number of Checkouts
 --------------- | -------------------
-Annual (Republic Rider) | 54,610
-24-hour (Day Tripper) | 27,889
-Monthly (People’s Pedaler) | 10,549
-Pay-per-trip (Casual Cruiser) | 821
-Semester (150-day) | 449
-7-day | 1
+Membership Type | Number of Trips
+--------------- | -------------
+Annual (Republic Rider) | 64,646
+24-hour (Day Tripper) | 22,409
+Monthly (People’s Pedaler) | 13,996
+Pay-per-trip (Casual Cruiser) | 2,225
+7-day | 6
 
 
 
 
-![](https://github.com/hbhasin/Boulder-2016-Bike-Share/blob/master/figures/Figure%204.PNG)
+![](https://github.com/hbhasin/Boulder-2017-Bike-Share/blob/master/figures/Figure%204.PNG)
 
 
 <p align="center">
-FIGURE 4: NUMBER OF CHECKOUTS BY MEMBERSHIP TYPE IN 2016
+FIGURE 4: NUMBER OF CHECKOUTS BY MEMBERSHIP TYPE IN 2017
 </p>
 
 
@@ -220,40 +221,40 @@ Bike checkout time is probably the most important attribute in the Trips dataset
 
 It appears that the highest number of checkouts occurred between 4 PM and 5 PM with ridership increasing steadily from 6 AM. Number of checkouts started to decrease after 6 PM.
 
-![](https://github.com/hbhasin/Boulder-2016-Bike-Share/blob/master/figures/Figure%205.PNG)
+![](https://github.com/hbhasin/Boulder-2017-Bike-Share/blob/master/figures/Figure%205.PNG)
 
 
 <p align="center">
-FIGURE 5: NUMBER OF CHECKOUTS BY HOUR IN 2016
+FIGURE 5: NUMBER OF CHECKOUTS BY HOUR IN 2017
 </p>
 
 
 
-Figure 6 shows the average distance ridden by the hour of the day in 2016. Interestingly, more distance was covered during the very early hours of the morning (2 AM to 3 AM) period. The typical distance ridden ranged from 1.4 miles to 1.6 miles from 4 AM to 12 midnight.
+Figure 6 shows the average distance ridden by the hour of the day in 2017. Interestingly, more distance was covered during the very early hours of the morning (2 AM to 3 AM) period. The typical distance ridden ranged from 1.4 miles to 1.6 miles from 4 AM to 12 midnight.
 
-![](https://github.com/hbhasin/Boulder-2016-Bike-Share/blob/master/figures/Figure%206.PNG)
+![](https://github.com/hbhasin/Boulder-2017-Bike-Share/blob/master/figures/Figure%206.PNG)
 
 <p align="center">
-FIGURE 6: ESTIMATED AVERAGE MILES RIDDEN BY HOUR OF CHECKOUT IN 2016
+FIGURE 6: ESTIMATED AVERAGE MILES RIDDEN BY HOUR OF CHECKOUT IN 2017
 </p>
 
 
 ## Ridership by Hour and Weekday 
 Figure 7 shows that weekday ridership patterns are similar. On the other hand weekend ridership demonstrate a busy afternoon (between 12 PM and 3 PM)
 
-![](https://github.com/hbhasin/Boulder-2016-Bike-Share/blob/master/figures/Figure%207.PNG)
+![](https://github.com/hbhasin/Boulder-2017-Bike-Share/blob/master/figures/Figure%207.PNG)
 
 <p align="center">
-FIGURE 7: CHECKOUTS BY HOUR OF DAY PER WEEKDAY IN 2016
+FIGURE 7: CHECKOUTS BY HOUR OF DAY PER WEEKDAY IN 2017
 </p>
 
 ## Ridership by Month 
 Monthly checkouts, as shown in Figure 8, suggest high ridership during the summer months and low ridership during the winter months.
 
-![](https://github.com/hbhasin/Boulder-2016-Bike-Share/blob/master/figures/Figure%208.PNG)
+![](https://github.com/hbhasin/Boulder-2017-Bike-Share/blob/master/figures/Figure%208.PNG)
 
 <p align="center">
-FIGURE 8: TOTAL CHECKOUTS BY MONTH IN 2016
+FIGURE 8: TOTAL CHECKOUTS BY MONTH IN 2017
 </p>
 
 ## Merging with Weather 
@@ -264,56 +265,56 @@ It is highly likely that weather plays a very important role in bike ridership a
 
 Figure 9 shows the total number of checkouts against maximum and minimum daily temperature. It clearly suggests that ridership increased as the temperature increased and vice-versa.
 
-![](https://github.com/hbhasin/Boulder-2016-Bike-Share/blob/master/figures/Figure%209.PNG)
+![](https://github.com/hbhasin/Boulder-2017-Bike-Share/blob/master/figures/Figure%209.PNG)
 
 <p align="center">
-FIGURE 9: TOTAL CHECKOUTS BY DAILY TEMPERATURE IN 2016
+FIGURE 9: TOTAL CHECKOUTS BY DAILY TEMPERATURE IN 2017
 </p>
 
 Apparent temperature, as defined by Dark Sky, is “apparent (or “feels like”) temperature in degrees Fahrenheit”. It appeared to have a subtle effect on bike ridership as shown in Figure 10.
 
 
-![](https://github.com/hbhasin/Boulder-2016-Bike-Share/blob/master/figures/Figure%2010.PNG)
+![](https://github.com/hbhasin/Boulder-2017-Bike-Share/blob/master/figures/Figure%2010.PNG)
 
 <p align="center">
-FIGURE 10: TOTAL CHECKOUTS BY DAILY APPARENT TEMPERATURE IN 2016
+FIGURE 10: TOTAL CHECKOUTS BY DAILY APPARENT TEMPERATURE IN 2017
 </p>
 
 
 ## Checkouts vs. Daily Cloud Cover 
-Dark Sky defines Cloud Cover as “the percentage of sky occluded by clouds, between 0 and 1, inclusive”. Figure 11 shows the total number of checkouts against daily cloud cover. It clearly suggests that ridership was highest as the cloud cover stayed at around 0.15.
+Dark Sky defines Cloud Cover as “the percentage of sky occluded by clouds, between 0 and 1, inclusive”. Figure 11 shows the total number of checkouts against daily cloud cover. It clearly suggests that ridership was highest as the cloud cover stayed at around 0.08.
 
-![](https://github.com/hbhasin/Boulder-2016-Bike-Share/blob/master/figures/Figure%2011.PNG)
+![](https://github.com/hbhasin/Boulder-2017-Bike-Share/blob/master/figures/Figure%2011.PNG)
 
 <p align="center">
-FIGURE 11: TOTAL CHECKOUTS BY DAILY CLOUD COVER IN 2016
+FIGURE 11: TOTAL CHECKOUTS BY DAILY CLOUD COVER IN 2017
 </p>
 
 ## Checkouts vs. Daily Wind Speed 
 Wind speed is reported in miles per hour. As shown in Figure 12, ridership did not seem to be somewhat impacted by higher wind speeds. 
 
-![](https://github.com/hbhasin/Boulder-2016-Bike-Share/blob/master/figures/Figure%2012.PNG)
+![](https://github.com/hbhasin/Boulder-2017-Bike-Share/blob/master/figures/Figure%2012.PNG)
 
 <p align="center">
-FIGURE 12: TOTAL CHECKOUTS BY DAILY WIND SPEED IN 2016
+FIGURE 12: TOTAL CHECKOUTS BY DAILY WIND SPEED IN 2017
 </p>
 
 ## Checkouts vs. Daily Humidity 
 Humidity is defined by Dark Sky as “relative humidity, between 0 and 1. Figure 13 shows decreased ridership at higher humidity levels.
 
-![](https://github.com/hbhasin/Boulder-2016-Bike-Share/blob/master/figures/Figure%2013.PNG)
+![](https://github.com/hbhasin/Boulder-2017-Bike-Share/blob/master/figures/Figure%2013.PNG)
 
 <p align="center">
-FIGURE 13: TOTAL CHECKOUTS BY DAILY HUMIDITY IN 2016	
+FIGURE 13: TOTAL CHECKOUTS BY DAILY HUMIDITY IN 2017	
 </p>
 
 ## Checkouts vs. Daily Visibility 
 Visibility is measured in miles and capped at 10 miles, according to Dark Sky. As Figure 14 shows, ridership peaked when visibility was at 10 miles.
 
-![](https://github.com/hbhasin/Boulder-2016-Bike-Share/blob/master/figures/Figure%2014.PNG)
+![](https://github.com/hbhasin/Boulder-2017-Bike-Share/blob/master/figures/Figure%2014.PNG)
 
 <p align="center">
-FIGURE 14: TOTAL CHECKOUTS BY DAILY VISIBILITY IN 2016
+FIGURE 14: TOTAL CHECKOUTS BY DAILY VISIBILITY IN 2017
 </p
 
 ## Days with Highest/Lowest Ridership
@@ -323,32 +324,32 @@ Another interesting data discovery was the fact that Saturdays and Sundays had t
 
 Checkout Week Day | Date of Checkout | Max Temperature | Min Temperature | Number of Checkouts
 ----------------- | ------------------- | --------------- | --------------- | -------------------
-Sunday | 2016-09-05 | 86.950 | 49.210 | 638
-Tuesday | 2016-07-27 | 87.150 | 55.300 | 534
-Saturday | 2016-08-06 | 76.320 | 59.090 | 529
-Thursday | 2016-08-05 | 69.330 | 57.110 | 524
-Thursday | 2016-07-29 | 82.480 | 58.620 | 523
-Saturday | 2016-08-07 | 84.200 | 57.750 | 512
-Wednesday | 2016-07-21 | 89.250 | 61.160 | 510
-Sunday | 2016-08-01 | 92.090 | 59.880 | 509
-Wednesday | 2016-08-04 | 70.920 | 58.620 | 509
-Monday | 2016-08-02 | 80.100 | 62.820 | 509
+Sunday | 2017-09-04 | 84.980 | 55.150 | 740
+Wednesday | 2017-07-27 | 80.480 | 58.020 | 574
+Friday | 2017-08-05 | 77.420 | 55.600 | 568
+Friday | 2017-06-24 | 69.690 | 46.940 | 560
+Thursday | 2017-06-09 | 86.380 | 54.750 | 558
+Tjursday | 2017-09-08 | 78.070 | 50.720 | 552
+Tuesday | 2017-06-28 | 81.830 | 54.370 | 540
+Thursday | 2017-07-14 | 81.440 | 55.990 | 535
+Thursday | 2017-08-11 | 73.080 | 52.170 | 526
+Sunday | 2017-07-24 | 89.520 | 60.770 | 511
 
 
 ### Lowest Ridership
 
 Checkout Week Day | Date of Checkout | Max Temperature | Min Temperature | Number of Checkouts
 ----------------- | ------------------- | --------------- | --------------- | -------------------
-Friday | 2016-01-09 | 25.800 | 13.110 | 33
-Tuesday | 2016-12-07 | 16.050 | 0.210 | 32
-Thursday | 2016-03-18 | 26.860 | 19.730 | 30
-Saturday | 2016-12-18 | 18.320 | -6.840 | 26
-Saturday | 2016-04-17 | 35.670 | 30.690 | 24
-Tuesday | 2016-03-23 | 38.610 | 21.560 | 24
-Friday | 2016-12-17 | 6.910 | -6.440 | 21
-Sunday | 2016-02-01 | 27.130 | 21.230 | 20
-Monday | 2016-02-02 | 22.670 | 11.790 | 20
-Saturday | 2016-12-25 | 37.090 | 21.040 | 11
+Tuesday | 2017-01-04 | 14.590 | 5.180 | 35
+Thursday | 2017-01-06 | 20.380 | -9.100 | 31
+Saturday | 2017-12-24 | 26.020 | 2.390 | 29
+Wednesday | 2017-12-21 | 36.420 | 10.920 | 29
+Friday | 2017-01-07 | 23.870 | 2.520 | 25
+Sunday | 2017-01-16 | 35.170 | 28.520 | 24
+Saturday | 2017-12-31 | 25.020 | 12.470 | 19
+Monday | 2017-12-26 | 15.040 | 9.420 | 18
+Sunday | 2017-12-25 | 24.000 | 11.420 | 14
+Wednesday | 2017-01-05 | 6.110 | -1.190 | 4
 
 
 ## Checkouts vs. Hourly Weather Variables
@@ -357,52 +358,52 @@ Hourly weather conditions provide better resolution than daily weather condition
 ### Checkouts vs. Hourly Temperature
 The scatter plots in Figure 15 and 16 show that the relationship between the number of checkouts and the hourly temperatures were not linear.
 
-![](https://github.com/hbhasin/Boulder-2016-Bike-Share/blob/master/figures/Figure%2015.PNG)
+![](https://github.com/hbhasin/Boulder-2017-Bike-Share/blob/master/figures/Figure%2015.PNG)
 
 <p align="center">
-FIGURE 15: TOTAL CHECKOUTS BY HOURLY TEMPERATURE IN 2016
+FIGURE 15: TOTAL CHECKOUTS BY HOURLY TEMPERATURE IN 2017
 </p>
 
-![](https://github.com/hbhasin/Boulder-2016-Bike-Share/blob/master/figures/Figure%2016.PNG)
+![](https://github.com/hbhasin/Boulder-2017-Bike-Share/blob/master/figures/Figure%2016.PNG)
 
 <p align="center">
-FIGURE 16: TOTAL CHECKOUTS BY HOURLY APPARENT TEMPERATURE IN 2016
+FIGURE 16: TOTAL CHECKOUTS BY HOURLY APPARENT TEMPERATURE IN 2017
 </p>
 
 ### Checkouts vs. Hourly Humidity
 Figure 17 shows that humidity affected ridership significantly.
 
-![](https://github.com/hbhasin/Boulder-2016-Bike-Share/blob/master/figures/Figure%2017.PNG)
+![](https://github.com/hbhasin/Boulder-2017-Bike-Share/blob/master/figures/Figure%2017.PNG)
 
 <p align="center">
-FIGURE 17: TOTAL CHECKOUTS BY HOURLY HUMIDITY IN 2016	
+FIGURE 17: TOTAL CHECKOUTS BY HOURLY HUMIDITY IN 2017
 </p>
 
 ### Checkouts vs. Hourly Cloud Cover
 As shown in Figure 18 Cloud Cover certainly impacted ridership.
 
-![](https://github.com/hbhasin/Boulder-2016-Bike-Share/blob/master/figures/Figure%2018.PNG)
+![](https://github.com/hbhasin/Boulder-2017-Bike-Share/blob/master/figures/Figure%2018.PNG)
 
 <p align="center">
-FIGURE 18: TOTAL CHECKOUTS BY HOURLY CLOUD COVER IN 2016	
+FIGURE 18: TOTAL CHECKOUTS BY HOURLY CLOUD COVER IN 2017	
 </p>
 
 ### Checkouts vs. Hourly Wind Speed
 Data on wind speed indicated it was clustered heavily in 0 to 8 miles per hour range, as shown in Figure 19.
 
-![](https://github.com/hbhasin/Boulder-2016-Bike-Share/blob/master/figures/Figure%2019.PNG)
+![](https://github.com/hbhasin/Boulder-2017-Bike-Share/blob/master/figures/Figure%2019.PNG)
 
 <p align="center">
-FIGURE 19: TOTAL CHECKOUTS BY HOURLY WIND SPEED IN 2016	
+FIGURE 19: TOTAL CHECKOUTS BY HOURLY WIND SPEED IN 2017
 </p>
 
 ### Checkouts vs. Hourly Visibility
 As shown in Figure 20 visibility at 10 miles had the greatest impact on ridership.
 
-![](https://github.com/hbhasin/Boulder-2016-Bike-Share/blob/master/figures/Figure%2020.PNG)
+![](https://github.com/hbhasin/Boulder-2017-Bike-Share/blob/master/figures/Figure%2020.PNG)
 
 <p align="center">
-FIGURE 20: TOTAL CHECKOUTS BY HOURLY VISIBILITY IN 2016	
+FIGURE 20: TOTAL CHECKOUTS BY HOURLY VISIBILITY IN 2017
 </p>
 
 # Part 2: Regression Modeling 
