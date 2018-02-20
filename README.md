@@ -193,8 +193,6 @@ FIGURE 3: RETURN KIOSK LOCATIONS AND NUMBER OF RETURNS IN 2017
 ## Checkouts per Membership Type 
 With the revisions made earlier to the membership type entries, the figure below shows the breakdown:
 
-Membership Type | Number of Checkouts
---------------- | -------------------
 Membership Type | Number of Trips
 --------------- | -------------
 Annual (Republic Rider) | 64,646
