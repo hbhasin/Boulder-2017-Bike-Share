@@ -1,4 +1,4 @@
-# Boulder-2017-Bike-Share Data Exploration and Predictive Analytics
+# Boulder 2017 B-cycle Ridership Data Exploration and Predictive Analytics
 
 ![](https://github.com/hbhasin/Boulder-2017-Bike-Share/blob/master/figures/splash.PNG)
 
@@ -87,7 +87,7 @@ Pay-per-trip (Casual Cruiser) | 2,225
 **Total Trips** | **103,282**
 
 ## Distance Traveled
-To estimate the distance between checkout and return kiosks when they are the same, Tyler’s method of using the “average speed of all the other rides (nominal distance ridden divided by the duration), and then applying this average speed to the same-kiosk trip durations” was adopted. This resulted in 158,140 miles ridden in 2017 and sharply contrasted with the 242,004 miles reported by [2017 Boulder B-cycle](https://cdn01.bcycle.com/libraries/docs/librariesprovider35/default-document-library/2017-annual-report-final_web.pdf?sfvrsn=996021c5_2). 
+To estimate the distance between checkout and return kiosks when they are the same, using the “average speed of all the other rides (nominal distance ridden divided by the duration), and then applying this average speed to the same-kiosk trip durations” was adopted. This resulted in 158,140 miles ridden in 2017 and sharply contrasted with the 242,004 miles reported by [2017 Boulder B-cycle](https://cdn01.bcycle.com/libraries/docs/librariesprovider35/default-document-library/2017-annual-report-final_web.pdf?sfvrsn=996021c5_2). 
 
 ### Most Popular and Least Popular Checkout and Return Kiosks 
 ### Most Popular 
@@ -513,26 +513,26 @@ The Extra Trees Forest Regressor with a predictive accuracy of 87.7% was used to
 
 Sample Number | Actual Number of Checkouts | Predicted Number of Checkouts | +/-
 ------------- | -------------------------- | ----------------------------- | ---
-1 | 4 | 4 | 0
-2 | 18 | 18 | 0
-3 | 2 | 2 | 0
-4 | 15 | 15 | 0
-5 | 54 | 54 | 0
-6 | 18 | 18 | 0
-7 | 17 | 17 | 0
-8 | 6 | 6 | 0
-9 | 3 | 3 | 0
-10 | 10 | 10 | 0
+1 | 33 | 33 | 0
+2 | 1 | 1 | 0
+3 | 45 | 45 | 0
+4 | 6 | 6 | 0
+5 | 30 | 30 | 0
+6 | 26 | 26 | 0
+7 | 30 | 30 | 0
+8 | 2 | 2 | 0
+9 | 12 | 12 | 0
+10 | 3 | 3 | 0
 11 | 29 | 29 | 0
-12 | 8 | 8 | 0
-13 | 16 | 16 | 0
-14 | 15 | 15 | 0
-15 | 19 | 19 | 0
-16 | 27 | 27 | 0
-17 | 34 | 34 | 0
-18 | 47 | 47 | 0
-19 | 35 | 35 | 0
-20 | 9 | 9 | 0
+12 | 27 | 27 | 0
+13 | 26 | 26 | 0
+14 | 1 | 1 | 0
+15 | 18 | 18 | 0
+16 | 50 | 50 | 0
+17 | 12 | 12 | 0
+18 | 3 | 3 | 0
+19 | 1 | 1 | 0
+20 | 2| 2| 0
 
 # Summary
 
