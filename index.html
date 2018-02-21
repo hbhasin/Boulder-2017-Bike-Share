@@ -6,26 +6,22 @@ div.container {
     width: 100%;
     border: 4px solid gray;
 }
-
 header, footer {
     padding: 2em;
     color: white;
-    background-color: blue;
+    background-color: rgb(135, 189, 165);
     clear: left;
     text-align: center;
 }
-
 code (
 	background-color: blue;
 )
-
 nav {
     float: left;
     max-width: 160px;
     margin: 0;
     padding: 1em;
 }
-
 nav ul {
     list-style-type: none;
     padding: 0;
@@ -34,22 +30,19 @@ nav ul {
 nav ul a {
     text-decoration: none;
 }
-
 article {
     border-left: 3px solid gray;
-    border-right: 3px solid gray;
-    border-top: 3px solid gray;
-    border-bottom: 3px solid gray;
+	border-right: 3px solid gray;
+	border-top: 3px solid gray;
+	border-bottom: 3px solid gray;
     padding-left: 2cm;
-    padding-right: 2cm;
+	padding-right: 2cm;
     line-height: 1.6;
     overflow: hidden;
 }
-
 p {
     font-family:  Verdana, Helvetica, sans-serif, Georgia, Serif;
 }
-
 li {
     font-family:  Verdana, Helvetica, sans-serif, Georgia, Serif;
 }
@@ -57,23 +50,19 @@ li {
 h1, h2, h3, h4 {
     font-family:  Verdana, Helvetica, sans-serif, Georgia, Serif;
 }
-
 table {
     font-family: Verdana, Helvetica, sans-serif, Georgia, Serif;
     border-collapse: collapse;
     width: 50%;
 }
-
 td, th {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
 }
-
 tr:nth-child(even) {
     background-color: #dddddd;
 }
-
 </style>
 </head>
 <body>
@@ -81,7 +70,7 @@ tr:nth-child(even) {
 <div class="container">
 
 <header>
-<h1>Boulder 2017 B-cycle Ridership Data Exploration and Predictive Analytics</h1>
+<h1>Boulder 2016 B-cycle Ridership Data Exploration and Predictive Analytics</h1>
 </header>
 
 <article>
@@ -263,8 +252,8 @@ Removing the 1,343 rows with a trip duration of 1 minute and 193 rows with inval
 </tr>
 </tbody>
 </table>
-<h3 id="distance-traveled">Distance Traveled</h3>
-<p>To estimate the distance between checkout and return kiosks when they are the same, Tyler’s method of using the “average speed of all the other rides (nominal distance ridden divided by the duration), and then applying this average speed to the same-kiosk trip durations” was adopted. This resulted in <strong>670,802 miles ridden in 2016</strong>.</p>
+<h2 id="distance-traveled">Distance Traveled</h2>
+<p>To estimate the distance between checkout and return kiosks when they are the same, Tyler’s method of using the “average speed of all the other rides (nominal distance ridden divided by the duration), and then applying this average speed to the same-kiosk trip durations” was adopted. This resulted in 143,006 miles ridden in 2016 and sharply contrasted with the 229,071 miles reported by Boulder B-cycle.</p>
 <h3 id="most-popular-and-least-popular-checkout-and-return-kiosks">Most Popular and Least Popular Checkout and Return Kiosks</h3>
 <h3 id="most-popular">Most Popular</h3>
 <p>The following ten kiosks were the most popular checkout kiosks by number of total bike checkouts in 2016.</p>
@@ -277,44 +266,106 @@ Removing the 1,343 rows with a trip duration of 1 minute and 193 rows with inval
 </thead>
 <tbody>
 <tr class="odd">
-<td>16th &amp; Wynkoop</td>
-<td>11,174</td>
+<td>115th &amp; Pearl</td>
+<td>5443</td>
 </tr>
 <tr class="even">
-<td>16th &amp; Broadway</td>
-<td>3,565</td>
+<td>13th &amp; Spruce</td>
+<td>4272</td>
 </tr>
 <tr class="odd">
-<td>1350 Larimer</td>
-<td>10,837</td>
+<td>Municipal Building</td>
+<td>3666</td>
 </tr>
 <tr class="even">
-<td>18th &amp; California</td>
-<td>9,865</td>
+<td>11th &amp; Pearl</td>
+<td>3566</td>
 </tr>
 <tr class="odd">
-<td>1550 Glenarm</td>
-<td>9,441</td>
+<td>Folsom &amp; Colorado</td>
+<td>3565</td>
 </tr>
 <tr class="even">
-<td>18th &amp; Arapahoe</td>
-<td>8,531</td>
+<td>13th &amp; Arapahoe</td>
+<td>3392</td>
 </tr>
 <tr class="odd">
-<td>20th &amp; Chestnut</td>
-<td>8,240</td>
+<td>20th &amp; Pearl</td>
+<td>3327</td>
 </tr>
 <tr class="even">
-<td>13th &amp; Speer</td>
-<td>8,228</td>
+<td>Broadway &amp; Alpine</td>
+<td>3147</td>
 </tr>
 <tr class="odd">
-<td>REI</td>
-<td>8,218</td>
+<td>31st &amp; Pearl</td>
+<td>2976</td>
 </tr>
 <tr class="even">
-<td>16th &amp; Little Raven</td>
-<td>8,198</td>
+<td>Broadway &amp; Euclid</td>
+<td>2968</td>
+</tr>
+</tbody>
+</table>
+<p>The most popular Checkout Kiosk to Return Kiosk routes were as follows:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Checkout Kiosk</th>
+<th>Return Kiosk</th>
+<th>Number of Trips</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>13th &amp; Spruce</td>
+<td>Broadway &amp; Alpine</td>
+<td>724</td>
+</tr>
+<tr class="even">
+<td>Broadway &amp; Alpine</td>
+<td>13th &amp; Spruce</td>
+<td>695</td>
+</tr>
+<tr class="odd">
+<td>6th &amp; Canyon</td>
+<td>Municipal Building</td>
+<td>680</td>
+</tr>
+<tr class="even">
+<td>Municipal Building</td>
+<td>6th &amp; Canyon</td>
+<td>641</td>
+</tr>
+<tr class="odd">
+<td>20th &amp; Pearl</td>
+<td>15th &amp; Pearl</td>
+<td>604</td>
+</tr>
+<tr class="even">
+<td>Municipal Building</td>
+<td>Municipal Building</td>
+<td>566</td>
+</tr>
+<tr class="odd">
+<td>28th &amp; Mapleton</td>
+<td>26th &amp; Pearl</td>
+<td>552</td>
+</tr>
+<tr class="even">
+<td>Folsom &amp; Pearl</td>
+<td>15th &amp; Pearl</td>
+<td>529</td>
+</tr>
+<tr class="odd">
+<td>13th &amp; Arapahoe</td>
+<td>13th &amp; Arapahoe</td>
+<td>506</td>
+</tr>
+<tr class="even">
+<td>15th &amp; Pearl</td>
+<td>20th &amp; Pearl</td>
+<td>503</td>
 </tr>
 </tbody>
 </table>
@@ -323,49 +374,49 @@ Removing the 1,343 rows with a trip duration of 1 minute and 193 rows with inval
 <thead>
 <tr class="header">
 <th>Return Kiosk</th>
-<th>Number of Checkouts</th>
+<th>Number of Returns</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>16th &amp; Wynkoop</td>
-<td>11,289</td>
+<td>115th &amp; Pearl</td>
+<td>5366</td>
 </tr>
 <tr class="even">
-<td>1350 Larimer</td>
-<td>10,920</td>
+<td>13th &amp; Spruce</td>
+<td>909</td>
 </tr>
 <tr class="odd">
-<td>16th &amp; Broadway</td>
-<td>10,870</td>
+<td>Municipal Building</td>
+<td>3919</td>
 </tr>
 <tr class="even">
-<td>18th &amp; California</td>
-<td>9,863</td>
+<td>13th &amp; Arapahoe</td>
+<td>3898</td>
 </tr>
 <tr class="odd">
-<td>1550 Glenarm</td>
-<td>9,501</td>
+<td>11th &amp; Pearl</td>
+<td>3737</td>
 </tr>
 <tr class="even">
-<td>18th &amp; Arapahoe</td>
-<td>8,549</td>
+<td>29th &amp; Pearl</td>
+<td>3260</td>
 </tr>
 <tr class="odd">
-<td>20th &amp; Chestnut</td>
-<td>8,356</td>
+<td>21st &amp; Arapahoe</td>
+<td>3178</td>
 </tr>
 <tr class="even">
-<td>REI</td>
-<td>8,284</td>
+<td>14th &amp; Canyon</td>
+<td>3102</td>
 </tr>
 <tr class="odd">
-<td>13th &amp; Speer</td>
-<td>8,272</td>
+<td>20th &amp; Pearl</td>
+<td>3055</td>
 </tr>
 <tr class="even">
-<td>16th &amp; Little Raven</td>
-<td>8,267</td>
+<td>Broadway &amp; Alpine</td>
+<td>3040</td>
 </tr>
 </tbody>
 </table>
@@ -380,58 +431,109 @@ Removing the 1,343 rows with a trip duration of 1 minute and 193 rows with inval
 </thead>
 <tbody>
 <tr class="odd">
-<td>Pepsi Center</td>
-<td>1,795</td>
+<td>Broadway &amp; Iris</td>
+<td>1328</td>
 </tr>
 <tr class="even">
-<td>32nd &amp; Julian</td>
-<td>1,755</td>
+<td>13th &amp; College</td>
+<td>1299</td>
 </tr>
 <tr class="odd">
-<td>25th &amp; Lawrence</td>
-<td>1,736</td>
+<td>UCAR Center Green</td>
+<td>1227</td>
 </tr>
 <tr class="even">
-<td>Colfax &amp; Garfield</td>
-<td>1,725</td>
+<td>9th &amp; Pearl</td>
+<td>982</td>
 </tr>
 <tr class="odd">
-<td>4th &amp; Walnut</td>
-<td>1.663</td>
+<td>27th Way &amp; Broadway</td>
+<td>678</td>
 </tr>
 <tr class="even">
-<td>Decatur Federal Light Rail</td>
-<td>1,508</td>
+<td>33rd &amp; Fisher</td>
+<td>648</td>
 </tr>
 <tr class="odd">
-<td>Denver Zoo</td>
-<td>1,490</td>
+<td>Wilderness Place</td>
+<td>370</td>
 </tr>
 <tr class="even">
-<td>Colfax &amp; Gaylord</td>
-<td>1,421</td>
+<td>30th &amp; Diagonal Highway</td>
+<td>247</td>
 </tr>
 <tr class="odd">
-<td>17th &amp; Curtis</td>
-<td>615</td>
+<td>30th &amp; Marine</td>
+<td>159</td>
 </tr>
 <tr class="even">
-<td>39th &amp; Fox</td>
-<td>332</td>
+<td>Gunbarrel North</td>
+<td>120</td>
+</tr>
+</tbody>
+</table>
+<p>The following ten kiosks were the least popular return kiosks by number of total bike returns in 2016.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Return Kiosk</th>
+<th>Number of Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Broadway &amp; Iris</td>
+<td>1265</td>
+</tr>
+<tr class="even">
+<td>Broadway &amp; University</td>
+<td>1070</td>
+</tr>
+<tr class="odd">
+<td>9th &amp; Pearl</td>
+<td>963</td>
+</tr>
+<tr class="even">
+<td>13th &amp; College</td>
+<td>804</td>
+</tr>
+<tr class="odd">
+<td>33rd &amp; Fisher</td>
+<td>708</td>
+</tr>
+<tr class="even">
+<td>27th Way &amp; Broadway</td>
+<td>509</td>
+</tr>
+<tr class="odd">
+<td>Wilderness Place</td>
+<td>426</td>
+</tr>
+<tr class="even">
+<td>30th &amp; Diagonal Highway</td>
+<td>263</td>
+</tr>
+<tr class="odd">
+<td>30th &amp; Marine</td>
+<td>170</td>
+</tr>
+<tr class="even">
+<td>Gunbarrel North</td>
+<td>114</td>
 </tr>
 </tbody>
 </table>
 <h2 id="map-of-station-popularity">Map of Station Popularity</h2>
 <h3 id="checkout-kiosks">Checkout Kiosks</h3>
 <p>The use of Tableau aided in the creation of the following map showing the popularity of the various Checkout Kiosks (Figure 2). The size of the circle is proportional to the number of checkouts from that kiosk in 2016.</p>
-<div class="figure"><img src="figures/Figure%202.PNG"/></div>
+<div class="figure"><img src="figures/Figure%202.PNG"></div>
 <p>FIGURE 2: CHECKOUT KIOSK LOCATIONS AND NUMBER OF CHECKOUTS IN 2016</p>
 <h3 id="return-kiosks">Return Kiosks</h3>
 <p>Similarly, the use of Tableau aided in the creation of the following map showing the popularity of the various Return Kiosks (Figure 3). The size of the circle corresponds to the number of checkouts returned to that kiosk in 2016.</p>
-<div class="figure"><img src="figures/Figure%203.PNG"/></div>
+<div class="figure"><img src="figures/Figure%203.PNG"></div>
 <p>FIGURE 3: RETURN KIOSK LOCATIONS AND NUMBER OF RETURNS IN 2016</p>
 <h2 id="checkouts-per-membership-type">Checkouts per Membership Type</h2>
-<p>Denver B-cycle has a number of different membership passes. The following were the top ten by number of checkouts in 2016 (Figure 4).</p>
+<p>With the revisions made earlier to the membership type entries, the figure below shows the breakdown:</p>
 <table>
 <thead>
 <tr class="header">
@@ -441,47 +543,32 @@ Removing the 1,343 rows with a trip duration of 1 minute and 193 rows with inval
 </thead>
 <tbody>
 <tr class="odd">
-<td>24-hour Kiosk Only (Denver B-cycle</td>
-<td>85,680</td>
+<td>Annual (Republic Rider)</td>
+<td>54,610</td>
 </tr>
 <tr class="even">
-<td>Annual Plus (Denver B-cycle)</td>
-<td>82,202</td>
+<td>24-hour (Day Tripper)</td>
+<td>27,889</td>
 </tr>
 <tr class="odd">
-<td>Annual (Denver B-cycle)</td>
-<td>80,093</td>
+<td>Monthly (People’s Pedaler)</td>
+<td>10,549</td>
 </tr>
 <tr class="even">
-<td>Not Applicable</td>
-<td>56,250</td>
+<td>Pay-per-trip (Casual Cruiser)</td>
+<td>821</td>
 </tr>
 <tr class="odd">
-<td>Monthly (Denver B-cycle)</td>
-<td>52,811</td>
+<td>Semester (150-day)</td>
+<td>449</td>
 </tr>
 <tr class="even">
-<td>Denver B-cycle Founder (Denver B-cycle)</td>
-<td>17,675</td>
-</tr>
-<tr class="odd">
-<td>Single Rider (Denver B-cycle)</td>
-<td>16,291</td>
-</tr>
-<tr class="even">
-<td>Republic Rider (Annual) (Boulder B-cycle)</td>
-<td>5,930</td>
-</tr>
-<tr class="odd">
-<td>Flex Pass (Denver B-cycle)</td>
-<td>3,507</td>
-</tr>
-<tr class="even">
-<td>Republic Rider (Boulder B-cycle)</td>
-<td>1,229</td>
+<td>7-day</td>
+<td>1</td>
 </tr>
 </tbody>
 </table>
+<p></p>
 <p></p>
 <p></p>
 <div class="figure"><img src="figures/Figure%204.PNG"></div>
@@ -489,10 +576,10 @@ Removing the 1,343 rows with a trip duration of 1 minute and 193 rows with inval
 <h2 id="ridership-by-calendar-and-clock-variables">Ridership by Calendar and Clock Variables</h2>
 <h3 id="ridership-by-hour">Ridership by Hour</h3>
 <p>Bike checkout time is probably the most important attribute in the Trips dataset. Each checkout time was converted into its integer hour. For example, 7:02 AM or 7:59 AM would be converted to an integer of 7. In this way, total number of checkouts could be aggregated for the year and plotted against their hours of the day, as shown in Figure 5.</p>
-<p>It appears that the highest number of checkouts occur between 4 PM and 5 PM with ridership increasing steadily from 10 AM onwards.</p>
+<p>It appears that the highest number of checkouts occurred between 4 PM and 5 PM with ridership increasing steadily from 6 AM. Number of checkouts started to decrease after 6 PM.</p>
 <div class="figure"><img src="figures/Figure%205.PNG"></div>
 <p>FIGURE 5: NUMBER OF CHECKOUTS BY HOUR IN 2016</p>
-<p>Figure 6 shows the average distance ridden by the hour of the day in 2016. More distance is covered during the 10 AM period and declining steadily after 3 PM.</p>
+<p>Figure 6 shows the average distance ridden by the hour of the day in 2016. Interestingly, more distance was covered during the very early hours of the morning (2 AM to 3 AM) period. The typical distance ridden ranged from 1.4 miles to 1.6 miles from 4 AM to 12 midnight.</p>
 <div class="figure"><img src="figures/Figure%206.PNG"></div>
 <p>FIGURE 6: ESTIMATED AVERAGE MILES RIDDEN BY HOUR OF CHECKOUT IN 2016</p>
 <h2 id="ridership-by-hour-and-weekday">Ridership by Hour and Weekday</h2>
@@ -504,20 +591,20 @@ Removing the 1,343 rows with a trip duration of 1 minute and 193 rows with inval
 <div class="figure"><img src="figures/Figure%208.PNG"></div>
 <p>FIGURE 8: TOTAL CHECKOUTS BY MONTH IN 2016</p>
 <h2 id="merging-with-weather">Merging with Weather</h2>
-<p>It is highly likely that weather plays a very important role in bike ridership and bike checkout times. This was shown in the previous plots on total checkouts per hour of the day, by weekday, and by month. To verify this, weather data obtained from Dark Sky API was merged with the Trips dataset and several graphs plotted to visualize the relationships.</p>
+<p>It is highly likely that weather plays a very important role in bike ridership and bike checkout times. This was shown in the previous plots on total checkouts per hour of the day, by weekday, and by month. To verify this, weather data obtained from <a href="https://darksky.net/dev/">Dark Sky API</a> was merged with the Trips dataset and several graphs plotted to visualize the relationships.</p>
 <h3 id="checkouts-vs.-daily-temperature">Checkouts vs. Daily Temperature</h3>
-<p>Figure 9 shows the total number of checkouts against maximum and minimum daily temperature. It clearly suggests that ridership increases as the temperature increases and vice-versa.</p>
+<p>Figure 9 shows the total number of checkouts against maximum and minimum daily temperature. It clearly suggests that ridership increased as the temperature increased and vice-versa.</p>
 <div class="figure"><img src="figures/Figure%209.PNG"></div>
 <p>FIGURE 9: TOTAL CHECKOUTS BY DAILY TEMPERATURE IN 2016</p>
-<p>Apparent temperature, as defined by Dark Sky, is “apparent (or “feels like”) temperature in degrees Fahrenheit”. It appears to have a subtle effect on bike ridership as shown in Figure 10.</p>
+<p>Apparent temperature, as defined by Dark Sky, is “apparent (or “feels like”) temperature in degrees Fahrenheit”. It appeared to have a subtle effect on bike ridership as shown in Figure 10.</p>
 <div class="figure"><img src="figures/Figure%2010.PNG"></div>
 <p>FIGURE 10: TOTAL CHECKOUTS BY DAILY APPARENT TEMPERATURE IN 2016</p>
 <h2 id="checkouts-vs.-daily-cloud-cover">Checkouts vs. Daily Cloud Cover</h2>
-<p>Dark Sky defines Cloud Cover as “the percentage of sky occluded by clouds, between 0 and 1, inclusive”. Figures 11 shows the total number of checkouts against daily cloud cover. They clearly suggest that ridership is highest as the cloud cover stays at around 0.15.</p>
+<p>Dark Sky defines Cloud Cover as “the percentage of sky occluded by clouds, between 0 and 1, inclusive”. Figure 11 shows the total number of checkouts against daily cloud cover. It clearly suggests that ridership was highest as the cloud cover stayed at around 0.15.</p>
 <div class="figure"><img src="figures/Figure%2011.PNG"></div>
 <p>FIGURE 11: TOTAL CHECKOUTS BY DAILY CLOUD COVER IN 2016</p>
 <h2 id="checkouts-vs.-daily-wind-speed">Checkouts vs. Daily Wind Speed</h2>
-<p>Wind speed is reported in miles per hour. As shown in Figure 12, ridership does not seem to be somewhat impacted by higher wind speeds.</p>
+<p>Wind speed is reported in miles per hour. As shown in Figure 12, ridership did not seem to be somewhat impacted by higher wind speeds.</p>
 <div class="figure"><img src="figures/Figure%2012.PNG"></div>
 <p>FIGURE 12: TOTAL CHECKOUTS BY DAILY WIND SPEED IN 2016</p>
 <h2 id="checkouts-vs.-daily-humidity">Checkouts vs. Daily Humidity</h2>
@@ -525,9 +612,10 @@ Removing the 1,343 rows with a trip duration of 1 minute and 193 rows with inval
 <div class="figure"><img src="figures/Figure%2013.PNG"></div>
 <p>FIGURE 13: TOTAL CHECKOUTS BY DAILY HUMIDITY IN 2016</p>
 <h2 id="checkouts-vs.-daily-visibility">Checkouts vs. Daily Visibility</h2>
-<p>Visibility is measured in miles and capped at 10 miles, according to Dark Sky. As Figure 14 shows, ridership peaks when visibility is at 10 miles.</p>
+<p>Visibility is measured in miles and capped at 10 miles, according to Dark Sky. As Figure 14 shows, ridership peaked when visibility was at 10 miles.</p>
 <div class="figure"><img src="figures/Figure%2014.PNG"></div>
-<p>FIGURE 14: TOTAL CHECKOUTS BY DAILY VISIBILITY IN 2016</p>
+<p>FIGURE 14: TOTAL CHECKOUTS BY DAILY VISIBILITY IN 2016</p
+
 <h2 id="days-with-highestlowest-ridership">Days with Highest/Lowest Ridership</h2>
 <p>Another interesting data discovery was the fact that Saturdays and Sundays had the highest and lowest ridership depending upon the weather. In his study, Tyler suggests that this may be due to “‘weekend warriors’ who rent B-cycles for pleasure and are highly affected by the weather in their decision to ride”. This may well be the case.</p>
 <h3 id="highest-ridership">Highest Ridership</h3>
@@ -551,73 +639,73 @@ Removing the 1,343 rows with a trip duration of 1 minute and 193 rows with inval
 <tbody>
 <tr class="odd">
 <td>Sunday</td>
-<td>2016-05-29</td>
-<td>71.090</td>
-<td>44.100</td>
-<td>2,100</td>
+<td>2016-09-05</td>
+<td>86.950</td>
+<td>49.210</td>
+<td>638</td>
 </tr>
 <tr class="even">
-<td>Saturday</td>
-<td>2016-05-28</td>
-<td>65.650</td>
-<td>40.330</td>
-<td>1,990</td>
-</tr>
-<tr class="odd">
-<td>Friday</td>
-<td>2016-06-03</td>
-<td>74.600</td>
-<td>56.120</td>
-<td>1,933</td>
-</tr>
-<tr class="even">
-<td>Wenesday</td>
-<td>2016-06-15</td>
-<td>85.430</td>
-<td>51.980</td>
-<td>1,927</td>
+<td>Tuesday</td>
+<td>2016-07-27</td>
+<td>87.150</td>
+<td>55.300</td>
+<td>534</td>
 </tr>
 <tr class="odd">
 <td>Saturday</td>
-<td>2016-06-21</td>
-<td>77.510</td>
-<td>49.790</td>
-<td>1,909</td>
+<td>2016-08-06</td>
+<td>76.320</td>
+<td>59.090</td>
+<td>529</td>
 </tr>
 <tr class="even">
-<td>Monday</td>
-<td>2016-06-27</td>
-<td>87.060</td>
-<td>58.440</td>
-<td>1,868</td>
-</tr>
-<tr class="odd">
-<td>Saturday</td>
-<td>2016-06-25</td>
-<td>79.230</td>
-<td>61.040</td>
-<td>1,868</td>
-</tr>
-<tr class="even">
-<td>Saturday</td>
-<td>2016-06-04</td>
-<td>75.500</td>
-<td>53.410</td>
-<td>1,857</td>
+<td>Thursday</td>
+<td>2016-08-05</td>
+<td>69.330</td>
+<td>57.110</td>
+<td>524</td>
 </tr>
 <tr class="odd">
 <td>Thursday</td>
-<td>2016-03-23</td>
-<td>84.860</td>
-<td>59.280</td>
-<td>1,857</td>
+<td>2016-07-29</td>
+<td>82.480</td>
+<td>58.620</td>
+<td>523</td>
 </tr>
 <tr class="even">
-<td>Friday</td>
-<td>2016-09-02</td>
-<td>79.770</td>
-<td>59.500</td>
-<td>1,855</td>
+<td>Saturday</td>
+<td>2016-08-07</td>
+<td>84.200</td>
+<td>57.750</td>
+<td>512</td>
+</tr>
+<tr class="odd">
+<td>Wednesday</td>
+<td>2016-07-21</td>
+<td>89.250</td>
+<td>61.160</td>
+<td>510</td>
+</tr>
+<tr class="even">
+<td>Sunday</td>
+<td>2016-08-01</td>
+<td>92.090</td>
+<td>59.880</td>
+<td>509</td>
+</tr>
+<tr class="odd">
+<td>Wednesday</td>
+<td>2016-08-04</td>
+<td>70.920</td>
+<td>58.620</td>
+<td>509</td>
+</tr>
+<tr class="even">
+<td>Monday</td>
+<td>2016-08-02</td>
+<td>80.100</td>
+<td>62.820</td>
+<td>509</td>
 </tr>
 </tbody>
 </table>
@@ -641,78 +729,78 @@ Removing the 1,343 rows with a trip duration of 1 minute and 193 rows with inval
 </thead>
 <tbody>
 <tr class="odd">
-<td>Saturday</td>
-<td>2016-12-24</td>
-<td>50.960</td>
-<td>28.940</td>
-<td>154</td>
+<td>Friday</td>
+<td>2016-01-09</td>
+<td>25.800</td>
+<td>13.110</td>
+<td>33</td>
 </tr>
 <tr class="even">
-<td>Sunday</td>
-<td>2016-04-17</td>
-<td>34.710</td>
-<td>30.140</td>
-<td>140</td>
-</tr>
-<tr class="odd">
-<td>Sunday</td>
-<td>2016-01-31</td>
-<td>31.260</td>
-<td>23.430</td>
-<td>133</td>
-</tr>
-<tr class="even">
-<td>Wednesday</td>
-<td>2016-12-07</td>
-<td>15.250</td>
-<td>-1.110</td>
-<td>105</td>
-</tr>
-<tr class="odd">
 <td>Tuesday</td>
-<td>2016-02-02</td>
-<td>20.870</td>
-<td>11.430</td>
-<td>72</td>
+<td>2016-12-07</td>
+<td>16.050</td>
+<td>0.210</td>
+<td>32</td>
+</tr>
+<tr class="odd">
+<td>Thursday</td>
+<td>2016-03-18</td>
+<td>26.860</td>
+<td>19.730</td>
+<td>30</td>
 </tr>
 <tr class="even">
 <td>Saturday</td>
-<td>2016-04-16</td>
-<td>34.430</td>
-<td>31.310</td>
-<td>61</td>
-</tr>
-<tr class="odd">
-<td>Sunday</td>
-<td>2016-12-25</td>
-<td>36.860</td>
-<td>25.290</td>
-<td>56</td>
-</tr>
-<tr class="even">
-<td>Wednesday</td>
-<td>2016-03-23</td>
-<td>43.070</td>
-<td>22.040</td>
-<td>18</td>
-</tr>
-<tr class="odd">
-<td>Sunday</td>
 <td>2016-12-18</td>
-<td>19.640</td>
-<td>-6.220</td>
-<td>17</td>
+<td>18.320</td>
+<td>-6.840</td>
+<td>26</td>
+</tr>
+<tr class="odd">
+<td>Saturday</td>
+<td>2016-04-17</td>
+<td>35.670</td>
+<td>30.690</td>
+<td>24</td>
+</tr>
+<tr class="even">
+<td>Tuesday</td>
+<td>2016-03-23</td>
+<td>38.610</td>
+<td>21.560</td>
+<td>24</td>
+</tr>
+<tr class="odd">
+<td>Friday</td>
+<td>2016-12-17</td>
+<td>6.910</td>
+<td>-6.440</td>
+<td>21</td>
+</tr>
+<tr class="even">
+<td>Sunday</td>
+<td>2016-02-01</td>
+<td>27.130</td>
+<td>21.230</td>
+<td>20</td>
+</tr>
+<tr class="odd">
+<td>Monday</td>
+<td>2016-02-02</td>
+<td>22.670</td>
+<td>11.790</td>
+<td>20</td>
 </tr>
 <tr class="even">
 <td>Saturday</td>
-<td>2016-12-17</td>
-<td>5.490</td>
-<td>-7.220</td>
-<td>16</td>
+<td>2016-12-25</td>
+<td>37.090</td>
+<td>21.040</td>
+<td>11</td>
 </tr>
 </tbody>
 </table>
-	
+
 <h3 id="checkouts-vs.-hourly-weather-variables">Checkouts vs. Hourly Weather Variables</h3>
 <p>Hourly weather conditions provide better resolution than daily weather conditions. To investigate this, number of checkouts against hourly weather variables were also plotted and compared with the plots using daily weather variables.</p>
 
@@ -720,31 +808,31 @@ Removing the 1,343 rows with a trip duration of 1 minute and 193 rows with inval
 <p>The scatter plots in Figure 15 and 16 show that the relationship between the number of checkouts and the hourly temperatures are not linear.</p>
 
 <div class="figure"><img src="figures/Figure%2015.PNG"></div>
+
 <p>FIGURE 15: TOTAL CHECKOUTS BY HOURLY TEMPERATURE IN 2016</p>
 <div class="figure"><img src="figures/Figure%2016.PNG"></div>
 <p>FIGURE 16: TOTAL CHECKOUTS BY HOURLY APPARENT TEMPERATURE IN 2016</p>
 <h3 id="checkouts-vs.-hourly-humidity">Checkouts vs. Hourly Humidity</h3>
-<p>Figure 17 shows that humidity affects ridership significantly.</p>
+<p>Figure 17 shows that humidity affected ridership significantly.</p>
 <div class="figure"><img src="figures/Figure%2017.PNG"></div>
 <p>FIGURE 17: TOTAL CHECKOUTS BY HOURLY HUMIDITY IN 2016</p>
 <h3 id="checkouts-vs.-hourly-cloud-cover">Checkouts vs. Hourly Cloud Cover</h3>
-<p>As shown in Figure 18 Cloud Cover certainly impacts ridership.</p>
+<p>As shown in Figure 18 Cloud Cover certainly impacted ridership.</p>
 <div class="figure"><img src="figures/Figure%2018.PNG"></div>
 <p>FIGURE 18: TOTAL CHECKOUTS BY HOURLY CLOUD COVER IN 2016</p>
 <h3 id="checkouts-vs.-hourly-wind-speed">Checkouts vs. Hourly Wind Speed</h3>
-<p>Data on wind speed indicates it is clustered heavily in 0 to 8 miles per hour range, as shown in Figure 19.</p>
+<p>Data on wind speed indicated it was clustered heavily in 0 to 8 miles per hour range, as shown in Figure 19.</p>
 <div class="figure"><img src="figures/Figure%2019.PNG"></div>
 <p>FIGURE 19: TOTAL CHECKOUTS BY HOURLY WIND SPEED IN 2016</p>
 <h3 id="checkouts-vs.-hourly-visibility">Checkouts vs. Hourly Visibility</h3>
-<p>As shown in Figure 20 visibility at 10 miles has the greatest impact on ridership.</p>
+<p>As shown in Figure 20 visibility at 10 miles had the greatest impact on ridership.</p>
 <div class="figure"><img src="figures/Figure%2020.PNG"></div>
 <p>FIGURE 20: TOTAL CHECKOUTS BY HOURLY VISIBILITY IN 2016</p>
 <h1 id="part-2-regression-modeling">Part 2: Regression Modeling</h1>
 <p>In his study, Tyler attempted to create a linear regression model using a number of calendar and weather variables. Using temperature, temperature squared, humidity, month, weekday, hour of day, holiday and cloud cover as input variables he arrived at an R squared value of 0.7382 which meant that approximately 73.8% of the variation in the hourly ridership could be explained by the selected variables and the linear model he used to fit the data.</p>
 <p>In this section various linear and non-linear regression models were used to test and train the Trips data that was merged with the weather data to try to predict the number of checkouts based on calendar, clock and weather conditions.</p>
 <p>The following regression models with their brief explanation were used in this study:</p>
-
-<ul style="list-style-type:disc">
+<<ul style="list-style-type:disc">
 <li><p>Linear Regression</p></li>
 <ul style="list-style-type:circle"><li><p>Most widely used statistical and machine learning technique to model relationship between two sets of variables typically using a straight line. Simple to use and fast performance but lacks high accuracy when compared to non-linear models.</p></li></ul>
 <li><p>Lasso Regression</p></li>
@@ -763,7 +851,7 @@ Removing the 1,343 rows with a trip duration of 1 minute and 193 rows with inval
 <ul style="list-style-type:circle"><li><p>A simple algorithm that uses a similarity measure (e.g. distance between neighbors) to predict the outcome.</p></li></ul>
 </ul>
 <h2 id="regression-modeling-with-categorical-feature-set">Regression Modeling with Categorical Feature Set</h2>
-<p>The Checkout Month, Week Day and Hour numeric variables were converted to categorical features resulting in 45 total features for regression modeling.</p>
+<p>The Checkout Month, Week Day and Hour numeric variables were converted to categorical features resulting in 44 total features for regression modeling.</p>
 <p>Prior to applying the models a feature correlation was performed on all the features to see if any of the features were highly correlated to one another. As shown in Figure 21, Temperature and Apparent Temperature were highly correlated suggesting that one of them could be removed from the features in the model application.</p>
 <div class="figure"><img src="figures/Figure%2021.PNG"></div>
 <p>FIGURE 21: FEATURE CORRELATIONS</p>
@@ -800,59 +888,61 @@ Removing the 1,343 rows with a trip duration of 1 minute and 193 rows with inval
 <tbody>
 <tr class="odd">
 <td>Training Test Score</td>
-<td>0.676</td>
-<td>0.676</td>
-<td>0.676</td>
-<td>0.676</td>
+<td>0.680</td>
+<td>0.677</td>
+<td>0.677</td>
+<td>0.680</td>
 <td>1.000</td>
-<td>0.969</td>
+<td>0.943</td>
 <td>1.000</td>
-<td>0.575</td>
+<td>0.597</td>
 </tr>
 <tr class="even">
 <td>Test Set Score</td>
-<td>0.696</td>
-<td>0.696</td>
-<td>0.696</td>
-<td>0.696</td>
-<td>0.718</td>
-<td>0.825</td>
-<td>0.840</td>
-<td>0.476</td>
+<td>0.676</td>
+<td>0.674</td>
+<td>0.674</td>
+<td>0.676</td>
+<td>0.423</td>
+<td>0.679</td>
+<td>0.699</td>
+<td>0.496</td>
 </tr>
 <tr class="odd">
 <td>R Squared</td>
-<td>0.834519</td>
-<td>0.834457</td>
-<td>0.834457</td>
-<td>0.834448</td>
-<td>0.847276</td>
-<td>0.908443</td>
-<td>0.916278</td>
-<td>0.690249</td>
+<td>0.822253</td>
+<td>0.821127</td>
+<td>0.821127</td>
+<td>0.822232</td>
+<td>0.650078</td>
+<td>0.824289</td>
+<td>0.835802</td>
+<td>0.70400</td>
 </tr>
 <tr class="even">
 <td>RMSE</td>
-<td>627.95439</td>
-<td>628.16826</td>
-<td>628.16826</td>
-<td>628.19832</td>
-<td>583.57445</td>
-<td>361.43485</td>
-<td>331.86035</td>
-<td>1082.98114</td>
+<td>46.268837</td>
+<td>46.533272</td>
+<td>46.533272</td>
+<td>46.273848</td>
+<td>82.481079</td>
+<td>45.789939</td>
+<td>43.059707</td>
+<td>72.051003</td>
 </tr>
 </tbody>
 </table>
-<p>The Extra Trees regression model achieved the highest accuracy and the lowest RMSE. All the linear models (Linear, Lasso, Ridge and Bayesian Ridge) had twice the RMSE value of the Extra Trees model.</p>
+<p>The Extra Trees regression model achieved the highest accuracy and the lowest RMSE. The Decision Tree model had lowest accuracy and the highest RMSE.</p>
 <h2 id="regression-modeling-with-numerical-feature-set">Regression Modeling with Numerical Feature Set</h2>
 <p>Using Checkout Month, Week Day and Hour numeric variables resulted in just 9 total features for regression modeling.</p>
 <p>Prior to applying the models a feature correlation was performed on all the features to see if any of the features were highly correlated to one another. As shown in Figure 23, Temperature and Apparent Temperature were highly correlated suggesting that one of them could be removed from the features in the model application.</p>
 <div class="figure"><img src="figures/Figure%2023.PNG"></div>
 <p>FIGURE 23: FEATURE CORRELATION</p>
-<p>For each model the training and test scores, R Squared and RMSE results were collected and summarized. In addition, the Decision Tree, Random Forest and Extra Trees models also had their Feature Importance bar charts plotted. The chart for Extra Tree model is shown in Figure 24.</p>
+<p>For each model the training and test scores, R Squared and RMSE results were collected and summarized. In addition, the Decision Tree, Random Forest and Extra Trees models also had their Feature Importance bar charts plotted. The chart for Random Forest and the Extra Trees models are shown in Figures 24 and 25, respectively.</p>
 <div class="figure"><img src="figures/Figure%2024.PNG"></div>
 <p>FIGURE 24: RANDOM FOREST REGRESSION MODEL FEATURE IMPORTANCE CHART</p>
+<div class="figure"><img src="figures/Figure%2025.PNG"></div>
+<p>FIGURE 25: EXTRA TREES REGRESSION MODEL FEATURE IMPORTANCE CHART</p>
 <h2 id="regression-modeling-summary-numerical-feature-set">Regression Modeling Summary – Numerical Feature Set</h2>
 <table>
 <colgroup>
@@ -882,57 +972,57 @@ Removing the 1,343 rows with a trip duration of 1 minute and 193 rows with inval
 <tbody>
 <tr class="odd">
 <td>Training Test Score</td>
-<td>0.433</td>
-<td>0.433</td>
-<td>0.433</td>
-<td>0.433</td>
+<td>0.452</td>
+<td>0.444</td>
+<td>0.444</td>
+<td>0.451</td>
 <td>1.000</td>
-<td>0.975</td>
+<td>0.947</td>
 <td>1.000</td>
-<td>0.880</td>
+<td>0.867</td>
 </tr>
 <tr class="even">
 <td>Test Set Score</td>
-<td>0.448</td>
-<td>0.447</td>
-<td>0.447</td>
-<td>0.447</td>
-<td>0.741</td>
-<td>0.854</td>
-<td>0.838</td>
-<td>0.646</td>
+<td>0.470</td>
+<td>0.463</td>
+<td>0.463</td>
+<td>0.471</td>
+<td>0.481</td>
+<td>0.735</td>
+<td>0.739</td>
+<td>0.616</td>
 </tr>
 <tr class="odd">
 <td>R Squared</td>
-<td>0.669090</td>
-<td>0.668243</td>
-<td>0.668243</td>
-<td>0.668785</td>
-<td>0.861079</td>
-<td>0.924077</td>
-<td>0.915609</td>
-<td>0.803447</td>
+<td>0.655919</td>
+<td>0.680605</td>
+<td>0.680605</td>
+<td>0.685989</td>
+<td>0.693454</td>
+<td>0.857242</td>
+<td>0.859465</td>
+<td>0.784742</td>
 </tr>
 <tr class="even">
 <td>RMSE</td>
-<td>1142.475</td>
-<td>1144.818</td>
-<td>1144.818</td>
-<td>1143.319</td>
-<td>534.800</td>
-<td>302.172</td>
-<td>334.397</td>
-<td>733.229</td>
+<td>74.533468</td>
+<td>75.555613</td>
+<td>75.555613</td>
+<td>74.519813</td>
+<td>73.070383</td>
+<td>37.319948</td>
+<td>36.782801</td>
+<td>54.076287</td>
 </tr>
 </tbody>
 </table>
 <h3 id="regression-modeling-summary">Regression Modeling Summary</h3>
 <ul>
 <li>The data exploration phase of this study revealed the significance of weather variables on the ridership. The regression modeling phase confirmed this to be accurate. Looking at the feature importance graphs generated by the Extra Trees and Random Forest models, the weather attributes rank the highest.</li>
-<li>The non-linear regression models performed better than the linear models. In particular, even with a reduced feature set, the non-linear models such as the Random Forest and the Extra Trees were the best performers with R Squared values well above 0.9.</li>
+<li>The non-linear regression models performed better than the linear models. In particular, even with a reduced feature set, the non-linear models such as the Extra Trees and the Random Forest were the best performers with R Squared values well above 0.85.</li>
 </ul>
 <h2 id="testing-regressor-on-unseen-samples">Testing Regressor on unseen samples</h2>
-<p>The Random Forest Regressor with a predictive accuracy of 92.4% was used to predict 10 samples (with numerical feature set) from the dataset that had not been used neither in the training nor in the test sets. The results are tabulated below. The regressor predicted 1 of the 10 samples accurately. Of the remaining 9 samples, it predicted well within the 7.6% range based on its accuracy on 8 samples.</p>
+<p>The Extra Trees Forest Regressor with a predictive accuracy of 85.9% was used to predict 10 samples (with numerical feature set) from the dataset that had not been used neither in the training nor in the test sets. The results are tabulated below. The regressor predicted all 10 of the 10 samples accurately.</p>
 <table>
 <thead>
 <tr class="header">
@@ -945,57 +1035,63 @@ Removing the 1,343 rows with a trip duration of 1 minute and 193 rows with inval
 <tbody>
 <tr class="odd">
 <td>1</td>
-<td>92</td>
-<td>96</td>
-<td>+4</td>
+<td>12</td>
+<td>12</td>
+<td>0</td>
 </tr>
 <tr class="even">
 <td>2</td>
-<td>12</td>
-<td>13</td>
-<td>+1</td>
+<td>48</td>
+<td>48</td>
+<td>0</td>
 </tr>
 <tr class="odd">
 <td>3</td>
-<td>55</td>
-<td>56</td>
-<td>+1</td>
+<td>9</td>
+<td>9</td>
+<td>0</td>
 </tr>
 <tr class="even">
 <td>4</td>
-<td>111</td>
-<td>112</td>
-<td>+1</td>
+<td>33</td>
+<td>33</td>
+<td>0</td>
 </tr>
 <tr class="odd">
 <td>5</td>
-<td>76</td>
-<td>72</td>
-<td>-4</td>
+<td>12</td>
+<td>12</td>
+<td>0</td>
 </tr>
 <tr class="even">
 <td>6</td>
-<td>41</td>
-<td>37</td>
-<td>-4</td>
+<td>13</td>
+<td>13</td>
+<td>0</td>
 </tr>
 <tr class="odd">
 <td>7</td>
-<td>8</td>
-<td>14</td>
-<td>+6</td>
+<td>9</td>
+<td>9</td>
+<td>0</td>
 </tr>
 <tr class="even">
 <td>8</td>
-<td>81</td>
-<td>99</td>
-<td>+18</td>
+<td>6</td>
+<td>6</td>
+<td>0</td>
 </tr>
 <tr class="odd">
 <td>9</td>
-<td>65</td>
-<td>64</td>
-<td>-1</td>
+<td>8</td>
+<td>8</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>5</td>
+<td>5</td>
+<td>0</td>
 </tr>
 </tbody>
 </table>
@@ -1022,10 +1118,8 @@ Removing the 1,343 rows with a trip duration of 1 minute and 193 rows with inval
 </ul>
 <p>The dataset was randomly spilt into 70% for training and 30% for testing. The class labels were defined as follows:</p>
 <ul>
-<li>Class 0: Number of Checkouts &gt;= 1 and &lt;= 50</li>
-<li>Class 1: Number of Checkouts &gt;=51 and &lt;= 100</li>
-<li>Class 2: Number of Checkouts &gt;= 101 and &lt;= 150</li>
-<li>Class 3: Number of Checkouts &gt;=151</li>
+<li>Class 0: Number of Checkouts &gt;= 1 and &lt;= 10</li>
+<li>Class 1: Number of Checkouts &gt; 10</li>
 </ul>
 <p>A cross validation using the Stratified Shuffle Split method was performed on the dataset for each model using a training sample size of 50% and a testing sample size of 50% with 10 splits.</p>
 <h2 id="classification-modeling-categorical-feature-set">Classification Modeling – Categorical Feature Set</h2>
@@ -1060,112 +1154,181 @@ Removing the 1,343 rows with a trip duration of 1 minute and 193 rows with inval
 <tbody>
 <tr class="odd">
 <td>Accuracy</td>
-<td>0.728070</td>
-<td>0.730119</td>
-<td>0.786062</td>
-<td>0.806043</td>
-<td>0.457115</td>
-<td>0.639864</td>
-<td>0.756335</td>
-<td>0.791423</td>
+<td>0.877010</td>
+<td>0.811258</td>
+<td>0.856197</td>
+<td>0.877010</td>
+<td>0.756386</td>
+<td>0.714286</td>
+<td>0.817408</td>
+<td>0.875591</td>
 </tr>
 <tr class="even">
 <td>F1 (macro)</td>
-<td>0.560579</td>
-<td>0.642804</td>
-<td>0.670351</td>
-<td>0.701782</td>
-<td>0.371971</td>
-<td>0.413859</td>
-<td>0.651137</td>
-<td>0.630989</td>
+<td>0.877009</td>
+<td>0.811243</td>
+<td>0.856088</td>
+<td>0.876795</td>
+<td>0.747293</td>
+<td>0.703119</td>
+<td>0.817388</td>
+<td>0.875557</td>
 </tr>
 <tr class="odd">
 <td>F1 (micro)</td>
-<td>0.728070</td>
-<td>0.730119</td>
-<td>0.786062</td>
-<td>0.806043</td>
-<td>0.457115</td>
-<td>0.639864</td>
-<td>0.756335</td>
-<td>0.791423</td>
+<td>0.877010</td>
+<td>0.811258</td>
+<td>0.856197</td>
+<td>0.877010</td>
+<td>0.756386</td>
+<td>0.714286</td>
+<td>0.817408</td>
+<td>0.875591</td>
 </tr>
 <tr class="even">
 <td>Precision (macro)</td>
-<td>0.622020</td>
-<td>0.636731</td>
-<td>0.710195</td>
-<td>0.710991</td>
-<td>0.440307</td>
-<td>0.497978</td>
-<td>0.682317</td>
-<td>0.676773</td>
+<td>0.877030</td>
+<td>0.811341</td>
+<td>0.857210</td>
+<td>0.877409</td>
+<td>0.799952</td>
+<td>0.751804</td>
+<td>0.817524</td>
+<td>0.875965</td>
 </tr>
 <tr class="odd">
 <td>Precision (micro)</td>
-<td>0.728070</td>
-<td>0.730119</td>
-<td>0.786062</td>
-<td>0.806043</td>
-<td>0.457115</td>
-<td>0.639864</td>
-<td>0.756335</td>
-<td>0.791423</td>
+<td>0.877010</td>
+<td>0.811258</td>
+<td>0.856197</td>
+<td>0.877010</td>
+<td>0.756386</td>
+<td>0.714286</td>
+<td>0.817408</td>
+<td>0.875591</td>
 </tr>
 <tr class="even">
 <td>Recall (macro)</td>
-<td>0.538820</td>
-<td>0.650152</td>
-<td>0.646257</td>
-<td>0.694738</td>
-<td>0.515025</td>
-<td>0.411259</td>
-<td>0.630477</td>
-<td>0.614739</td>
+<td>0.8777014</td>
+<td>0.811251</td>
+<td>0.856172</td>
+<td>0.876995</td>
+<td>0.756566</td>
+<td>0.714103</td>
+<td>0.817399</td>
+<td>0.875576</td>
 </tr>
 <tr class="odd">
 <td>Recall (micro)</td>
-<td>0.728070</td>
-<td>0.730119</td>
-<td>0.786062</td>
-<td>0.806043</td>
-<td>0.457115</td>
-<td>0.639864</td>
-<td>0.756335</td>
-<td>0.791423</td>
+<td>0.877010</td>
+<td>0.811258</td>
+<td>0.856197</td>
+<td>0.877010</td>
+<td>0.811258</td>
+<td>0.856197</td>
+<td>0.877010</td>
+<td>0.756386</td>
+</tr>
+<tr class="even">
+<td>F1 (macro)</td>
+<td>0.877009</td>
+<td>0.811243</td>
+<td>0.856088</td>
+<td>0.876795</td>
+<td>0.747293</td>
+<td>0.703119</td>
+<td>0.817388</td>
+<td>0.875557</td>
+</tr>
+<tr class="odd">
+<td>F1 (micro)</td>
+<td>0.877010</td>
+<td>0.811258</td>
+<td>0.856197</td>
+<td>0.877010</td>
+<td>0.756386</td>
+<td>0.714286</td>
+<td>0.817408</td>
+<td>0.875591</td>
+</tr>
+<tr class="even">
+<td>Precision (macro)</td>
+<td>0.877030</td>
+<td>0.811341</td>
+<td>0.857210</td>
+<td>0.877409</td>
+<td>0.799952</td>
+<td>0.751804</td>
+<td>0.817524</td>
+<td>0.875965</td>
+</tr>
+<tr class="odd">
+<td>Precision (micro)</td>
+<td>0.877010</td>
+<td>0.811258</td>
+<td>0.856197</td>
+<td>0.877010</td>
+<td>0.756386</td>
+<td>0.714286</td>
+<td>0.817408</td>
+<td>0.875591</td>
+</tr>
+<tr class="even">
+<td>Recall (macro)</td>
+<td>0.8777014</td>
+<td>0.811251</td>
+<td>0.856172</td>
+<td>0.876995</td>
+<td>0.756566</td>
+<td>0.714103</td>
+<td>0.817399</td>
+<td>0.875576</td>
+</tr>
+<tr class="odd">
+<td>Recall (micro)</td>
+<td>0.877010</td>
+<td>0.811258</td>
+<td>0.856197</td>
+<td>0.877010</td>
+<td>0.756386</td>
+<td>0.714286</td>
+<td>0.817408</td>
+<td>0.875591</td>
 </tr>
 <tr class="even">
 <td>Cross Validation</td>
-<td>0.718655</td>
-<td>0.722281</td>
-<td>0.777895</td>
-<td>0.797076</td>
-<td>0.448012</td>
-<td>0.624035</td>
-<td>0.748538</td>
-<td>0.750175</td>
+<td>0.858643</td>
+<td>0.804258</td>
+<td>0.856145</td>
+<td>0.864045</td>
+<td>0.740562</td>
+<td>0.721885</td>
+<td>0.799319</td>
+<td>0.870338</td>
 </tr>
 <tr class="odd">
 <td>Execution Time (sec)</td>
-<td>14.137227</td>
-<td>0.304386</td>
-<td>3.665370</td>
-<td>3.346657</td>
-<td>0.179008</td>
-<td>0.977846</td>
-<td>108.952438</td>
-<td>9.298618</td>
+<td>10.791598</td>
+<td>0.317235</td>
+<td>4.023082</td>
+<td>3.425960</td>
+<td>0.175422</td>
+<td>0.994537</td>
+<td>48.096231</td>
+<td>9.780759</td>
 </tr>
 </tbody>
 </table>
-<p>The Extra Trees model attained the highest accuracy in classifying the four classes. The Naïve Bayes model performed the poorest.</p>
+<p>The Extra Trees model attained the highest accuracy in classifying the two classes. The Naïve Bayes model attained the lowest.</p>
 <h2 id="classification-modeling-numerical-feature-set">Classification Modeling – Numerical Feature Set</h2>
 <p>Using Checkout Month, Week Day and Hour numeric variables resulted in just 9 total features for regression modeling.</p>
-<p>As in the case of Regression modeling, feature correlation was carried out to determine if any features had a high correlation with one another. As shown in Figure 22, Temperature and Apparent Temperature were highly correlated suggesting that one of them could be removed from the features in the model application.</p>
-<p>For each model the training and test scores, Accuracy, F1 (micro), F1 (macro), Precision (macro), Precision (micro), Recall (macro) and Recall (micro) results were collected and summarized. In addition, the Decision Tree, Random Forest, Extra Trees and Gradient Boosting models also had their Feature Importance bar charts plotted. The chart for the Gradient Boosting model is shown in Figure 25.</p>
-<div class="figure"><img src="figures/Figure%2025.PNG"></div>
-<p>FIGURE 25: GRADIENT BOOSTING CLASSIFICATION MODEL FEATURE IMPORTANCE CHART</p>
+<p>As in the case of Regression modeling, feature correlation was carried out to determine if any features had a high correlation with one another. As shown in Figure 26, Temperature and Apparent Temperature were highly correlated suggesting that one of them could be removed from the features in the model application.</p>
+<div class="figure">
+<img src="figures/Figure%2026.PNG"></div>
+<p>FIGURE 26: FEATURE CORRELATION</p>
+<p>For each model the training and test scores, Accuracy, F1 (micro), F1 (macro), Precision (macro), Precision (micro), Recall (macro) and Recall (micro) results were collected and summarized. In addition, the Decision Tree, Random Forest, Extra Trees and Gradient Boosting models also had their Feature Importance bar charts plotted. The chart for the Random Forest model is shown in Figure 27.</p>
+<div class="figure"><img src="figures/Figure%2027.PNG"></div>
+<p>FIGURE 27: RANDOM FOREST CLASSIFICATION MODEL FEATURE IMPORTANCE CHART</p>
 <h2 id="classification-modeling-summary-numerical-feature-set">Classification Modeling Summary – Numerical Feature Set</h2>
 <table style="width:100%;">
 <colgroup>
@@ -1195,115 +1358,114 @@ Removing the 1,343 rows with a trip duration of 1 minute and 193 rows with inval
 <tbody>
 <tr class="odd">
 <td>Accuracy</td>
-<td>0.640351</td>
-<td>0.732456</td>
-<td>0.793372</td>
-<td>0.791910</td>
-<td>0.504386</td>
-<td>0.688109</td>
-<td>0.760234</td>
-<td>0.687135</td>
+<td>0.772942</td>
+<td>0.845790</td>
+<td>0.878430</td>
+<td>0.872280</td>
+<td>0.771523</td>
+<td>0.815043</td>
+<td>0.851939</td>
+<td>0.867550</td>
 </tr>
 <tr class="even">
 <td>F1 (macro)</td>
-<td>0.341939</td>
-<td>0.629112</td>
-<td>0.675405</td>
-<td>0.684538</td>
-<td>0.384729</td>
-<td>0.463753</td>
-<td>0.647997</td>
-<td>0.437630</td>
+<td>0.772932</td>
+<td>0.845788</td>
+<td>0.878403</td>
+<td>0.872190</td>
+<td>0.769910</td>
+<td>0.812961</td>
+<td>0.851927</td>
+<td>0.867515</td>
 </tr>
 <tr class="odd">
 <td>F1 (micro)</td>
-<td>0.640351</td>
-<td>0.732456</td>
-<td>0.793372</td>
-<td>0.791910</td>
-<td>0.504386</td>
-<td>0.688109</td>
-<td>0.688109</td>
-<td>0.687135</td>
+<td>0.772942</td>
+<td>0.845790</td>
+<td>0.878430</td>
+<td>0.872280</td>
+<td>0.771523</td>
+<td>0.815043</td>
+<td>0.851939</td>
+<td>0.867550</td>
 </tr>
 <tr class="even">
 <td>Precision (macro)</td>
-<td>0.311641</td>
-<td>0.625842</td>
-<td>0.732482</td>
-<td>0.727647</td>
-<td>0.395476</td>
-<td>0.543086</td>
-<td>0.658037</td>
-<td>0.457347</td>
+<td>0.773004</td>
+<td>0.845802</td>
+<td>0.878721</td>
+<td>0.873266</td>
+<td>0.779530</td>
+<td>0.829477</td>
+<td>0.852033</td>
+<td>0.867893</td>
 </tr>
 <tr class="odd">
 <td>Precision (micro)</td>
-<td>0.640351</td>
-<td>0.732456</td>
-<td>0.793372</td>
-<td>0.791910</td>
-<td>0.504386</td>
-<td>0.688109</td>
-<td>0.688109</td>
-<td>0.687135</td>
+<td>0.772942</td>
+<td>0.845790</td>
+<td>0.878430</td>
+<td>0.872280</td>
+<td>0.771523</td>
+<td>0.815043</td>
+<td>0.851939</td>
+<td>0.867550</td>
 </tr>
 <tr class="even">
 <td>Recall (macro)</td>
-<td>0.380207</td>
-<td>0.632630</td>
-<td>0.646895</td>
-<td>0.657962</td>
-<td>0.411507</td>
-<td>0.458458</td>
-<td>0.639805</td>
-<td>0.446176</td>
+<td>0.772949</td>
+<td>0.845790</td>
+<td>0.878416</td>
+<td>0.872256</td>
+<td>0.771603</td>
+<td>0.819944</td>
+<td>0.851932</td>
+<td>0.867535</td>
 </tr>
 <tr class="odd">
 <td>Recall (micro)</td>
-<td>0.640351</td>
-<td>0.732456</td>
-<td>0.793372</td>
-<td>0.791910</td>
-<td>0.504386</td>
-<td>0.688109</td>
-<td>0.688109</td>
-<td>0.687135</td>
+<td>0.772942</td>
+<td>0.845790</td>
+<td>0.878430</td>
+<td>0.872280</td>
+<td>0.771523</td>
+<td>0.815043</td>
+<td>0.851939</td>
+<td>0.867550</td>
 </tr>
 <tr class="even">
 <td>Cross Validation</td>
-<td>0.642573</td>
-<td>0.727544</td>
-<td>0.782407</td>
-<td>0.778772</td>
-<td>0.526725</td>
-<td>0.684503</td>
-<td>0.757427</td>
-<td>0.664971</td>
+<td>0.771672</td>
+<td>0.832108</td>
+<td>0.874368</td>
+<td>0.871019</td>
+<td>0.765200</td>
+<td>0.822538</td>
+<td>0.843486</td>
+<td>0.852682</td>
 </tr>
 <tr class="odd">
 <td>Execution Time (sec)</td>
-<td>12.288280</td>
-<td>0.190748</td>
-<td>4.000826</td>
-<td>3.295505</td>
-<td>0.096340</td>
-<td>0.941100</td>
-<td>60.454736</td>
-<td>3.061440</td>
+<td>9.676564</td>
+<td>0.301543</td>
+<td>3.972808</td>
+<td>3.246149</td>
+<td>0.106590</td>
+<td>0.953759</td>
+<td>20.225848</td>
+<td>4.669855</td>
 </tr>
 </tbody>
 </table>
 <p>Both the Random Forest and the Extra Trees classifiers achieved the highest accuracy and the Naïve Bayes the lowest. The cross validation test accuracy were comparable to the F1 (micro), Precision (micro) and the Recall (micro) accuracies.</p>
 <h2 id="classification-modeling-summary">Classification Modeling Summary</h2>
 <ul>
-<li><p>The multi-layer perceptron model attained the highest accuracy in classifying the four classes using the categorical feature set. The Naïve Bayes model performed the poorest.</p></li>
-<li><p>The Gradient Boosting Classifier achieved the highest accuracy and the Naïve Bayes the lowest with the numerical feature set. While the Multi-Layer Perceptron model had better accuracy than the Gradient Boosting with the categorical feature set it did not fare as well in the numerical feature set.</p></li>
-<li><p>None of the models used in this study were not able to achieve an accuracy greater than 71% either with the categorical or the numerical feature set.</p></li>
-<li><p>The non-linear regression models performed better than the linear models. In particular, even with a reduced feature set, the non-linear models such as the Random Forest and the Extra Trees were the best performers with R Squared values well above 0.9.</p></li>
+<li><p>The Extra Trees model attained the highest accuracy in classifying the two classes using the categorical feature set. The Naïve Bayes model attained the lowest.</p></li>
+<li><p>The Random Forest Classifier achieved the highest accuracy and the Naïve Bayes the lowest with the numerical feature set.</p></li>
+<li><p>The non-linear classification models (except Naive Bayes) performed better than the linear model.</p></li>
 </ul>
 <h2 id="testing-classifier-on-unseen-samples">Testing Classifier on unseen samples</h2>
-<p>The Random Forest Classifier with a predictive accuracy of 79.3% was used to predict 10 samples (with numerical feature set) from the dataset that had not been used neither in the training nor in the test sets. The results are tabulated below. The classifier predicted 8 of the 10 samples accurately. Of the remaining 2 samples, it predicted one class below the actual class in both samples.</p>
+<p>The Random Forest Classifier with a predictive accuracy of 87.8% was used to predict 10 samples (with numerical feature set) from the dataset that had not been used neither in the training nor in the test sets. The results are tabulated below. The classifier predicted 9 of the 10 samples accurately. Of the remaining 1 sample, it predicted one class above the actual class.</p>
 <table style="width:100%;">
 <colgroup>
 <col width="14%" />
@@ -1324,94 +1486,92 @@ Removing the 1,343 rows with a trip duration of 1 minute and 193 rows with inval
 <tbody>
 <tr class="odd">
 <td>1</td>
-<td>Between 51 and 100</td>
+<td>Greater than 10</td>
 <td>1</td>
-<td>Between 51 and 100</td>
+<td>Greater than 10</td>
 <td>1</td>
 </tr>
 <tr class="even">
 <td>2</td>
-<td>Between 1 and 50</td>
-<td>0</td>
-<td>Between 1 and 50</td>
-<td>0</td>
+<td>Greater than 10</td>
+<td>1</td>
+<td>Greater than 10</td>
+<td>1</td>
 </tr>
 <tr class="odd">
 <td>3</td>
-<td>Between 51 and 100</td>
-<td>1</td>
-<td>Between 1 and 50</td>
+<td>Between 1 and 10</td>
+<td>0</td>
+<td>Between 1 and 10</td>
 <td>0</td>
 </tr>
 <tr class="even">
 <td>4</td>
-<td>Between 101 and 150</td>
-<td>2</td>
-<td>Between 101 and 150</td>
-<td>2</td>
+<td>Greater than 10</td>
+<td>1</td>
+<td>Greater than 10</td>
+<td>1</td>
 </tr>
 <tr class="odd">
 <td>5</td>
-<td>Between 51 and 100</td>
+<td>Greater than 10</td>
 <td>1</td>
-<td>Between 51 and 100</td>
+<td>Greater than 10</td>
 <td>1</td>
 </tr>
 <tr class="even">
 <td>6</td>
-<td>Between 1 and 50</td>
-<td>0</td>
-<td>Between 1 and 50</td>
-<td>0</td>
+<td>Greater than 10</td>
+<td>1</td>
+<td>Greater than 10</td>
+<td>1</td>
 </tr>
 <tr class="odd">
 <td>7</td>
-<td>Between 1 and 50</td>
+<td>Between 1 and 10</td>
 <td>0</td>
-<td>Between 1 and 50</td>
-<td>0</td>
+<td>Greater than 10</td>
+<td>1</td>
 </tr>
 <tr class="even">
 <td>8</td>
-<td>Between 51 and 100</td>
-<td>1</td>
-<td>Between 1 and 50</td>
+<td>Between 1 and 10</td>
+<td>0</td>
+<td>Between 1 and 10</td>
 <td>0</td>
 </tr>
 <tr class="odd">
 <td>9</td>
-<td>Between 51 and 100</td>
-<td>1</td>
-<td>Between 51 and 100</td>
-<td>1</td>
+<td>Between 1 and 10</td>
+<td>0</td>
+<td>Between 1 and 10</td>
+<td>0</td>
 </tr>
 <tr class="even">
 <td>10</td>
-<td>Between 1 and 50</td>
+<td>Between 1 and 10</td>
 <td>0</td>
-<td>Between 1 and 50</td>
+<td>Between 1 and 10</td>
 <td>0</td>
 </tr>
 </tbody>
 </table>
 <h1 id="summary">Summary</h1>
-<p>This in-depth study on Denver 2016 Bike Share Trips data was undertaken to continue the work that Tyler started on the 2014 data. It agrees with his findings that merging calendar, clock and weather attributes into the Trips dataset can reveal ridership patterns and allow regression and classification techniques to be applied for prediction purposes.</p>
+<p>This in-depth study on Boulder 2016 Bike Share Trips data was undertaken to continue the work that Tyler started on the 2014 Denver Bike Ridership data. It agrees with his findings that merging calendar, clock and weather attributes into the Trips dataset can reveal ridership patterns and allow regression and classification techniques to be applied for prediction purposes.</p>
 <p>This study covered three areas:</p>
 <ol style="list-style-type: decimal">
 <li>Explored the Trips datasets and visualized the data and provided useful and interesting information.</li>
 <li>Deployed a variety of supervised machine learning regression models to predict the number of checkouts using calendar, clock and weather attributes.</li>
-<li>Deployed a variety of supervised machine learning classification models to predict four classes reflecting the number of checkouts using calendar, clock and weather attributes.</li>
+<li>Deployed a variety of supervised machine learning classification models to predict two classes reflecting the number of checkouts using calendar, clock and weather attributes.</li>
 </ol>
 <h2 id="next-steps">Next Steps</h2>
 <ul>
-<li>Provide and/or present findings to Denver B-cycle executives to improve future ridership</li>
+<li>Provide and/or present findings to Boulder B-cycle executives to improve future ridership</li>
 <li>Develop a simple desktop, web or mobile app that takes calendar, clock and weather variables as inputs and predicts the number of checkouts as the output.</li>
-<li>Undertake similar project for Boulder B-cycle</li>
 <li>Longmont, CO has just introduced its bike sharing system – this study could be useful to the management.</li>
 </ul>
-
 <h2 id="acknowledgements">Acknowledgements</h2>
-<p>The original plan was to use the Denver 2015 Trips dataset to continue the work by <a href="https://github.com/tybyers/denver_bcycle">Tyler Byers</a>. Fortunately, the 2016 dataset became available just in time for this project's undertaking. While there are certainly some differences between how the data were analyzed and reported by Denver B-Cycle and the author, credit must go to Denver B-Cycle for publishing its <a href="http://denver.bcycle.com/docs/librariesprovider34/default-document-library/dbs_annualreport_2016_05.pdf?sfvrsn=2">2016 annual report</a> and posting the 2016 dataset for public consumption and for use in this project in a timely and professional manner. Credit also goes to my <a href="https://www.springboard.com/">Springboard</a> mentor, <a href="https://www.linkedin.com/in/alexchao56"/>Alex Chao,</a> for his invaluable guidance and feedback on the progress of this project.</p>
+<p>The original plan was to work only on the Denver 2015 Trips dataset to continue the effort by <a href="https://github.com/tybyers/denver_bcycle">Tyler Byers</a>. Fortunately, the Boulder 2016 dataset became available just in time for this project's undertaking as well. While there are certainly some differences between how the data were analyzed and reported by Boulder B-Cycle and the author, credit must go to <a href="https://boulder.bcycle.com/staff-board">Kevin Crouse</a> for providing the link to Dropbox to download the dataset and his interest in the final report. Credit also goes to my <a href="https://www.springboard.com/">Springboard</a> mentor, <a href="https://www.linkedin.com/in/alexchao56"/>Alex Chao,</a> for his invaluable guidance and feedback on the progress of this project.</p>
 </article>
 
 <footer></footer>
