@@ -1,4 +1,4 @@
-# Boulder-2017-Bike-Share Data Exploration and Predictive Analysis
+# Boulder 2017 B-cycle Ridership Data Exploration and Predictive Analysis
 
 ## Project Summary
 This study explores the Boulder 2017 Bike Share Trips dataset and follows up with regression analytics deploying several popular machine learning algorithms.
