@@ -145,7 +145,7 @@ tr:nth-child(even) {
 </tr>
 </tbody>
 </table>
-<p>The Trips dataset reported the following breakdown:</p>
+<p>The Trips dataset reported 39 rows with NaN (Not A Number) entries. Removal of these 39 rows resulted in 122,292 rows with the following breakdown:</p>
 <table>
 <thead>
 <tr class="header">
@@ -155,36 +155,41 @@ tr:nth-child(even) {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Annual (Denver B-cycle)</td>
-<td>82,199</td>
+<td>Annual (Republic Rider)</td>
+<td>67,092</td>
 </tr>
 <tr class="even">
-<td>Annual Plus (Denver B-cycle)</td>
-<td>84,271</td>
+<td>24-hour (Day Tripper)</td>
+<td>23,082</td>
 </tr>
 <tr class="odd">
-<td>Flex Pass</td>
-<td>3,565</td>
+<td>Maintenance</td>
+<td>15,393</td>
 </tr>
 <tr class="even">
-<td>Monthly (Denver B-cycle)</td>
-<td>54,004</td>
+<td>Monthly</td>
+<td>14,426</td>
 </tr>
 <tr class="odd">
-<td>24 hour online (Denver B-cycle)</td>
-<td>117</td>
+<td>Pay-per-trip</td>
+<td>2,293</td>
 </tr>
 <tr class="even">
-<td>24-hour Kiosk Only (Denver B-cycle)</td>
-<td>87,315</td>
+<td>7-day</td>
+<td>6</td>
 </tr>
 <tr class="odd">
 <td><strong>Total Trips</strong></td>
-<td><strong>311,471</strong></td>
+<td><strong>122,292</strong></td>
 </tr>
 </tbody>
 </table>
-<p>There were several other Membership Types that were also listed under “Denver B-cycle” in the User’s Program:</p>
+<p>Removing “Maintenance” entries brought the number of rows down to 106,899. There were 1914 entries with a Trip Duration = 0. Removing these entries resulted in 104,985 rows.
+Over 1.2% of the Boulder B-cycle rides (1284 rides) had the same checkout station as return station with a trip duration of only 1 minute (Figure 1). It is very likely that the majority of these “rides” are likely people checking out a bike, and then deciding after a very short time that this particular bike doesn’t work for them.</p>
+<div class="figure"><img src="figures/Figure%201.PNG"></div>
+<p>FIGURE 1: TRIP DURATION WHEN CHECKOUT AND RETURN KIOSKS ARE THE SAME</p>
+
+<p>Removing entries with a Trip Duration = 1 resulted in 103,578 rows with the following breakdown:</p>
 <table>
 <thead>
 <tr class="header">
@@ -194,25 +199,70 @@ tr:nth-child(even) {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Denver B-cycle Founder (Denver B-cycle)</td>
-<td>18,003</td>
+<td>Annual (Republic Rider)</td>
+<td>64,842</td>
 </tr>
 <tr class="even">
-<td>Not Applicable</td>
-<td>64,959</td>
+<td>24-hour (Day Tripper)</td>
+<td>22,466</td>
 </tr>
 <tr class="odd">
-<td>Single Ride (Denver B-cycle)</td>
-<td>16,526</td>
+<td>Monthly (People's Pedaler)</td>
+<td>14,032</td>
+</tr>
+<tr class="even">
+<td>Pay-per-trip (Casual Cruiser)</td>
+<td>2,232</td>
+</tr>
+<tr class="odd">
+<td>7-day</td>
+<td>6</td>
+</tr>
+<tr class="even">
+<td><strong>Total Trips</strong></td>
+<td><strong>103,578</strong></td>
 </tr>
 </tbody>
 </table>
-<p>In particular, the “Not Applicable” membership type accounted for more than 15% of the 419,611 trips. Perhaps some of these trips were used in the Denver B-cycle annual report.</p>
-<p>Also over 2.3% of the Denver B-cycle rides (9,954 rides) had the same checkout station as return station with a trip duration of only 1 minute (Figure 1). Again, Tyler’s explanation of why these trips should be removed from the dataset makes sense - “I believe these should be filtered out because I believe the majority of these “rides” are likely people checking out a bike, and then deciding after a very short time that this particular bike doesn’t work for them. I believe that most of the same-kiosk rides under 5 minutes or so likely shouldn’t count, but only culled the ones that were one minute long”.</p>
-<div class="figure"><img src="figures/Figure%201.PNG"></div>
-<p>FIGURE 1: TRIP DURATION WHEN CHECKOUT AND RETURN KIOSKS ARE THE SAME</p>
-<p>There were 6574 rows in the Trips dataset that had kiosk names not in the Kiosk Master List. These 6574 rows were removed accordingly.</p>
-<p>Removing the 9,954 rows with a trip duration of 1 minute and 6574 rows with invalid kiosk names resulted in <strong>394,431 Denver B-cycle rides in 2016</strong>.</p>
+
+<p>This number appeared closer to the 103,568 trips reported by Boulder B-cycle although there were differences amongst the individual membership types.</p>
+<p>There were 296 rows in the Trips dataset that had “Maintenance” entry in the Return Kiosk column. These 296 rows were removed accordingly.</p>
+<p>
+Removing the 1,343 rows with a trip duration of 1 minute and 193 rows with invalid kiosk names resulted in <strong>103,282 Boulder B-cycle rides in 2017</strong>.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Membership Type</th>
+<th>Number of Trips</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Annual (Republic Rider)</td>
+<td>64,646</td>
+</tr>
+<tr class="even">
+<td>24-hour (Day Tripper)</td>
+<td>22,409</td>
+</tr>
+<tr class="odd">
+<td>Monthly (People's Pedaler)</td>
+<td>13,996</td>
+</tr>
+<tr class="even">
+<td>Pay-per-trip (Casual Cruiser)</td>
+<td>2,225</td>
+</tr>
+<tr class="odd">
+<td>7-day</td>
+<td>6</td>
+</tr>
+<tr class="even">
+<td><strong>Total Trips</strong></td>
+<td><strong>103,282</strong></td>
+</tr>
+</tbody>
+</table>
 <h3 id="distance-traveled">Distance Traveled</h3>
 <p>To estimate the distance between checkout and return kiosks when they are the same, Tyler’s method of using the “average speed of all the other rides (nominal distance ridden divided by the duration), and then applying this average speed to the same-kiosk trip durations” was adopted. This resulted in <strong>670,802 miles ridden in 2016</strong>.</p>
 <h3 id="most-popular-and-least-popular-checkout-and-return-kiosks">Most Popular and Least Popular Checkout and Return Kiosks</h3>
