@@ -20,9 +20,9 @@ The following project files are located in this project directory:
 
 [Boulder 2017 Bike Share Weather Data Consolidation](https://github.com/hbhasin/Boulder-2017-Bike-Share/blob/master/Boulder_2017_Bike_Share_Weather_Data_Consolidation.ipynb) - Merges the daily and hourly weather attributes from [Dark Sky API](https://darksky.net/dev/) into the Trips dataset.
 
-[Boulder 2017 Bike Share Data Exploration](https://github.com/hbhasin/Boulder-2016-Bike-Share/blob/master/Boulder%202016%20Bike%20Share%20Data%20Exploration.ipynb) - Jupyter notebook containing Python code used to explore and visualize the information contained in the Boulder 2017 Trips dataset. 
+[Boulder 2017 Bike Share Data Exploration](https://github.com/hbhasin/Boulder-2016-Bike-Share/blob/master/Boulder%202017%20Bike%20Share%20Data%20Exploration.ipynb) - Jupyter notebook containing Python code used to explore and visualize the information contained in the Boulder 2017 Trips dataset. 
 
-[Boulder 2017 Bike Share Regression Modeling](https://github.com/hbhasin/Boulder-2016-Bike-Share/blob/master/Boulder%202016%20Bike%20Share%20Regression%20Modeling.ipynb) - Jupyter notebook containing Python code used to deploy a variety of regression models to train and test the Trips dataset followed by a predcition on 20 unseen samples. The regression models include Linear, Lasso, Ridge, Bayesian Ridge, Decision Tree, Random Forest, Extra Trees and Nearest Neighbors. 
+[Boulder 2017 Bike Share Regression Modeling](https://github.com/hbhasin/Boulder-2016-Bike-Share/blob/master/Boulder%202017%20Bike%20Share%20Regression%20Modeling.ipynb) - Jupyter notebook containing Python code used to deploy a variety of regression models to train and test the Trips dataset followed by a predcition on 20 unseen samples. The regression models include Linear, Lasso, Ridge, Bayesian Ridge, Decision Tree, Random Forest, Extra Trees and Nearest Neighbors. 
 
 [./data](https://github.com/hbhasin/Boulder-2017-Bike-Share/tree/master/data) - Folder containing data files used in the Python scripts and in the notebooks.
 
