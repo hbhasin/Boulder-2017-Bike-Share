@@ -93,7 +93,7 @@ tr:nth-child(even) {
 <h2 id="data-acquisition">Data Acquisition</h2>
 <p>Data for this study was downloaded from several sources and combined using the following steps:</p>
 <ol type="1">
-	<li><p>Downloaded Boulder B-cycle May 2011-January 2018 Trip Data from <a href="https://boulder.bcycle.com/data-reports">Boulder B-Cycle website</a>. The columns names were changed to comply with Python code best practices.</p></li>
+	<li><p>Downloaded Boulder B-cycle May 2011-January 2018 Trip Data from <a href="https://boulder.bcycle.com/data-reports">Boulder B-Cycle website</a>. The columns names were changed to comply with Python code best practices and only rows for 2017 were kept for this exercise.</p></li>
 	<li><p>Created a list of the 1892 combinations of the 44 checkout/return kiosks. Used <a href="https://developers.google.com/maps/documentation/distance-matrix/">Google Distance Matrix API</a> to provide the bicycling distance and time between each checkout and return kiosk. Google only supports a maximum of 2500 requests a day, it took two days to obtain this data.</p></li>
 	<li><p>Obtained daily and hourly weather data via <a href="https://darksky.net/dev/">Dark Sky API</a> for all of 2017. Dark Sky supports up to 1000 requests per day.</p></li>
 </ol>
