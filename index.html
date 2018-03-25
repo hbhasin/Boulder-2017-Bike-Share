@@ -9,7 +9,7 @@ div.container {
 header, footer {
     padding: 2em;
     color: white;
-    background-color: rgb(135, 189, 165);
+    background-color: blue;
     clear: left;
     text-align: center;
 }
@@ -32,11 +32,11 @@ nav ul a {
 }
 article {
     border-left: 3px solid gray;
-	border-right: 3px solid gray;
-	border-top: 3px solid gray;
-	border-bottom: 3px solid gray;
+    border-right: 3px solid gray;
+    border-top: 3px solid gray;
+    border-bottom: 3px solid gray;
     padding-left: 2cm;
-	padding-right: 2cm;
+    padding-right: 2cm;
     line-height: 1.6;
     overflow: hidden;
 }
@@ -70,36 +70,26 @@ tr:nth-child(even) {
 <div class="container">
 
 <header>
-<h1>Boulder 2017 B-cycle Ridership Data Exploration and Predictive Analytics</h1>
+<h1>Denver 2016 B-cycle Ridership Data Exploration and Predictive Analytics</h1>
 </header>
 
 <article>
 
-<h1 id="boulder-2017-b-cycle-ridership-data-exploration-and-predictive-analytics">Boulder 2017 B-cycle Ridership Data Exploration and Predictive Analytics</h1>
+<h1 id="denver-2017-b-cycle-ridership-data-exploration-and-predictive-analytics">Denver 2017 B-cycle Ridership Data Exploration and Predictive Analytics</h1>
 <p><a href="http://www.linkedin.com/in/bhasinharpreet">Harpreet Bhasin</a></p>
-<p>Feb 21, 2018</p>
-<div class="figure" align="center"><img src="figures/splash.PNG"></div>
-<p><a href="https://Boulder.bcycle.com/">Boulder B-cycle</a>is a nonprofit organization formed by Boulder residents to create and operate Boulder’s bike-sharing program on a not-for-profit, financially sustainable basis. Its mission is to &quot;implement and operate a community-supported bike-share program that provides Boulder’s residents, commuters and visitors with an environmentally friendly, financially sustainable, and affordable transportation option that’s ideal for short trips resulting in fewer vehicle miles traveled, less pollution and congestion, more personal mobility and better health and wellness.&quot;</p>
-<div class="figure" align="center"><img src="figures/Boulder%20Header.PNG"></div>
-<p>Boulder B-cycle posts its trips data set on its website as soon as its annual report is released. Trips data have been available since 2010. The 2017 annual report and its associated dataset for this report were obtained from from <a href="https://boulder.bcycle.com/data-reports">Boulder B-Cycle website</a>.</p>
-<div class="figure" align="center"><img src="figures/Boulder%202017%20Annual%20Report.PNG"></div>
-<p>This study will explore the publicly available 2017 Boulder B-cycle Trip Data and perform some predictive analytics on the number of bike checkouts using calendar, clock and weather variables as the predictors. The reporting style will follow the <a href=" https://hbhasin.github.io/Boulder-2016-Bike-Share/">Boulder 2016 B-cycle Ridership Data Exploration and Predictive Analytics</a> study to provide continuity and similarity</p>
-<p>This study has two parts:</p>
-<ol type="1">
-	<li><p>Explore the Trips datasets and visualize the data to provide useful and interesting information.</p></li>
-	<li><p>Deploy a variety of regression models to train and test the data followed by a prediction on 10 unseen samples.</p></li>
-</ol>
+<p>March 24, 2018</p>
+
+<div class="figure", align="center"><img src="figures/Splash.PNG" /></div>
+<p><a href="https://denver.bcycle.com/">Denver B-cycle</a> is a non-profit public bike sharing organization operating an automated bike sharing system called Denver B-cycle. Its mission is to &quot;serve as a catalyst to fundamentally transform public thinking and behavior by operating a bike sharing system in Denver to enhance mobility while promoting all aspects of sustainability: quality of life, equity, the environment, economic development, and public health&quot;. <img src="https://github.com/hbhasin/Denver-2017-Bike-Share/blob/master/figures/Denver%20Bikes.PNG" /></p>
+<p>Denver B-cycle posts its trips data set on its website as soon as its annual report is released. Trips data have been available since 2010. The 2017 annual report and its associated dataset for this report were obtained from <a href="https://denver.bcycle.com/">Denver B-Cycle website</a>.</p>
+<div class="figure", align="center"><img src="figures/Denver%202017%20Annual%20Report.PNG"/></div>
+<p>This study has two parts: 1. Explore the Trips datasets and visualize the data to provide useful and interesting information. 2. Deploy a variety of regression models to train and test the data followed by a prediction on 10 unseen samples.</p>
 <h1 id="part-1-data-exploration">Part 1: Data Exploration</h1>
 <h2 id="data-acquisition">Data Acquisition</h2>
-<p>Data for this study was downloaded from several sources and combined using the following steps:</p>
-<ol type="1">
-	<li><p>Downloaded Boulder B-cycle May 2011-January 2018 Trip Data from <a href="https://boulder.bcycle.com/data-reports">Boulder B-Cycle website</a>. The columns names were changed to comply with Python code best practices and only rows for 2017 were kept for this exercise.</p></li>
-	<li><p>Created a list of the 1892 combinations of the 44 checkout/return kiosks. Used <a href="https://developers.google.com/maps/documentation/distance-matrix/">Google Distance Matrix API</a> to provide the bicycling distance and time between each checkout and return kiosk. Google only supports a maximum of 2500 requests a day, it took two days to obtain this data.</p></li>
-	<li><p>Obtained daily and hourly weather data via <a href="https://darksky.net/dev/">Dark Sky API</a> for all of 2017. Dark Sky supports up to 1000 requests per day.</p></li>
-</ol>
+<p>Data for this study was downloaded from several sources and combined using the following steps: 1. Downloaded B-cycle 2017 Trips and Kiosk data from <a href="https://www.denverbcycle.com/company">Denver B-Cycle website</a>. The columns names were changed to comply with Python code best practices. 2. Created a list of the 7921 combinations of the 89 checkout/return kiosks. Used <a href="https://developers.google.com/maps/documentation/distance-matrix/">Google Distance Matrix API</a> to provide the bicycling distance and time between each checkout and return kiosk. Adopted Tyler’s method of finding the average distance by taking the distance from each checkout-return pair’s distance separately then averaging it. As he pointed out in his study, this approach was taken “because of the large number of one-way streets in the Denver downtown area where the kiosks are highly clustered”. Google only supports a maximum of 2500 requests a day, it took four days to obtain this data. 3. Obtained daily and hourly weather data via <a href="https://darksky.net/dev/">Dark Sky API</a> for all of 2017. Dark Sky supports up to 1000 requests per day</p>
 <h3 id="basic-ridership-statistics">Basic Ridership Statistics</h3>
 <h4 id="number-of-rides">Number of Rides</h4>
-<p>The B-cycle data, as downloaded, contained 122,331 rows of trips data. Under normal circumstances this would mean that 122,331 B-cycle trips were taken in 2017. However, the <a href="http://https://cdn01.bcycle.com/libraries/docs/librariesprovider35/default-document-library/2017-annual-report-final_web.pdf?sfvrsn=996021c5_2">2017 Boulder B-cycle annual report</a> acknowledged 103,568 total trips for the year. The breakdown, totaling 101,146 trips was as follows:</p>
+<p>The B-cycle data, as downloaded, contained 344,256 rows of trips data. This agrees with the 344,256 total trips reported in the <a href="http://denver.bcycle.com/docs/librariesprovider34/default-document-library/annual-reports/dbs_annualreport_2017_04.pdf">2017 Denver B-cycle annual report</a>. The breakdown was as follows:</p>
 <table>
 <thead>
 <tr class="header">
@@ -109,32 +99,36 @@ tr:nth-child(even) {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Annual (Republic Rider)</td>
-<td>63,262</td>
+<td>Annual (And Annual Plus)</td>
+<td>167,644</td>
 </tr>
 <tr class="even">
-<td>24-hour (Day Tripper)</td>
-<td>23,082</td>
+<td>Flex</td>
+<td>3,868</td>
 </tr>
 <tr class="odd">
-<td>Maintenance</td>
-<td>15,393</td>
+<td>30 Day</td>
+<td>60,462</td>
 </tr>
 <tr class="even">
-<td>Monthly</td>
-<td>14,426</td>
+<td>24 Hr Online</td>
+<td>8,159</td>
 </tr>
 <tr class="odd">
-<td>7-day</td>
-<td>6</td>
+<td>24 Hr Kiosk</td>
+<td>103,471</td>
 </tr>
 <tr class="even">
+<td>24 Hr Rental</td>
+<td>652</td>
+</tr>
+<tr class="odd">
 <td><strong>Total Trips</strong></td>
-<td><strong>101,146</strong></td>
+<td><strong>344, 256</strong></td>
 </tr>
 </tbody>
 </table>
-<p>The Trips dataset reported 39 rows with NaN (Not A Number) entries. Removal of these 39 rows resulted in 122,292 rows with the following breakdown:</p>
+<p>The Trips dataset reported the following breakdown:</p>
 <table>
 <thead>
 <tr class="header">
@@ -144,116 +138,60 @@ tr:nth-child(even) {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Annual (Republic Rider)</td>
-<td>67,092</td>
+<td>24-hour Kiosk Only (Denver B-cycle)</td>
+<td>103,471</td>
 </tr>
 <tr class="even">
-<td>24-hour (Day Tripper)</td>
-<td>23,082</td>
+<td>Annual Plus (Denver B-cycle)</td>
+<td>77,500</td>
 </tr>
 <tr class="odd">
-<td>Maintenance</td>
-<td>15,393</td>
+<td>Annual (Denver B-cycle)</td>
+<td>76,601</td>
 </tr>
 <tr class="even">
-<td>Monthly</td>
-<td>14,426</td>
+<td>Monthly (Denver B-cycle)</td>
+<td>60,462</td>
 </tr>
 <tr class="odd">
-<td>Pay-per-trip</td>
-<td>2,293</td>
+<td>Republic Rider (Annual) (Boulder B-cycle)</td>
+<td>7,229</td>
 </tr>
 <tr class="even">
-<td>7-day</td>
-<td>6</td>
+<td>24 HR (Denver B-cycle)</td>
+<td>5,873</td>
+</tr>
+<tr class="odd">
+<td>Denver B-cycle Founder (Denver B-cycle)</td>
+<td>4,891</td>
+</tr>
+<tr class="even">
+<td>Flex Pass (Denver B-cycle)</td>
+<td>3,868</td>
+</tr>
+<tr class="odd">
+<td>24 hour online (Denver B-cycle)</td>
+<td>2,250</td>
+</tr>
+<tr class="even">
+<td>24 HR Rental (Denver B-cycle)</td>
+<td>652</td>
 </tr>
 <tr class="odd">
 <td><strong>Total Trips</strong></td>
-<td><strong>122,292</strong></td>
+<td><strong>344,256</strong></td>
 </tr>
 </tbody>
 </table>
-<p>Removing “Maintenance” entries brought the number of rows down to 106,899. There were 1914 entries with a Trip Duration = 0. Removing these entries resulted in 104,985 rows.
-Over 1.2% of the Boulder B-cycle rides (1284 rides) had the same checkout station as return station with a trip duration of only 1 minute (Figure 1). It is very likely that the majority of these “rides” are likely people checking out a bike, and then deciding after a very short time that this particular bike doesn’t work for them.</p>
-<div class="figure"><img src="figures/Figure%201.PNG"></div>
-<p>FIGURE 1: TRIP DURATION WHEN CHECKOUT AND RETURN KIOSKS ARE THE SAME</p>
-
-<p>Removing entries with a Trip Duration = 1 resulted in 103,578 rows with the following breakdown:</p>
-<table>
-<thead>
-<tr class="header">
-<th>Membership Type</th>
-<th>Number of Trips</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Annual (Republic Rider)</td>
-<td>64,842</td>
-</tr>
-<tr class="even">
-<td>24-hour (Day Tripper)</td>
-<td>22,466</td>
-</tr>
-<tr class="odd">
-<td>Monthly (People's Pedaler)</td>
-<td>14,032</td>
-</tr>
-<tr class="even">
-<td>Pay-per-trip (Casual Cruiser)</td>
-<td>2,232</td>
-</tr>
-<tr class="odd">
-<td>7-day</td>
-<td>6</td>
-</tr>
-<tr class="even">
-<td><strong>Total Trips</strong></td>
-<td><strong>103,578</strong></td>
-</tr>
-</tbody>
-</table>
-
-<p>This number appeared closer to the 103,568 trips reported by Boulder B-cycle although there were differences amongst the individual membership types.</p>
-<p>There were 296 rows in the Trips dataset that had “Maintenance” entry in the Return Kiosk column. These 296 rows were removed accordingly.</p>
-<p>
-Removing the 1,343 rows with a trip duration of 1 minute and 193 rows with invalid kiosk names resulted in <strong>103,282 Boulder B-cycle rides in 2017</strong>.</p>
-<table>
-<thead>
-<tr class="header">
-<th>Membership Type</th>
-<th>Number of Trips</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Annual (Republic Rider)</td>
-<td>64,646</td>
-</tr>
-<tr class="even">
-<td>24-hour (Day Tripper)</td>
-<td>22,409</td>
-</tr>
-<tr class="odd">
-<td>Monthly (People's Pedaler)</td>
-<td>13,996</td>
-</tr>
-<tr class="even">
-<td>Pay-per-trip (Casual Cruiser)</td>
-<td>2,225</td>
-</tr>
-<tr class="odd">
-<td>7-day</td>
-<td>6</td>
-</tr>
-<tr class="even">
-<td><strong>Total Trips</strong></td>
-<td><strong>103,282</strong></td>
-</tr>
-</tbody>
-</table>
-<h2 id="distance-traveled">Distance Traveled</h2>
-<p>To estimate the distance between checkout and return kiosks when they are the same, using the “average speed of all the other rides (nominal distance ridden divided by the duration), and then applying this average speed to the same-kiosk trip durations” was adopted. This resulted in 158,140 miles ridden in 2017 and sharply contrasted with the 242,004 miles reported by <a href="https://boulder.bcycle.com/data-reports">Boulder B-Cycle website</a>.</p>
+<p>Over 1.16% of the Denver B-cycle rides (4029 rides) had the same checkout station as return station with a trip duration of only 1 minute (Figure 1). It is very likely that the majority of these “rides” are likely people checking out a bike, and then deciding after a very short time that this particular bike doesn’t work for them.</p>
+<div class="figure", align="center"><img src="figures/Figure%201.PNG" /></div>
+<p align="center">
+FIGURE 1: TRIP DURATION WHEN CHECKOUT AND RETURN KIOSKS ARE THE SAME
+</p>
+<p>There were 17,342 rows in the Trips dataset that had kiosk names not listed in the Kiosk Master List. These 17,342 rows were removed accordingly.</p>
+<p>Removing the 4,029 rows with a trip duration of 1 minute and 17,342 rows with invalid kiosk names resulted in <strong>322,082 Denver B-cycle rides in 2017</strong>.</p>
+<h3 id="distance-traveled">Distance Traveled</h3>
+<p>To estimate the distance between checkout and return kiosks when they are the same, using the “average speed of all the other rides (nominal distance ridden divided by the duration), and then applying this average speed to the same-kiosk trip durations” was adopted. This resulted in <strong>535,628 miles ridden in 2017</strong>.</p>
 <h3 id="most-popular-and-least-popular-checkout-and-return-kiosks">Most Popular and Least Popular Checkout and Return Kiosks</h3>
 <h3 id="most-popular">Most Popular</h3>
 <p>The following ten kiosks were the most popular checkout kiosks by number of total bike checkouts in 2017.</p>
@@ -266,106 +204,44 @@ Removing the 1,343 rows with a trip duration of 1 minute and 193 rows with inval
 </thead>
 <tbody>
 <tr class="odd">
-<td>Folsom &amp; Colorado</td>
-<td>4885</td>
+<td>16th &amp; Wynkoop</td>
+<td>12,309</td>
 </tr>
 <tr class="even">
-<td>15th &amp; Pearl</td>
-<td>4709</td>
+<td>1350 Larimer</td>
+<td>7,724</td>
 </tr>
 <tr class="odd">
-<td>28th &amp; Mapleton</td>
-<td>3666</td>
+<td>13th &amp; Speer</td>
+<td>7,722</td>
 </tr>
 <tr class="even">
-<td>Broadway &amp; Euclid</td>
-<td>3854</td>
+<td>1550 Glenarm</td>
+<td>7,643</td>
 </tr>
 <tr class="odd">
-<td>21st &amp; Arapahoe</td>
-<td>3462</td>
+<td>16th &amp; Platte</td>
+<td>7,258</td>
 </tr>
 <tr class="even">
-<td>13th &amp; Spruce</td>
-<td>3447</td>
+<td>18th &amp; Arapahoe</td>
+<td>6,771</td>
 </tr>
 <tr class="odd">
-<td>Folsom &amp; Pearl</td>
-<td>3416</td>
+<td>14th &amp; Stout</td>
+<td>6,611</td>
 </tr>
 <tr class="even">
-<td>11th &amp; Pearl</td>
-<td>3348</td>
+<td>20th &amp; Chestnut</td>
+<td>6,239</td>
 </tr>
 <tr class="odd">
-<td>19th &amp; Boulder Creek</td>
-<td>3185</td>
+<td>16th &amp; Broadway</td>
+<td>6,227</td>
 </tr>
 <tr class="even">
-<td>13th &amp; Arapahoe</td>
-<td>3143</td>
-</tr>
-</tbody>
-</table>
-<p>The most popular Checkout Kiosk to Return Kiosk routes were as follows:</p>
-<table>
-<thead>
-<tr class="header">
-<th>Checkout Kiosk</th>
-<th>Return Kiosk</th>
-<th>Number of Trips</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>26th &amp; Pearl</td>
-<td>28th &amp; Mapleton</td>
-<td>884</td>
-</tr>
-<tr class="even">
-<td>28th &amp; Mapleton</td>
-<td>26th &amp; Pearl</td>
-<td>883</td>
-</tr>
-<tr class="odd">
-<td>Folsom &amp; Pearl</td>
-<td>15th &amp; Pearl</td>
-<td>610</td>
-</tr>
-<tr class="even">
-<td>13th &amp; Arapahoe</td>
-<td>13th &amp; Arapahoe</td>
-<td>610</td>
-</tr>
-<tr class="odd">
-<td>Settlers' Park</td>
-<td>11th &amp; Pearl</td>
-<td>473</td>
-</tr>
-<tr class="even">
-<td>38th &amp; Arapahoe</td>
-<td>48th &amp; Arapahoe</td>
-<td>452</td>
-</tr>
-<tr class="odd">
-<td>21st &amp; Arapahoe</td>
-<td>21st &amp; Arapahoe</td>
-<td>451</td>
-</tr>
-<tr class="even">
-<td>15th &amp; Pearl</td>
-<td>Folsom &amp; Pearl</td>
-<td>432</td>
-</tr>
-<tr class="odd">
-<td>15th &amp; Pearl</td>
-<td>28th &amp; Mapleton</td>
-<td>413</td>
-</tr>
-<tr class="even">
-<td>Broadway &amp; Baseline</td>
-<td>Williams Village</td>
-<td>412</td>
+<td>16th &amp; Little Raven</td>
+<td>6,025</td>
 </tr>
 </tbody>
 </table>
@@ -374,49 +250,49 @@ Removing the 1,343 rows with a trip duration of 1 minute and 193 rows with inval
 <thead>
 <tr class="header">
 <th>Return Kiosk</th>
-<th>Number of Returns</th>
+<th>Number of Checkouts</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>15th &amp; Pearl</td>
-<td>4692</td>
+<td>16th &amp; Wynkoop</td>
+<td>14,717</td>
 </tr>
 <tr class="even">
-<td>28th &amp; Mapleton</td>
-<td>4282</td>
+<td>1350 Larimer</td>
+<td>9,502</td>
 </tr>
 <tr class="odd">
-<td>13th &amp; Spruce</td>
-<td>4057</td>
+<td>1550 Glenarm</td>
+<td>8,412</td>
 </tr>
 <tr class="even">
-<td>21st &amp; Arapahoe</td>
-<td>3943</td>
+<td>16th &amp; Platte</td>
+<td>7,881</td>
 </tr>
 <tr class="odd">
-<td>13th &amp; Arapahoe</td>
-<td>3708</td>
+<td>13th &amp; Speer</td>
+<td>7,411</td>
 </tr>
 <tr class="even">
-<td>Folsom &amp; Pearl</td>
-<td>3491</td>
+<td>16th &amp; Broadway</td>
+<td>7,195</td>
 </tr>
 <tr class="odd">
-<td>11th &amp; Pearl</td>
-<td>3464</td>
+<td>16th &amp; Little Raven</td>
+<td>7,104</td>
 </tr>
 <tr class="even">
-<td>48th &amp; Arapahoe</td>
-<td>3356</td>
+<td>17th &amp; Wewatta</td>
+<td>6,547</td>
 </tr>
 <tr class="odd">
-<td>The Village</td>
-<td>3220</td>
+<td>REI</td>
+<td>6,422</td>
 </tr>
 <tr class="even">
-<td>Twenty Ninth Street North</td>
-<td>3156</td>
+<td>18th &amp; Arapahoe</td>
+<td>6,370</td>
 </tr>
 </tbody>
 </table>
@@ -431,44 +307,44 @@ Removing the 1,343 rows with a trip duration of 1 minute and 193 rows with inval
 </thead>
 <tbody>
 <tr class="odd">
-<td>UCAR Center Green</td>
-<td>1379</td>
+<td>Colfax &amp; Garfield</td>
+<td>1,566</td>
 </tr>
 <tr class="even">
-<td>13th &amp; College</td>
-<td>1317</td>
+<td>33rd &amp; Arapahoe</td>
+<td>1,488</td>
 </tr>
 <tr class="odd">
-<td>Boulder Junction</td>
-<td>1251</td>
+<td>14th &amp; Elati</td>
+<td>1,455</td>
 </tr>
 <tr class="even">
-<td>North Boulder Recreation Center</td>
-<td>1012</td>
+<td>Pepsi Center</td>
+<td>1,382</td>
 </tr>
 <tr class="odd">
-<td>Pearl Place</td>
-<td>1006</td>
+<td>Colfax &amp; Pearl</td>
+<td>1,327</td>
 </tr>
 <tr class="even">
-<td>30th &amp; Diagonal Highway</td>
-<td>938</td>
+<td>4th &amp; Walnut</td>
+<td>1,292</td>
 </tr>
 <tr class="odd">
-<td>Broadway &amp; Iris</td>
-<td>873</td>
+<td>Colfax &amp; Columbine</td>
+<td>1,154</td>
 </tr>
 <tr class="even">
-<td>Table Mesa Park-n-Ride</td>
-<td>506</td>
+<td>39th &amp; Fox</td>
+<td>304</td>
 </tr>
 <tr class="odd">
-<td>27th Way &amp; Broadway</td>
-<td>257</td>
+<td>29th &amp; Brighton</td>
+<td>152</td>
 </tr>
 <tr class="even">
-<td>Gunbarrel North</td>
-<td>160</td>
+<td>7th &amp; Sherman</td>
+<td>93</td>
 </tr>
 </tbody>
 </table>
@@ -476,64 +352,108 @@ Removing the 1,343 rows with a trip duration of 1 minute and 193 rows with inval
 <table>
 <thead>
 <tr class="header">
-<th>Return Kiosk</th>
-<th>Number of Returns</th>
+<th>Checkout Kiosk</th>
+<th>Number of Checkouts</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Broadway &amp; University</td>
-<td>1210</td>
+<td>Colfax &amp; Garfield</td>
+<td>1,446</td>
 </tr>
 <tr class="even">
-<td>Boulder Junction</td>
-<td>1146</td>
+<td>14th &amp; Elati</td>
+<td>1,403</td>
 </tr>
 <tr class="odd">
-<td>Pearl Place</td>
-<td>1132</td>
+<td>32nd &amp; Julian</td>
+<td>1,353</td>
 </tr>
 <tr class="even">
-<td>North Boulder Recreation Center</td>
-<td>953</td>
+<td>4th &amp; Walnut</td>
+<td>1,286</td>
 </tr>
 <tr class="odd">
-<td>13th &amp; College</td>
-<td>922</td>
+<td>Colfax &amp; Pearl</td>
+<td>1,172</td>
 </tr>
 <tr class="even">
-<td>30th &amp; Diagonal Highway</td>
-<td>880</td>
+<td>32nd &amp; Clay</td>
+<td>999</td>
 </tr>
 <tr class="odd">
-<td>Broadway &amp; Iris</td>
-<td>756</td>
+<td>Colfax &amp; Columbine</td>
+<td>907</td>
 </tr>
 <tr class="even">
-<td>Table Mesa Park-n-Ride</td>
-<td>475</td>
+<td>39th &amp; Fox</td>
+<td>316</td>
 </tr>
 <tr class="odd">
-<td>27th Way &amp; Broadway</td>
-<td>257</td>
+<td>29th &amp; Brighton</td>
+<td>204</td>
 </tr>
 <tr class="even">
-<td>Gunbarrel North</td>
-<td>166</td>
+<td>7th &amp; Sherman</td>
+<td>120</td>
 </tr>
 </tbody>
 </table>
 <h2 id="map-of-station-popularity">Map of Station Popularity</h2>
 <h3 id="checkout-kiosks">Checkout Kiosks</h3>
 <p>The use of Tableau aided in the creation of the following map showing the popularity of the various Checkout Kiosks (Figure 2). The size of the circle is proportional to the number of checkouts from that kiosk in 2017.</p>
-<div class="figure"><img src="figures/Figure%202.PNG"></div>
-<p>FIGURE 2: CHECKOUT KIOSK LOCATIONS AND NUMBER OF CHECKOUTS IN 2017</p>
+<div class="figure", align="center"><img src="figures/Figure%202.PNG" />
+
+</div>
+<p align="center">
+FIGURE 2: CHECKOUT KIOSK LOCATIONS AND NUMBER OF CHECKOUTS IN 2017
+</p>
 <h3 id="return-kiosks">Return Kiosks</h3>
 <p>Similarly, the use of Tableau aided in the creation of the following map showing the popularity of the various Return Kiosks (Figure 3). The size of the circle corresponds to the number of checkouts returned to that kiosk in 2017.</p>
-<div class="figure"><img src="figures/Figure%203.PNG"></div>
-<p>FIGURE 3: RETURN KIOSK LOCATIONS AND NUMBER OF RETURNS IN 2017</p>
+<div class="figure", align="center"><img src="figures/Figure%203.PNG" />
+
+</div>
+<p align="center">
+FIGURE 3: RETURN KIOSK LOCATIONS AND NUMBER OF RETURNS IN 2017
+</p>
+<h2 id="checkout-method">Checkout Method</h2>
+<p>The 2017 dataset also includes information on the checkout method used by the rider.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Checkout_Method</th>
+<th>Number of Checkouts</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>RFID</td>
+<td>169,974</td>
+</tr>
+<tr class="even">
+<td>Kiosk Phone Lookup</td>
+<td>59,933</td>
+</tr>
+<tr class="odd">
+<td>New Kiosk Purchase</td>
+<td>45,504</td>
+</tr>
+<tr class="even">
+<td>Kiosk Credit Card Lookup</td>
+<td>36,164</td>
+</tr>
+<tr class="odd">
+<td>Mobile</td>
+<td>10,503</td>
+</tr>
+<tr class="even">
+<td>Virtual</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
 <h2 id="checkouts-per-membership-type">Checkouts per Membership Type</h2>
-<p>With the revisions made earlier to the membership type entries, the figure below shows the breakdown:</p>
+<p>Denver B-cycle has a number of different membership passes. The following were the top ten by number of checkouts in 2017 (Figure 4).</p>
 <table>
 <thead>
 <tr class="header">
@@ -543,77 +463,138 @@ Removing the 1,343 rows with a trip duration of 1 minute and 193 rows with inval
 </thead>
 <tbody>
 <tr class="odd">
-<td>Annual (Republic Rider)</td>
-<td>64,646</td>
+<td>24-hour Kiosk Only (Denver B-cycle)</td>
+<td>96,857</td>
 </tr>
 <tr class="even">
-<td>24-hour (Day Tripper)</td>
-<td>22,409</td>
+<td>Annual Plus (Denver B-cycle)</td>
+<td>72,715</td>
 </tr>
 <tr class="odd">
-<td>Monthly (People’s Pedaler)</td>
-<td>13,996</td>
+<td>Annual (Denver B-cycle)</td>
+<td>72,456</td>
 </tr>
 <tr class="even">
-<td>Pay-per-trip (Casual Cruiser)</td>
-<td>2,225</td>
+<td>Monthly (Denver B-cycle)</td>
+<td>55,859</td>
+</tr>
+<tr class="odd">
+<td>Republic Rider (Annual) (Boulder B-cycle)</td>
+<td>6,812</td>
 </tr>
 <tr class="even">
-<td>7-day</td>
-<td>6</td>
+<td>24 HR (Denver B-cycle)</td>
+<td>5,579</td>
+</tr>
+<tr class="odd">
+<td>Denver B-cycle Founder (Denver B-cycle)</td>
+<td>4,075</td>
+</tr>
+<tr class="even">
+<td>Flex Pass (Denver B-cycle)</td>
+<td>3,657</td>
+</tr>
+<tr class="odd">
+<td>24 hour online (Denver B-cycle)</td>
+<td>2,073</td>
+</tr>
+<tr class="even">
+<td>24 HR Rental (Denver B-cycle)</td>
+<td>617</td>
 </tr>
 </tbody>
 </table>
-<p></p>
-<p></p>
-<p></p>
-<div class="figure"><img src="figures/Figure%204.PNG"></div>
-<p>FIGURE 4: NUMBER OF CHECKOUTS BY MEMBERSHIP TYPE IN 2017</p>
+<div class="figure", align="center">
+<img src="figures/Figure%204.PNG" />
+
+</div>
+<p align="center">
+FIGURE 4: NUMBER OF CHECKOUTS BY MEMBERSHIP TYPE IN 2017
+</p>
 <h2 id="ridership-by-calendar-and-clock-variables">Ridership by Calendar and Clock Variables</h2>
 <h3 id="ridership-by-hour">Ridership by Hour</h3>
 <p>Bike checkout time is probably the most important attribute in the Trips dataset. Each checkout time was converted into its integer hour. For example, 7:02 AM or 7:59 AM would be converted to an integer of 7. In this way, total number of checkouts could be aggregated for the year and plotted against their hours of the day, as shown in Figure 5.</p>
-<p>It appears that the highest number of checkouts occurred between 4 PM and 5 PM with ridership increasing steadily from 6 AM. Number of checkouts started to decrease after 6 PM.</p>
-<div class="figure"><img src="figures/Figure%205.PNG"></div>
-<p>FIGURE 5: NUMBER OF CHECKOUTS BY HOUR IN 2017</p>
-<p>Figure 6 shows the average distance ridden by the hour of the day in 2017. Interestingly, more distance was covered during the very early hours of the morning (2 AM to 3 AM) period. The typical distance ridden ranged from 1.4 miles to 1.6 miles from 4 AM to 12 midnight.</p>
-<div class="figure"><img src="figures/Figure%206.PNG"></div>
-<p>FIGURE 6: ESTIMATED AVERAGE MILES RIDDEN BY HOUR OF CHECKOUT IN 2017</p>
+<p>It appears that the highest number of checkouts occur between 4 PM and 5 PM with ridership increasing steadily from 10 AM onwards.</p>
+<div class="figure", align="center"><img src="figures/Figure%205.PNG" />
+
+</div>
+<p align="center">
+FIGURE 5: NUMBER OF CHECKOUTS BY HOUR IN 2017
+</p>
+<p>Figure 6 shows the average distance ridden by the hour of the day in 2017. More distance is covered during the 10 AM period and declining steadily after 3 PM.</p>
+<div class="figure", align="center"><img src="figures/Figure%206.PNG" />
+
+</div>
+<p align="center">
+FIGURE 6: ESTIMATED AVERAGE MILES RIDDEN BY HOUR OF CHECKOUT IN 2017
+</p>
 <h2 id="ridership-by-hour-and-weekday">Ridership by Hour and Weekday</h2>
 <p>Figure 7 shows that weekday ridership patterns are similar. On the other hand weekend ridership demonstrate a busy afternoon (between 12 PM and 3 PM)</p>
-<div class="figure"><img src="figures/Figure%207.PNG"></div>
-<p>FIGURE 7: CHECKOUTS BY HOUR OF DAY PER WEEKDAY IN 2017</p>
+<div class="figure", align="center"><img src="figures/Figure%207.PNG" />
+
+</div>
+<p align="center">
+FIGURE 7: CHECKOUTS BY HOUR OF DAY PER WEEKDAY IN 2017
+</p>
 <h2 id="ridership-by-month">Ridership by Month</h2>
 <p>Monthly checkouts, as shown in Figure 8, suggest high ridership during the summer months and low ridership during the winter months.</p>
-<div class="figure"><img src="figures/Figure%208.PNG"></div>
-<p>FIGURE 8: TOTAL CHECKOUTS BY MONTH IN 2017</p>
+<div class="figure", align="center"><img src="figures/Figure%208.PNG" />
+
+</div>
+<p align="center">
+FIGURE 8: TOTAL CHECKOUTS BY MONTH IN 2017
+</p>
 <h2 id="merging-with-weather">Merging with Weather</h2>
-<p>It is highly likely that weather plays a very important role in bike ridership and bike checkout times. This was shown in the previous plots on total checkouts per hour of the day, by weekday, and by month. To verify this, weather data obtained from <a href="https://darksky.net/dev/">Dark Sky API</a> was merged with the Trips dataset and several graphs plotted to visualize the relationships.</p>
+<p>It is highly likely that weather plays a very important role in bike ridership and bike checkout times. This was shown in the previous plots on total checkouts per hour of the day, by weekday, and by month. To verify this, weather data obtained from Dark Sky API was merged with the Trips dataset and several graphs plotted to visualize the relationships.</p>
 <h3 id="checkouts-vs.-daily-temperature">Checkouts vs. Daily Temperature</h3>
-<p>Figure 9 shows the total number of checkouts against maximum and minimum daily temperature. It clearly suggests that ridership increased as the temperature increased and vice-versa.</p>
-<div class="figure"><img src="figures/Figure%209.PNG"></div>
-<p>FIGURE 9: TOTAL CHECKOUTS BY DAILY TEMPERATURE IN 2017</p>
-<p>Apparent temperature, as defined by Dark Sky, is “apparent (or “feels like”) temperature in degrees Fahrenheit”. It appeared to have a subtle effect on bike ridership as shown in Figure 10.</p>
-<div class="figure"><img src="figures/Figure%2010.PNG"></div>
-<p>FIGURE 10: TOTAL CHECKOUTS BY DAILY APPARENT TEMPERATURE IN 2017</p>
+<p>Figure 9 shows the total number of checkouts against maximum and minimum daily temperature. It clearly suggests that ridership increases as the temperature increases and vice-versa.</p>
+<div class="figure", align="center"><img src="figures/Figure%209.PNG" />
+
+</div>
+<p align="center">
+FIGURE 9: TOTAL CHECKOUTS BY DAILY TEMPERATURE IN 2017
+</p>
+<p>Apparent temperature, as defined by Dark Sky, is “apparent (or “feels like”) temperature in degrees Fahrenheit”. It appears to have a subtle effect on bike ridership as shown in Figure 10.</p>
+<div class="figure", align="center"><img src="figures/Figure%2010.PNG" />
+
+</div>
+<p align="center">
+FIGURE 10: TOTAL CHECKOUTS BY DAILY APPARENT TEMPERATURE IN 2017
+</p>
 <h2 id="checkouts-vs.-daily-cloud-cover">Checkouts vs. Daily Cloud Cover</h2>
-<p>Dark Sky defines Cloud Cover as “the percentage of sky occluded by clouds, between 0 and 1, inclusive”. Figure 11 shows the total number of checkouts against daily cloud cover. It clearly suggests that ridership was highest as the cloud cover stayed at around 0.08.</p>
-<div class="figure"><img src="figures/Figure%2011.PNG"></div>
-<p>FIGURE 11: TOTAL CHECKOUTS BY DAILY CLOUD COVER IN 2017</p>
+<p>Dark Sky defines Cloud Cover as “the percentage of sky occluded by clouds, between 0 and 1, inclusive”. Figures 11 shows the total number of checkouts against daily cloud cover. They clearly suggest that ridership is highest as the cloud cover stays at around 0.15.</p>
+<div class="figure", align="center"><img src="figures/Figure%2011.PNG" />
+
+</div>
+<p align="center">
+FIGURE 11: TOTAL CHECKOUTS BY DAILY CLOUD COVER IN 2017
+</p>
 <h2 id="checkouts-vs.-daily-wind-speed">Checkouts vs. Daily Wind Speed</h2>
-<p>Wind speed is reported in miles per hour. As shown in Figure 12, ridership did not seem to be somewhat impacted by higher wind speeds.</p>
-<div class="figure"><img src="figures/Figure%2012.PNG"></div>
-<p>FIGURE 12: TOTAL CHECKOUTS BY DAILY WIND SPEED IN 2017</p>
+<p>Wind speed is reported in miles per hour. As shown in Figure 12, ridership does not seem to be somewhat impacted by higher wind speeds.</p>
+<div class="figure", align="center"><img src="figures/Figure%2012.PNG" />
+
+</div>
+<p align="center">
+FIGURE 12: TOTAL CHECKOUTS BY DAILY WIND SPEED IN 2017
+</p>
 <h2 id="checkouts-vs.-daily-humidity">Checkouts vs. Daily Humidity</h2>
 <p>Humidity is defined by Dark Sky as “relative humidity, between 0 and 1. Figure 13 shows decreased ridership at higher humidity levels.</p>
-<div class="figure"><img src="figures/Figure%2013.PNG"></div>
-<p>FIGURE 13: TOTAL CHECKOUTS BY DAILY HUMIDITY IN 2017</p>
-<h2 id="checkouts-vs.-daily-visibility">Checkouts vs. Daily Visibility</h2>
-<p>Visibility is measured in miles and capped at 10 miles, according to Dark Sky. As Figure 14 shows, ridership peaked when visibility was at 10 miles.</p>
-<div class="figure"><img src="figures/Figure%2014.PNG"></div>
-<p>FIGURE 14: TOTAL CHECKOUTS BY DAILY VISIBILITY IN 2017</p>
+<div class="figure", align="center"><img src="figures/Figure%2013.PNG" />
 
+</div>
+<p align="center">
+FIGURE 13: TOTAL CHECKOUTS BY DAILY HUMIDITY IN 2017
+</p>
+<h2 id="checkouts-vs.-daily-visibility">Checkouts vs. Daily Visibility</h2>
+<p>Visibility is measured in miles and capped at 10 miles, according to Dark Sky. As Figure 14 shows, ridership peaks when visibility is at 10 miles.</p>
+<div class="figure", align="center"><img src="figures/Figure%2014.PNG" />
+
+</div>
+<p align="center">
+FIGURE 14: TOTAL CHECKOUTS BY DAILY VISIBILITY IN 2017
+</p>
 <h2 id="days-with-highestlowest-ridership">Days with Highest/Lowest Ridership</h2>
-<p>Another interesting data discovery was the fact that Saturdays and Sundays had the highest and lowest ridership depending upon the weather. This may be due to “‘weekend warriors’ who rent B-cycles for pleasure and are highly affected by the weather in their decision to ride”.</p>
+<p>Another interesting data discovery was the fact that Saturdays and Sundays had the highest and lowest ridership depending upon the weather. In his study, Tyler suggests that this may be due to “‘weekend warriors’ who rent B-cycles for pleasure and are highly affected by the weather in their decision to ride”. This may well be the case.</p>
 <h3 id="highest-ridership">Highest Ridership</h3>
 <table style="width:100%;">
 <colgroup>
@@ -634,74 +615,74 @@ Removing the 1,343 rows with a trip duration of 1 minute and 193 rows with inval
 </thead>
 <tbody>
 <tr class="odd">
-<td>Wednesday</td>
-<td>2017-07-27</td>
-<td>80.480</td>
-<td>58.020</td>
-<td>574</td>
-</tr>
-<tr class="even">
-<td>Friday</td>
-<td>2017-08-05</td>
-<td>77.420</td>
-<td>55.600</td>
-<td>568</td>
-</tr>
-<tr class="even">
-<td>Friday</td>
-<td>2017-06-24</td>
-<td>69.690</td>
-<td>46.940</td>
-<td>560</td>
-</tr>
-<tr class="odd">
-<td>Thursday</td>
-<td>2017-06-09</td>
-<td>86.380</td>
-<td>54.750</td>
-<td>558</td>
-</tr>
-<tr class="even">
-<td>Thursday</td>
-<td>2017-09-08</td>
-<td>78.070</td>
-<td>50.720</td>
-<td>552</td>
-</tr>
-<tr class="odd">
-<td>Tuesday</td>
-<td>2017-06-28</td>
-<td>81.830</td>
-<td>54.370</td>
-<td>540</td>
-</tr>
-<tr class="even">
-<td>Thursday</td>
-<td>2017-07-14</td>
-<td>81.440</td>
-<td>55.990</td>
-<td>535</td>
-</tr>
-<tr class="odd">
-<td>Thursday</td>
-<td>2017-08-11</td>
-<td>73.080</td>
-<td>52.170</td>
-<td>526</td>
-</tr>
-<tr class="even">
 <td>Sunday</td>
-<td>2017-07-24</td>
-<td>89.520</td>
-<td>60.770</td>
-<td>511</td>
+<td>2017-05-29</td>
+<td>71.090</td>
+<td>44.100</td>
+<td>2,100</td>
+</tr>
+<tr class="even">
+<td>Saturday</td>
+<td>2017-05-28</td>
+<td>65.650</td>
+<td>40.330</td>
+<td>1,990</td>
+</tr>
+<tr class="odd">
+<td>Friday</td>
+<td>2017-06-03</td>
+<td>74.600</td>
+<td>56.120</td>
+<td>1,933</td>
+</tr>
+<tr class="even">
+<td>Wenesday</td>
+<td>2017-06-15</td>
+<td>85.430</td>
+<td>51.980</td>
+<td>1,927</td>
+</tr>
+<tr class="odd">
+<td>Saturday</td>
+<td>2017-06-21</td>
+<td>77.510</td>
+<td>49.790</td>
+<td>1,909</td>
+</tr>
+<tr class="even">
+<td>Monday</td>
+<td>2017-06-27</td>
+<td>87.060</td>
+<td>58.440</td>
+<td>1,868</td>
+</tr>
+<tr class="odd">
+<td>Saturday</td>
+<td>2017-06-25</td>
+<td>79.230</td>
+<td>61.040</td>
+<td>1,868</td>
+</tr>
+<tr class="even">
+<td>Saturday</td>
+<td>2017-06-04</td>
+<td>75.500</td>
+<td>53.410</td>
+<td>1,857</td>
 </tr>
 <tr class="odd">
 <td>Thursday</td>
-<td>2017-07-18/td>
-<td>82.190</td>
-<td>50.950</td>
-<td>511</td>
+<td>2017-03-23</td>
+<td>84.860</td>
+<td>59.280</td>
+<td>1,857</td>
+</tr>
+<tr class="even">
+<td>Friday</td>
+<td>2017-09-02</td>
+<td>79.770</td>
+<td>59.500</td>
+<td>1,855</td>
 </tr>
 </tbody>
 </table>
@@ -725,135 +706,163 @@ Removing the 1,343 rows with a trip duration of 1 minute and 193 rows with inval
 </thead>
 <tbody>
 <tr class="odd">
-<td>Tuesday</td>
-<td>2017-01-04</td>
-<td>14.590</td>
-<td>5.180</td>
-<td>35</td>
-</tr>
-<tr class="even">
-<td>Thursday</td>
-<td>2017-01-06</td>
-<td>20.380</td>
-<td>-9.100</td>
-<td>31</td>
-</tr>
-<tr class="odd">
 <td>Saturday</td>
 <td>2017-12-24</td>
-<td>26.020</td>
-<td>2.390</td>
-<td>29</td>
-</tr>
-<tr class="even">
-<td>Wednesday</td>
-<td>2017-12-21</td>
-<td>36.420</td>
-<td>10.920</td>
-<td>29</td>
-</tr>
-<tr class="odd">
-<td>Friday</td>
-<td>2017-01-07</td>
-<td>23.870</td>
-<td>2.520</td>
-<td>25</td>
+<td>50.960</td>
+<td>28.940</td>
+<td>154</td>
 </tr>
 <tr class="even">
 <td>Sunday</td>
-<td>2017-01-16</td>
-<td>35.170</td>
-<td>28.520</td>
-<td>24</td>
+<td>2017-04-17</td>
+<td>34.710</td>
+<td>30.140</td>
+<td>140</td>
 </tr>
 <tr class="odd">
-<td>Saturday</td>
-<td>2017-12-31</td>
-<td>25.020</td>
-<td>12.470</td>
-<td>19</td>
+<td>Sunday</td>
+<td>2017-01-31</td>
+<td>31.260</td>
+<td>23.430</td>
+<td>133</td>
 </tr>
 <tr class="even">
-<td>Monday</td>
-<td>2017-12-26</td>
-<td>15.040</td>
-<td>9.420</td>
-<td>18</td>
+<td>Wednesday</td>
+<td>2017-12-07</td>
+<td>15.250</td>
+<td>-1.110</td>
+<td>105</td>
+</tr>
+<tr class="odd">
+<td>Tuesday</td>
+<td>2017-02-02</td>
+<td>20.870</td>
+<td>11.430</td>
+<td>72</td>
+</tr>
+<tr class="even">
+<td>Saturday</td>
+<td>2017-04-16</td>
+<td>34.430</td>
+<td>31.310</td>
+<td>61</td>
 </tr>
 <tr class="odd">
 <td>Sunday</td>
 <td>2017-12-25</td>
-<td>24.000</td>
-<td>11.420</td>
-<td>14</td>
+<td>36.860</td>
+<td>25.290</td>
+<td>56</td>
 </tr>
 <tr class="even">
 <td>Wednesday</td>
-<td>2017-01-05</td>
-<td>6.110</td>
-<td>-1.190</td>
-<td>4</td>
+<td>2017-03-23</td>
+<td>43.070</td>
+<td>22.040</td>
+<td>18</td>
+</tr>
+<tr class="odd">
+<td>Sunday</td>
+<td>2017-12-18</td>
+<td>19.640</td>
+<td>-6.220</td>
+<td>17</td>
+</tr>
+<tr class="even">
+<td>Saturday</td>
+<td>2017-12-17</td>
+<td>5.490</td>
+<td>-7.220</td>
+<td>16</td>
 </tr>
 </tbody>
 </table>
-
-<h3 id="checkouts-vs.-hourly-weather-variables">Checkouts vs. Hourly Weather Variables</h3>
+<h2 id="checkouts-vs.-hourly-weather-variables">Checkouts vs. Hourly Weather Variables</h2>
 <p>Hourly weather conditions provide better resolution than daily weather conditions. To investigate this, number of checkouts against hourly weather variables were also plotted and compared with the plots using daily weather variables.</p>
-
 <h3 id="checkouts-vs.-hourly-temperature">Checkouts vs. Hourly Temperature</h3>
 <p>The scatter plots in Figure 15 and 16 show that the relationship between the number of checkouts and the hourly temperatures are not linear.</p>
+<div class="figure", align="center"><img src="figures/Figure%2015.PNG" />
 
-<div class="figure"><img src="figures/Figure%2015.PNG"></div>
+</div>
+<p align="center">
+FIGURE 15: TOTAL CHECKOUTS BY HOURLY TEMPERATURE IN 2017
+</p>
+<div class="figure", align="center"><img src="figures/Figure%2017.PNG" />
 
-<p>FIGURE 15: TOTAL CHECKOUTS BY HOURLY TEMPERATURE IN 2017</p>
-<div class="figure"><img src="figures/Figure%2016.PNG"></div>
-<p>FIGURE 16: TOTAL CHECKOUTS BY HOURLY APPARENT TEMPERATURE IN 2017</p>
+</div>
+<p align="center">
+FIGURE 16: TOTAL CHECKOUTS BY HOURLY APPARENT TEMPERATURE IN 2017
+</p>
 <h3 id="checkouts-vs.-hourly-humidity">Checkouts vs. Hourly Humidity</h3>
-<p>Figure 17 shows that humidity affected ridership significantly.</p>
-<div class="figure"><img src="figures/Figure%2017.PNG"></div>
-<p>FIGURE 17: TOTAL CHECKOUTS BY HOURLY HUMIDITY IN 2017</p>
+<p>Figure 17 shows that humidity affects ridership significantly.</p>
+<div class="figure", align="center"><img src="figures/Figure%2017.PNG" />
+
+</div>
+<p align="center">
+FIGURE 17: TOTAL CHECKOUTS BY HOURLY HUMIDITY IN 2017
+</p>
 <h3 id="checkouts-vs.-hourly-cloud-cover">Checkouts vs. Hourly Cloud Cover</h3>
-<p>As shown in Figure 18 Cloud Cover certainly impacted ridership.</p>
-<div class="figure"><img src="figures/Figure%2018.PNG"></div>
-<p>FIGURE 18: TOTAL CHECKOUTS BY HOURLY CLOUD COVER IN 2017</p>
+<p>As shown in Figure 18 Cloud Cover certainly impacts ridership.</p>
+<div class="figure", align="center"><img src="figures/Figure%2018.PNG" />
+
+</div>
+<p align="center">
+FIGURE 18: TOTAL CHECKOUTS BY HOURLY CLOUD COVER IN 2017
+</p>
 <h3 id="checkouts-vs.-hourly-wind-speed">Checkouts vs. Hourly Wind Speed</h3>
-<p>Data on wind speed indicated it was clustered heavily in 0 to 8 miles per hour range, as shown in Figure 19.</p>
-<div class="figure"><img src="figures/Figure%2019.PNG"></div>
-<p>FIGURE 19: TOTAL CHECKOUTS BY HOURLY WIND SPEED IN 2017</p>
+<p>Data on wind speed indicates it is clustered heavily in 0 to 8 miles per hour range, as shown in Figure 19.</p>
+<div class="figure", align="center"><img src="figures/Figure%2019.PNG" />
+
+</div>
+<p align="center">
+FIGURE 19: TOTAL CHECKOUTS BY HOURLY WIND SPEED IN 2017
+</p>
 <h3 id="checkouts-vs.-hourly-visibility">Checkouts vs. Hourly Visibility</h3>
-<p>As shown in Figure 20 visibility at 10 miles had the greatest impact on ridership.</p>
-<div class="figure"><img src="figures/Figure%2020.PNG"></div>
-<p>FIGURE 20: TOTAL CHECKOUTS BY HOURLY VISIBILITY IN 2017</p>
+<p>As shown in Figure 20 visibility at 10 miles has the greatest impact on ridership.</p>
+<div class="figure", align="center"><img src="figures/Figure%2020.PNG" />
+
+</div>
+<p align="center">
+FIGURE 20: TOTAL CHECKOUTS BY HOURLY VISIBILITY IN 2017
+</p>
 <h1 id="part-2-regression-modeling">Part 2: Regression Modeling</h1>
 <p>In this section various linear and non-linear regression models were used to test and train the Trips data that was merged with the weather data to try to predict the number of checkouts based on calendar, clock and weather conditions.</p>
 <p>The following regression models with their brief explanation were used in this study:</p>
-<ul style="list-style-type:disc">
-<li><p>Linear Regression</p></li>
-<ul style="list-style-type:circle"><li><p>Most widely used statistical and machine learning technique to model relationship between two sets of variables typically using a straight line. Simple to use and fast performance but lacks high accuracy when compared to non-linear models.</p></li></ul>
-<li><p>Lasso Regression</p></li>
-<ul style="list-style-type:circle"><li><p>A type of linear regression that uses shrinkage to reduce data values toward the mean. Well suited for automating feature selection.</p></li></ul>
-<li><p>Ridge Regression<p></li>
-<ul style="list-style-type:circle"><li><p>Well suited for data that suffers from multicollinearity, i.e. features with high correlation.</p></li></ul>
-<li><p>Bayesian Ridge Regression<p></li>
-<ul style="list-style-type:circle"><li><p>An approach to linear regression in which the statistical analysis is undertaken using Bayesian inference.</p></li></ul>
-<li><p>Decision Tree Regression<p></li>
-<ul style="list-style-type:circle"><li><p>Uses a tree like structure to derive a final decision on the outcome of the analysis.</p></li></ul>
-<li><p>Random Forest Regression<p></li>
-<ul style="list-style-type:circle"><li><p>An ensemble learning method that operates by constructing a multitude of decision trees to arrive at the mean prediction.</p></li></ul>
-<li><p>Extra Trees Regression<p></li>
-<ul style="list-style-type:circle"><li><p>An extremely randomized tree regressor. Builds a totally random decision tree.</p></li></ul>
-<li><p>Nearest Neighbors Regression<p></li>
-<ul style="list-style-type:circle"><li><p>A simple algorithm that uses a similarity measure (e.g. distance between neighbors) to predict the outcome.</p></li></ul>
+<ul>
+<li>Linear Regression</li>
+<li><p>Most widely used statistical and machine learning technique to model relationship between two sets of variables typically using a straight line. Simple to use and fast performance but lacks high accuracy when compared to non-linear models.</p></li>
+<li>Lasso Regression</li>
+<li><p>A type of linear regression that uses shrinkage to reduce data values toward the mean. Well suited for automating feature selection.</p></li>
+<li>Ridge Regression</li>
+<li><p>Well suited for data that suffers from multicollinearity, i.e. features with high correlation.</p></li>
+<li>Bayesian Ridge Regression</li>
+<li><p>An approach to linear regression in which the statistical analysis is undertaken using Bayesian inference.</p></li>
+<li>Decision Tree Regression</li>
+<li><p>Uses a tree like structure to derive a final decision on the outcome of the analysis.</p></li>
+<li>Random Forest Regression</li>
+<li><p>An ensemble learning method that operates by constructing a multitude of decision trees to arrive at the mean prediction.</p></li>
+<li>Extra Trees Regression</li>
+<li><p>An extremely randomized tree regressor. Builds a totally random decision tree.</p></li>
+<li>Nearest Neighbors Regression</li>
+<li><p>A simple algorithm that uses a similarity measure (e.g. distance between neighbors) to predict the outcome.</p></li>
 </ul>
 <h2 id="regression-modeling-with-categorical-feature-set">Regression Modeling with Categorical Feature Set</h2>
-<p>The Checkout Month, Week Day and Hour numeric variables were converted to categorical features resulting in 44 total features for regression modeling.</p>
+<p>The Checkout Month, Week Day and Hour numeric variables were converted to categorical features resulting in 45 total features for regression modeling.</p>
 <p>Prior to applying the models a feature correlation was performed on all the features to see if any of the features were highly correlated to one another. As shown in Figure 21, Temperature and Apparent Temperature were highly correlated suggesting that one of them could be removed from the features in the model application.</p>
-<div class="figure"><img src="figures/Figure%2021.PNG"></div>
-<p>FIGURE 21: FEATURE CORRELATION</p>
+<div class="figure", align="center"><img src="figures/Figure%2021.PNG" />
+
+</div>
+<p align="center">
+FIGURE 21: FEATURE CORRELATIONS
+</p>
 <p>The models used for regression supported the use of several parameters that could be used to adjust or tune them for better performance. In most cases in this study, the parameters were set to default.</p>
 <p>The dataset was randomly spilt into 70% for training and 30% for testing. For each model the training and test scores, R Squared and RMSE results were collected and summarized. In addition, the Decision Tree, Random Forest and Extra Trees models also had their Feature Importance bar charts plotted. The chart for Extra Tree model is shown in Figure 22.</p>
-<div class="figure"><img src="figures/Figure%2022.PNG"></div>
-<p>FIGURE 22: EXTRA TREES REGRESSION MODEL FEATURE IMPORTANCE CHART</p>
+<div class="figure", align="center"><img src="figures/Figure%2022.PNG" />
+
+</div>
+<p align="center">
+FIGURE 22: EXTRA TREES REGRESSION MODEL FEATURE IMPORTANCE CHART
+</p>
 <h2 id="regression-modeling-summary-categorical-feature-set">Regression Modeling Summary – Categorical Feature Set</h2>
 <table>
 <colgroup>
@@ -883,61 +892,67 @@ Removing the 1,343 rows with a trip duration of 1 minute and 193 rows with inval
 <tbody>
 <tr class="odd">
 <td>Training Test Score</td>
-<td>0.702</td>
-<td>0.699</td>
-<td>0.699</td>
-<td>0.702</td>
+<td>0.676</td>
+<td>0.676</td>
+<td>0.676</td>
+<td>0.676</td>
 <td>1.000</td>
-<td>0.948</td>
+<td>0.969</td>
 <td>1.000</td>
-<td>0.590</td>
+<td>0.575</td>
 </tr>
 <tr class="even">
 <td>Test Set Score</td>
-<td>0.703</td>
-<td>0.699</td>
-<td>0.699</td>
-<td>0.702</td>
-<td>0.541</td>
-<td>0.732</td>
-<td>0.752</td>
-<td>0.499</td>
+<td>0.696</td>
+<td>0.696</td>
+<td>0.696</td>
+<td>0.696</td>
+<td>0.718</td>
+<td>0.825</td>
+<td>0.840</td>
+<td>0.476</td>
 </tr>
 <tr class="odd">
 <td>R Squared</td>
-<td>0.838215</td>
-<td>0.836334</td>
-<td>0.836334</td>
-<td>0.838118</td>
-<td>0.735793</td>
-<td>0.855677</td>
-<td>0.867256</td>
-<td>0.706641/td>
+<td>0.834519</td>
+<td>0.834457</td>
+<td>0.834457</td>
+<td>0.834448</td>
+<td>0.847276</td>
+<td>0.908443</td>
+<td>0.916278</td>
+<td>0.690249</td>
 </tr>
 <tr class="even">
 <td>RMSE</td>
-<td>48.413736</td>
-<td>48.926522</td>
-<td>48.926522</td>
-<td>48.440353</td>
-<td>74.658154</td>
-<td>43.598737</td>
-<td>40.350959</td>
-<td>81.503647</td>
+<td>627.95439</td>
+<td>628.16826</td>
+<td>628.16826</td>
+<td>628.19832</td>
+<td>583.57445</td>
+<td>361.43485</td>
+<td>331.86035</td>
+<td>1082.98114</td>
 </tr>
 </tbody>
 </table>
-<p>The Extra Trees regression model achieved the highest accuracy and the lowest RMSE. The Decision Tree model had lowest accuracy and the highest RMSE.</p>
+<p>The Extra Trees regression model achieved the highest accuracy and the lowest RMSE. All the linear models (Linear, Lasso, Ridge and Bayesian Ridge) had twice the RMSE value of the Extra Trees model.</p>
 <h2 id="regression-modeling-with-numerical-feature-set">Regression Modeling with Numerical Feature Set</h2>
 <p>Using Checkout Month, Week Day and Hour numeric variables resulted in just 9 total features for regression modeling.</p>
 <p>Prior to applying the models a feature correlation was performed on all the features to see if any of the features were highly correlated to one another. As shown in Figure 23, Temperature and Apparent Temperature were highly correlated suggesting that one of them could be removed from the features in the model application.</p>
-<div class="figure"><img src="figures/Figure%2023.PNG"></div>
-<p>FIGURE 23: FEATURE CORRELATION</p>
-<p>For each model the training and test scores, R Squared and RMSE results were collected and summarized. In addition, the Decision Tree, Random Forest and Extra Trees models also had their Feature Importance bar charts plotted. The chart for Random Forest and the Extra Trees models are shown in Figures 24 and 25, respectively.</p>
-<div class="figure"><img src="figures/Figure%2024.PNG"></div>
-<p>FIGURE 24: RANDOM FOREST REGRESSION MODEL FEATURE IMPORTANCE CHART</p>
-<div class="figure"><img src="figures/Figure%2025.PNG"></div>
-<p>FIGURE 25: EXTRA TREES REGRESSION MODEL FEATURE IMPORTANCE CHART</p>
+<div class="figure", align="center"><img src="figures/Figure%2023.PNG" />
+
+</div>
+<p align="center">
+FIGURE 23: FEATURE CORRELATION
+</p>
+<p>For each model the training and test scores, R Squared and RMSE results were collected and summarized. In addition, the Decision Tree, Random Forest and Extra Trees models also had their Feature Importance bar charts plotted. The chart for Extra Tree model is shown in Figure 24.</p>
+<div class="figure", align="center"><img src="figures/Figure%2024.PNG" />
+
+</div>
+<p align="center">
+FIGURE 24: EXTRA TREES REGRESSION MODEL FEATURE IMPORTANCE CHART
+</p>
 <h2 id="regression-modeling-summary-numerical-feature-set">Regression Modeling Summary – Numerical Feature Set</h2>
 <table>
 <colgroup>
@@ -967,57 +982,57 @@ Removing the 1,343 rows with a trip duration of 1 minute and 193 rows with inval
 <tbody>
 <tr class="odd">
 <td>Training Test Score</td>
-<td>0.441</td>
-<td>0.435</td>
-<td>0.435</td>
-<td>0.441</td>
+<td>0.431</td>
+<td>0.430</td>
+<td>0.430</td>
+<td>0.431</td>
 <td>1.000</td>
-<td>0.958</td>
+<td>0.970</td>
 <td>1.000</td>
-<td>0.884</td>
+<td>0.888</td>
 </tr>
 <tr class="even">
 <td>Test Set Score</td>
-<td>0.451</td>
-<td>0.448</td>
-<td>0.448</td>
-<td>0.451</td>
-<td>0.531</td>
-<td>0.759</td>
-<td>0.769</td>
-<td>0.884</td>
+<td>0.394</td>
+<td>0.393</td>
+<td>0.393</td>
+<td>0.394</td>
+<td>0.703</td>
+<td>0.827</td>
+<td>0.827</td>
+<td>0.610</td>
 </tr>
 <tr class="odd">
 <td>R Squared</td>
-<td>0.671243</td>
-<td>0.669656</td>
-<td>0.669656</td>
-<td>0.671447</td>
-<td>0.728553</td>
-<td>0.871173</td>
-<td>0.876915</td>
-<td>0.800871</td>
+<td>0.628</td>
+<td>0.627</td>
+<td>0.627</td>
+<td>0.6278</td>
+<td>0.838</td>
+<td>0.909</td>
+<td>0.910</td>
+<td>0.780</td>
 </tr>
 <tr class="even">
 <td>RMSE</td>
-<td>87.618427</td>
-<td>87.957784</td>
-<td>87.957784</td>
-<td>87.574861</td>
-<td>74.825290</td>
-<td>38.441564</td>
-<td>36.841010</td>
-<td>57.187221</td>
+<td>844.015</td>
+<td>845.345</td>
+<td>845.345</td>
+<td>844.312</td>
+<td>414.078</td>
+<td>240.960</td>
+<td>240.800</td>
+<td>543.996</td>
 </tr>
 </tbody>
 </table>
 <h3 id="regression-modeling-summary">Regression Modeling Summary</h3>
 <ul>
 <li>The data exploration phase of this study revealed the significance of weather variables on the ridership. The regression modeling phase confirmed this to be accurate. Looking at the feature importance graphs generated by the Extra Trees and Random Forest models, the weather attributes rank the highest.</li>
-<li>The non-linear regression models performed better than the linear models. In particular, even with a reduced feature set, the non-linear models such as the Extra Trees and the Random Forest were the best performers with R Squared values well above 0.87.</li>
+<li>The non-linear regression models performed better than the linear models. In particular, even with a reduced feature set, the non-linear models such as the Random Forest and the Extra Trees were the best performers with R Squared values well above 0.9.</li>
 </ul>
 <h2 id="testing-regressor-on-unseen-samples">Testing Regressor on unseen samples</h2>
-<p>The Extra Trees Forest Regressor with a predictive accuracy of 87.7% was used to predict 20 samples (with numerical feature set) from the dataset that had not been used neither in the training nor in the test sets. The results are tabulated below. The regressor predicted all 20 of the 20 samples accurately.</p>
+<p>The Extra Trees Regressor with a predictive accuracy of 91% was used to predict 10 samples (with numerical feature set) from the dataset that had not been used neither in the training nor in the test sets. The results are tabulated below. The regressor predicted 9 of the 10 samples well within the 9% range based on its predictive accuracy.</p>
 <table>
 <thead>
 <tr class="header">
@@ -1030,123 +1045,63 @@ Removing the 1,343 rows with a trip duration of 1 minute and 193 rows with inval
 <tbody>
 <tr class="odd">
 <td>1</td>
-<td>33</td>
-<td>33</td>
-<td>0</td>
+<td>21.8</td>
+<td>21</td>
+<td>-0.8</td>
 </tr>
 <tr class="even">
 <td>2</td>
-<td>1</td>
-<td>1</td>
-<td>0</td>
+<td>10.3</td>
+<td>7</td>
+<td>-3.3</td>
 </tr>
 <tr class="odd">
 <td>3</td>
-<td>45</td>
-<td45</td>
-<td>0</td>
+<td>48.5</td>
+<td>44</td>
+<td>-4.5</td>
 </tr>
 <tr class="even">
 <td>4</td>
-<td>6</td>
-<td>6</td>
-<td>0</td>
+<td>1.9</td>
+<td>2</td>
+<td>+0.1</td>
 </tr>
 <tr class="odd">
 <td>5</td>
-<td>30</td>
-<td>30</td>
-<td>0</td>
+<td>29.5</td>
+<td>25</td>
+<td>-4.5</td>
 </tr>
 <tr class="even">
 <td>6</td>
-<td>26</td>
-<td>26</td>
-<td>0</td>
+<td>117.2</td>
+<td>100</td>
+<td>-7.2</td>
 </tr>
 <tr class="odd">
 <td>7</td>
-<td>30</td>
-<td>30</td>
-<td>0</td>
+<td>79.6</td>
+<td>83</td>
+<td>+3.4</td>
 </tr>
 <tr class="even">
 <td>8</td>
-<td>2</td>
-<td>2</td>
-<td>0</td>
+<td>8.7</td>
+<td>11</td>
+<td>+2.3</td>
 </tr>
 <tr class="odd">
 <td>9</td>
-<td>12</td>
-<td>12</td>
-<td>0</td>
+<td>118.8</td>
+<td>129</td>
+<td>+10.2</td>
 </tr>
 <tr class="even">
 <td>10</td>
-<td>3</td>
-<td>3</td>
-<td>0</td>
-</tr>
-<tr class="odd">
-<td>11</td>
-<td>29</td>
-<td>29</td>
-<td>0</td>
-</tr>
-<tr class="even">
-<td>12</td>
-<td>27</td>
-<td>27</td>
-<td>0</td>
-</tr>
-<tr class="odd">
-<td>13</td>
-<td>26</td>
-<td>26</td>
-<td>0</td>
-</tr>
-<tr class="even">
-<td>14</td>
-<td>1</td>
-<td>1</td>
-<td>0</td>
-</tr>
-<tr class="odd">
-<td>15</td>
-<td>18</td>
-<td>18</td>
-<td>0</td>
-</tr>
-<tr class="even">
-<td>16</td>
-<td>50</td>
-<td>50</td>
-<td>0</td>
-</tr>
-<tr class="odd">
-<td>17</td>
-<td>12</td>
-<td>12</td>
-<td>0</td>
-</tr>
-<tr class="even">
-<td>18</td>
-<td>3</td>
-<td>3</td>
-<td>0</td>
-</tr>
-<tr class="odd">
-<td>19</td>
-<td>15</td>
-<td>15</td>
-<td>0</td>
-</tr>
-<tr class="even">
-<td>20</td>
-<td>2</td>
-<td>2</td>
-<td>0</td>
+<td>126.5</td>
+<td>126</td>
+<td>- 0.5</td>
 </tr>
 </tbody>
 </table>
@@ -1155,8 +1110,6 @@ Removing the 1,343 rows with a trip duration of 1 minute and 193 rows with inval
 <ol style="list-style-type: decimal">
 <li>Explored the Trips datasets and visualized the data and provided useful and interesting information.</li>
 <li>Deployed a variety of supervised machine learning regression models to predict the number of checkouts using calendar, clock and weather attributes.</li>
-</article>
-<footer></footer>
-</div>
+</ol>
 </body>
 </html>
